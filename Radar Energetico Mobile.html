@@ -1,0 +1,1083 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El Radar Energético — Edición Móvil · 27 Abr 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;600&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f2ede2;
+    --paper-2:#ebe4d4;
+    --ink:#141210;
+    --ink-2:#2b2724;
+    --rule:#1a1714;
+    --muted:#6b625a;
+    --accent:#7a1a17;
+    --accent-2:#8a6a1a;
+    --font-brand:'Montserrat', sans-serif;
+    --geam-cyan:#00AEEF;
+    --geam-navy:#1B2F6B;
+    --geam-red:#C8102E;
+  }
+  html,body{background:#d9d2c2;margin:0;padding:0;color:var(--ink);font-family:"Source Serif 4",Georgia,serif;}
+  body{
+    background:
+      radial-gradient(1200px 600px at 50% -10%, rgba(0,0,0,.06), transparent 60%),
+      #d9d2c2;
+    min-height:100vh;
+    padding:40px 20px 80px;
+  }
+  .paper{
+    max-width:1240px;margin:0 auto;
+    background:var(--paper);
+    background-image:
+      radial-gradient(transparent 1px, rgba(0,0,0,.02) 1.5px, transparent 2px),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08  0 0 0 0 0.06  0 0 0 0 0.04  0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-size: 3px 3px, 200px 200px;
+    padding:48px 56px 64px;
+    box-shadow:
+      0 1px 0 rgba(0,0,0,.1),
+      0 30px 60px rgba(0,0,0,.25),
+      0 80px 120px rgba(0,0,0,.15);
+    position:relative;
+  }
+  .paper::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.06), transparent 8%, transparent 92%, rgba(0,0,0,.08)),
+      linear-gradient(90deg, rgba(0,0,0,.04), transparent 6%, transparent 94%, rgba(0,0,0,.04));
+    mix-blend-mode:multiply;
+  }
+
+  .top-bar{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    font-family:"Source Serif 4",serif;font-style:italic;font-size:13px;
+    border-bottom:1px solid var(--ink);padding-bottom:8px;
+    letter-spacing:.02em;
+  }
+  .top-bar .left, .top-bar .right{flex:1;}
+  .top-bar .right{text-align:right;}
+  .top-bar .center{flex:0;white-space:nowrap;font-variant:small-caps;letter-spacing:.2em;font-style:normal;font-weight:600;}
+
+  .masthead{
+    text-align:center;padding:14px 0 6px;
+    border-bottom:3px double var(--ink);
+  }
+  .masthead h1{
+    font-family:var(--font-brand);
+    font-size:clamp(40px, 7.2vw, 104px);
+    font-weight:900;
+    letter-spacing:-.01em;line-height:.95;margin:0;
+    color:var(--geam-navy);
+    white-space:nowrap;
+  }
+  .masthead h1 .news{color:var(--geam-navy);font-weight:800;}
+  .masthead .kicker{
+    font-family:"Playfair Display",serif;font-style:italic;
+    font-size:15px;color:var(--ink-2);margin-top:6px;
+  }
+  .masthead .latin{
+    font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.35em;
+    font-size:11px;color:var(--muted);margin-top:10px;
+  }
+
+  .dateline{
+    display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;
+    padding:10px 4px;border-bottom:1px solid var(--ink);
+    font-family:"Source Serif 4",serif;font-size:13px;
+  }
+  .dateline .l{text-align:left;font-variant:small-caps;letter-spacing:.15em;}
+  .dateline .c{font-style:italic;}
+  .dateline .r{text-align:right;font-variant:small-caps;letter-spacing:.15em;}
+  .geam-mark{display:inline-flex;align-items:center;gap:8px;}
+  .geam-brand-logo{display:block;height:42px;width:auto;}
+
+  .front{
+    display:grid;
+    grid-template-columns: 1.1fr 1.6fr 1fr;
+    gap:22px;
+    padding:22px 0 10px;
+    border-bottom:1px solid var(--ink);
+  }
+  .col{position:relative;}
+  .col + .col{border-left:1px solid var(--ink);padding-left:22px;}
+
+  .eyebrow{
+    font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.25em;
+    font-size:11px;color:var(--accent);font-weight:600;margin-bottom:4px;
+  }
+  h2.head{font-family:"Playfair Display",serif;font-weight:900;font-size:38px;line-height:1.02;margin:2px 0 6px;letter-spacing:-.01em;}
+  h3.head{font-family:"Playfair Display",serif;font-weight:800;font-size:24px;line-height:1.08;margin:2px 0 6px;}
+  h4.head{font-family:"Playfair Display",serif;font-weight:700;font-size:18px;line-height:1.12;margin:2px 0 4px;}
+  .deck{font-family:"Playfair Display",serif;font-style:italic;font-weight:400;font-size:16px;line-height:1.35;color:var(--ink-2);margin:4px 0 10px;}
+  .byline{
+    font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.18em;
+    font-size:10.5px;color:var(--muted);margin:6px 0 10px;
+    border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:4px 0;
+  }
+  .body{font-family:"Source Serif 4",serif;font-size:14px;line-height:1.55;text-align:justify;hyphens:auto;}
+  .body p{margin:0 0 .7em;}
+  .body p:first-of-type::first-letter{
+    font-family:"Playfair Display",serif;font-weight:900;
+    float:left;font-size:56px;line-height:.88;padding:4px 8px 0 0;color:var(--ink);
+  }
+  .columns-2{column-count:2;column-gap:22px;column-rule:1px solid rgba(0,0,0,.15);}
+  .columns-2 p:first-child::first-letter{all:unset;}
+
+  .divider{border:0;border-top:1px solid var(--ink);margin:14px 0;}
+  .divider.thick{border-top:3px double var(--ink);}
+  .section-head{display:flex;align-items:center;gap:12px;margin:26px 0 10px;}
+  .section-head .t{font-family:"Playfair Display",serif;font-weight:900;font-size:22px;letter-spacing:.02em;}
+  .section-head .no{font-family:"JetBrains Mono",monospace;font-size:11px;border:1px solid var(--ink);padding:2px 6px;border-radius:2px;letter-spacing:.1em;}
+  .section-head .line{flex:1;border-top:1px solid var(--ink);}
+
+  .meta{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;}
+  .tag{display:inline-block;font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.12em;font-size:10.5px;border:1px solid var(--ink);padding:1px 7px;margin:0 4px 4px 0;color:var(--ink);}
+
+  .impact{display:inline-flex;align-items:center;gap:6px;font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.15em;font-size:10.5px;font-weight:600;padding:2px 8px;border:1px solid var(--ink);}
+  .impact .dot{width:8px;height:8px;background:var(--ink);display:inline-block;border-radius:50%;}
+  .impact.high{background:var(--accent);color:var(--paper);border-color:var(--accent);}
+  .impact.high .dot{background:var(--paper);}
+  .impact.med{background:var(--accent-2);color:var(--paper);border-color:var(--accent-2);}
+  .impact.med .dot{background:var(--paper);}
+  .impact.low{background:transparent;}
+
+  .alert{border:2px solid var(--accent);padding:14px 16px;margin:14px 0;background:rgba(122,26,23,.06);position:relative;}
+  .alert::before{content:"";position:absolute;top:-2px;left:-2px;right:-2px;height:6px;background:repeating-linear-gradient(45deg, var(--accent) 0 8px, transparent 8px 16px);}
+  .alert h5{font-family:"Playfair Display",serif;font-weight:900;font-size:17px;margin:6px 0 4px;color:var(--accent);letter-spacing:.02em;}
+  .alert .badge{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--paper);background:var(--accent);padding:2px 10px;display:inline-block;}
+
+  .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:1px solid var(--ink);margin:18px 0 6px;background:var(--paper-2);}
+  .kpi{padding:12px 14px;border-right:1px solid var(--ink);}
+  .kpi:last-child{border-right:none;}
+  .kpi .l{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.15em;font-size:10.5px;color:var(--muted);}
+  .kpi .v{font-family:"Playfair Display",serif;font-weight:900;font-size:28px;line-height:1;margin-top:4px;}
+  .kpi .d{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--ink-2);margin-top:4px;letter-spacing:.05em;}
+  .kpi .d.up{color:#2d5a2d;}
+  .kpi .d.down{color:var(--accent);}
+
+  .index{
+    border-top:3px double var(--ink);border-bottom:3px double var(--ink);
+    padding:10px 0;margin:14px 0;
+    display:grid;grid-template-columns:repeat(5,1fr);gap:14px;
+    font-family:"Source Serif 4",serif;font-size:12px;
+  }
+  .index .it{border-left:1px solid rgba(0,0,0,.2);padding-left:10px;}
+  .index .it:first-child{border-left:0;}
+  .index .n{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--muted);}
+  .index .t{font-weight:700;font-size:13px;margin-top:2px;}
+
+  .stories{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;padding:8px 0 20px;}
+  .stories > .story{border-left:1px solid var(--ink);padding-left:22px;}
+  .stories > .story:first-child{border-left:none;padding-left:0;}
+  .story .body{font-size:13.5px;}
+
+  .pull{
+    border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);
+    padding:12px 6px;margin:10px 0;
+    font-family:"Playfair Display",serif;font-style:italic;font-weight:400;
+    font-size:22px;line-height:1.2;text-align:center;
+  }
+  .pull .src{display:block;font-family:"Source Serif 4",serif;font-style:normal;font-variant:small-caps;letter-spacing:.2em;font-size:11px;color:var(--muted);margin-top:8px;}
+
+  .sources{border:1px solid var(--ink);padding:12px 14px;background:var(--paper-2);font-family:"Source Serif 4",serif;font-size:12px;line-height:1.45;}
+  .sources h6{font-family:"Playfair Display",serif;font-weight:800;font-size:14px;margin:0 0 6px;letter-spacing:.02em;}
+  .sources ul{margin:0;padding-left:16px;}
+  .sources li{margin-bottom:2px;}
+
+  .ticker{
+    border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:6px 0;margin:12px 0;
+    display:flex;gap:28px;align-items:center;
+    font-family:"JetBrains Mono",monospace;font-size:11.5px;
+    white-space:nowrap;overflow:hidden;
+  }
+  .ticker .lab{background:var(--ink);color:var(--paper);padding:2px 8px;font-weight:600;letter-spacing:.1em;}
+  .ticker .it{display:inline-flex;align-items:center;gap:6px;}
+  .ticker .up{color:#2d5a2d;}
+  .ticker .dn{color:var(--accent);}
+
+  .footer{
+    border-top:3px double var(--ink);margin-top:20px;padding-top:14px;
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:"Source Serif 4",serif;font-size:11.5px;color:var(--muted);font-variant:small-caps;letter-spacing:.15em;
+  }
+
+  .bars{display:flex;align-items:flex-end;gap:3px;height:56px;margin-top:8px;}
+  .bars b{display:block;width:10px;background:var(--ink);}
+
+  /* Resolution callout figure */
+  .res-fig{margin:6px 0 10px;padding:14px 16px 12px;border:1px solid var(--ink);background:var(--paper-2);}
+  .res-fig h6{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;margin:0 0 6px;}
+  .res-fig .num{font-family:"Playfair Display",serif;font-weight:900;font-size:42px;line-height:1;color:var(--ink);}
+  .res-fig .sub{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:4px;letter-spacing:.05em;}
+  .res-fig hr{border:0;border-top:1px solid var(--ink);margin:10px 0;}
+  .res-fig .row{display:grid;grid-template-columns:1fr 1fr;gap:12px;font-family:"Source Serif 4",serif;font-size:12px;}
+  .res-fig .row strong{font-family:"Playfair Display",serif;font-weight:800;font-size:14px;display:block;}
+
+  /* Map placeholder */
+  .map-fig{margin:6px 0 10px;padding:0;border:1px solid var(--ink);background:var(--paper-2);}
+  .map-fig svg{display:block;width:100%;height:auto;}
+
+  /* Bar comparison */
+  .compare{margin:10px 0;border:1px solid var(--ink);background:var(--paper-2);padding:14px 16px;}
+  .compare h6{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;margin:0 0 8px;}
+  .compare .row{display:grid;grid-template-columns:120px 1fr 60px;align-items:center;gap:10px;margin-bottom:8px;}
+  .compare .lbl{font-family:"Playfair Display",serif;font-weight:700;font-size:13px;}
+  .compare .track{height:18px;border:1px solid var(--ink);position:relative;background:var(--paper);}
+  .compare .fill{position:absolute;left:0;top:0;bottom:0;background:var(--ink);}
+  .compare .fill.alt{background:repeating-linear-gradient(45deg, var(--accent) 0 3px, #a84442 3px 6px);}
+  .compare .val{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;text-align:right;}
+  .compare .cap{font-family:"Source Serif 4",serif;font-style:italic;font-size:11px;color:var(--muted);margin-top:6px;border-top:1px solid var(--ink);padding-top:6px;}
+
+  /* Download button */
+  .dl-btn{
+    position:fixed;right:20px;bottom:20px;z-index:50;
+    display:inline-flex;align-items:center;gap:10px;
+    padding:12px 18px;border:1px solid var(--ink);
+    background:var(--ink);color:var(--paper);
+    font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.18em;
+    font-size:12px;font-weight:600;cursor:pointer;
+    box-shadow:0 8px 22px rgba(0,0,0,.25);
+    transition:transform .15s ease, background .15s ease;
+  }
+  .dl-btn:hover{background:var(--accent);transform:translateY(-1px);}
+  .dl-btn svg{width:14px;height:14px;}
+
+  /* Print rules — paginated PDF preserving visual format */
+  @page{ size: A3 portrait; margin: 10mm; }
+  @media print{
+    html,body{
+      background:#d9d2c2 !important;
+      padding:0 !important;margin:0 !important;
+      -webkit-print-color-adjust:exact !important;
+      print-color-adjust:exact !important;
+    }
+    body{padding:0 !important;}
+    *{
+      -webkit-print-color-adjust:exact !important;
+      print-color-adjust:exact !important;
+    }
+    .paper{
+      box-shadow:none !important;
+      max-width:none !important;
+      width:auto !important;
+      margin:0 !important;
+      padding:24px 28px !important;
+    }
+    .dl-btn{display:none !important;}
+    .section-head, .front, .stories, .kpis, .footer, .index, figure, .alert, .alert-r, .res-fig, .map-fig, .compare, .pull, .sources, article, .ticker{
+      break-inside:avoid;page-break-inside:avoid;
+    }
+    .ticker{flex-wrap:wrap;white-space:normal;}
+  }
+
+  /* ============================================================
+     MOBILE EDITION — collapse all multi-column layouts to single
+     ============================================================ */
+  @media (max-width: 900px){
+    body{padding:14px 8px 60px;}
+    .paper{
+      max-width:100%;
+      padding:22px 16px 36px;
+      box-shadow:0 1px 0 rgba(0,0,0,.1), 0 12px 28px rgba(0,0,0,.18);
+    }
+
+    /* Top bar wraps */
+    .top-bar{flex-direction:column;align-items:flex-start;gap:4px;font-size:11.5px;text-align:left;}
+    .top-bar .right{text-align:left;}
+    .top-bar .center{letter-spacing:.14em;}
+
+    /* Masthead */
+    .masthead h1{font-size:clamp(34px, 11vw, 56px);white-space:normal;line-height:.96;}
+    .masthead .kicker{font-size:13px;}
+    .masthead .latin{font-size:10px;letter-spacing:.22em;}
+
+    /* Dateline */
+    .dateline{grid-template-columns:1fr;gap:6px;font-size:12px;text-align:center;}
+    .dateline .l,.dateline .r{text-align:center;}
+    .geam-mark{justify-content:center;}
+    .geam-brand-logo{height:36px;}
+
+    /* Single-column for ALL multi-col blocks (incl. inline style overrides) */
+    .front,
+    .stories,
+    div[style*="grid-template-columns"]{
+      grid-template-columns: 1fr !important;
+      gap:18px !important;
+    }
+    /* Drop column dividers, replace with horizontal rules */
+    .col + .col,
+    .stories > .story{
+      border-left:none !important;
+      padding-left:0 !important;
+      border-top:1px solid var(--ink) !important;
+      padding-top:16px !important;
+    }
+    .stories > .story:first-child{border-top:none !important;padding-top:0 !important;}
+
+    /* Headings — scale down */
+    h2.head{font-size:28px;}
+    h3.head{font-size:21px;}
+    h4.head{font-size:17px;}
+    .deck{font-size:14.5px;}
+    .body{font-size:14.5px;line-height:1.6;text-align:left;hyphens:auto;}
+    .body p:first-of-type::first-letter{font-size:46px;padding:2px 6px 0 0;}
+
+    /* Kill the 2-col flow inside body when used */
+    .columns-2{column-count:1;column-rule:none;}
+
+    /* KPIs → 2 columns */
+    .kpis{grid-template-columns:repeat(2,1fr);}
+    .kpi{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);}
+    .kpi:nth-child(2n){border-right:none;}
+    .kpi .v{font-size:24px;}
+
+    /* Index → 2 columns */
+    .index{grid-template-columns:repeat(2,1fr);gap:10px 14px;padding:10px 0;}
+    .index .it{border-left:0;padding-left:0;}
+
+    /* Section heads */
+    .section-head{gap:10px;margin:22px 0 10px;}
+    .section-head .t{font-size:18px;}
+
+    /* Pull quote */
+    .pull{font-size:18px;padding:10px 4px;}
+
+    /* Sources / footer */
+    .sources{padding:10px 12px;font-size:12px;}
+    .footer{flex-direction:column;gap:6px;text-align:center;font-size:10.5px;letter-spacing:.12em;}
+
+    /* Ticker — wrap & scroll */
+    .ticker{
+      flex-wrap:wrap;white-space:normal;gap:10px 14px;
+      font-size:10.5px;
+    }
+
+    /* Resolution / Map / Compare figures */
+    .res-fig{padding:12px 14px;}
+    .res-fig .num{font-size:34px;}
+    .res-fig .row{grid-template-columns:1fr;gap:8px;}
+    .compare .row{grid-template-columns:90px 1fr 50px;gap:8px;}
+    .compare .lbl{font-size:12px;}
+    .compare .track{height:14px;}
+
+    /* Alert */
+    .alert{padding:12px 14px;}
+    .alert h5{font-size:15.5px;}
+
+    /* Tags wrap nicely */
+    .tag{font-size:10px;letter-spacing:.1em;}
+    .impact{font-size:10px;letter-spacing:.12em;padding:2px 6px;}
+
+    /* Sources column-list at bottom (uses CSS columns) */
+    div[style*="columns:3"]{column-count:1 !important;}
+
+    /* Download button — smaller, anchored bottom-center */
+    .dl-btn{
+      right:12px;bottom:12px;
+      padding:10px 14px;font-size:11px;letter-spacing:.14em;
+    }
+
+    /* SVG charts and bar figures responsive */
+    svg{max-width:100%;height:auto;}
+  }
+
+  @media (max-width: 420px){
+    .paper{padding:18px 12px 32px;}
+    .masthead h1{font-size:clamp(30px, 12vw, 46px);}
+    .kpis{grid-template-columns:1fr;}
+    .kpi{border-right:none;}
+    .kpi:last-child{border-bottom:none;}
+    .index{grid-template-columns:1fr;}
+    h2.head{font-size:24px;}
+    .compare .row{grid-template-columns:80px 1fr 44px;}
+  }
+
+  /* Print rules unchanged below — kept for desktop print fallback */
+</style>
+</head>
+<body>
+
+<button class="dl-btn" id="dl-pdf" title="Descargar PDF idéntico al diseño">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+  <span id="dl-label">Descargar PDF</span>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+(function(){
+  const btn = document.getElementById('dl-pdf');
+  const label = document.getElementById('dl-label');
+  btn.addEventListener('click', async () => {
+    const paper = document.querySelector('.paper');
+    if(!paper) return;
+    btn.disabled = true;
+    label.textContent = 'Generando…';
+    btn.style.display = 'none'; // oculta del snapshot
+    try{
+      // Espera fuentes
+      if(document.fonts && document.fonts.ready){ await document.fonts.ready; }
+      // Captura el .paper a alta resolución
+      const canvas = await html2canvas(paper, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: getComputedStyle(document.body).backgroundColor || '#d9d2c2',
+        windowWidth: paper.scrollWidth,
+        windowHeight: paper.scrollHeight,
+        logging: false
+      });
+      const imgW = canvas.width;
+      const imgH = canvas.height;
+      // PDF con ancho del .paper en pt (1px ≈ 0.75pt). Mantenemos proporción.
+      const pxToPt = 0.75;
+      const pageW = paper.scrollWidth * pxToPt;
+      const pageHperPage = pageW * (297/210); // alto = A4 ratio del ancho elegido
+      const totalH = imgH * (pageW / imgW); // alto total en pt al escalar al ancho del PDF
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF({ unit: 'pt', format: [pageW, pageHperPage], orientation: 'portrait', compress: true });
+
+      // Cuántas páginas necesitamos
+      const pages = Math.ceil(totalH / pageHperPage);
+      // Para evitar generar múltiples canvases, recortamos del canvas original por página
+      const pxPerPage = Math.floor(imgW * (pageHperPage / pageW)); // alto en px del canvas que cabe por página
+      for(let i=0; i<pages; i++){
+        const sliceH = Math.min(pxPerPage, imgH - i*pxPerPage);
+        const slice = document.createElement('canvas');
+        slice.width = imgW;
+        slice.height = sliceH;
+        const ctx = slice.getContext('2d');
+        ctx.drawImage(canvas, 0, i*pxPerPage, imgW, sliceH, 0, 0, imgW, sliceH);
+        const dataUrl = slice.toDataURL('image/jpeg', 0.92);
+        if(i>0) pdf.addPage([pageW, pageHperPage], 'portrait');
+        const drawH = sliceH * (pageW / imgW);
+        pdf.addImage(dataUrl, 'JPEG', 0, 0, pageW, drawH, undefined, 'FAST');
+      }
+      pdf.save('Radar-Energetico-GEAM.pdf');
+    } catch(err){
+      console.error(err);
+      alert('No se pudo generar el PDF. Revisa la consola.');
+    } finally {
+      btn.style.display = '';
+      btn.disabled = false;
+      label.textContent = 'Descargar PDF';
+    }
+  });
+})();
+</script>
+
+<div class="paper">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="left">Vol. IV · Núm. 13 · Edición Semanal</div>
+    <div class="center">— Inteligencia Estratégica del Sector Energético —</div>
+    <div class="right">Circulación ejecutiva · Tirada digital</div>
+  </div>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <h1 class="geam-logo"><span class="geam">GEAM ENERGY</span> <span class="news">NEWS</span></h1>
+    <div class="kicker">Monitoreo de gas natural, electricidad e hidrocarburos en Colombia</div>
+    <div class="latin">Ex datis, consilium · Desde los datos, la decisión</div>
+  </header>
+
+  <!-- DATELINE -->
+  <div class="dateline">
+    <div class="l">Barranquilla — Colombia</div>
+    <div class="c">Lunes, 27 de Abril de 2026 · Periodo monitoreado: 23 — 30 de Marzo</div>
+    <div class="r"><span class="geam-mark"><img class="geam-brand-logo" src="assets/logo-geam.png" alt="Geam Energy"></span></div>
+  </div>
+
+  <!-- INDEX -->
+  <nav class="index">
+    <div class="it"><div class="n">§ I</div><div class="t">Regulación & Política</div></div>
+    <div class="it"><div class="n">§ II</div><div class="t">Mercado de Gas</div></div>
+    <div class="it"><div class="n">§ III</div><div class="t">Mercado Eléctrico</div></div>
+    <div class="it"><div class="n">§ IV</div><div class="t">Transición & Renovables</div></div>
+    <div class="it"><div class="n">§ V</div><div class="t">Contradicciones & Alertas</div></div>
+  </nav>
+
+  <!-- FRONT PAGE: 3 columns -->
+  <section class="front">
+
+    <!-- LEFT: Executive synthesis -->
+    <div class="col">
+      <div class="eyebrow">Síntesis Ejecutiva</div>
+      <h3 class="head">Resolución 40163 reescribe el mercado secundario de gas</h3>
+      <div class="byline">Mesa de Inteligencia · Geam Energy · 27 Mar 2026</div>
+      <div class="body">
+        <p>La semana del 23 al 30 de marzo dejó tres ejes en el centro de la mesa de planeación: una medida transitoria que habilita a térmicas a recolocar gas importado en el mercado secundario, foros de Minenergía abiertos sobre paridad ACPM y alivios a generación, y un evento operativo en la línea Los Palos–Toledo cuya causa fue ajena a ISA Energía.</p>
+        <p>La lectura de fondo es de <em>gestión activa del suministro</em>: la Resolución 40163 (expedida 18/03, divulgada 27/03) busca maximizar capacidad de regasificación subutilizada por seis meses, mientras se refuerzan rutas alternas — Buenaventura, Caribe 2026–2036 — y se consolidan vulnerabilidades logísticas en zonas aisladas como Puerto Leguízamo.</p>
+      </div>
+
+      <div class="pull">
+        “El gas natural no solo acompaña la transición, la hace posible.”
+        <span class="src">Luz Stella Murgas — Naturgas</span>
+      </div>
+
+      <div class="eyebrow" style="margin-top:14px;">Tendencia del periodo</div>
+      <div class="meta">Suministro gas <span style="color:var(--accent)">▲</span> &nbsp; Riesgo operativo <span style="color:var(--accent)">▲</span> &nbsp; Política transición <span style="color:#2d5a2d">▲</span> &nbsp; Regulación <span style="color:var(--accent-2)">●</span> activa</div>
+    </div>
+
+    <!-- CENTER: lead story -->
+    <div class="col">
+      <div class="eyebrow">Portada · Mercado de Gas</div>
+      <h2 class="head">Térmicas podrán comercializar gas importado en el mercado secundario por seis meses</h2>
+      <div class="deck">La Resolución 40163 habilita transitoriamente uso de capacidad de regasificación de plantas térmicas y permite reasignar volúmenes importados no requeridos para generación. Bolsa Mercantil emite procedimiento operativo el 26 de marzo.</div>
+      <div class="byline">Fuentes: La República · Hogan Lovells · Bolsa Mercantil de Colombia · 26–27 Mar 2026</div>
+
+      <figure class="res-fig">
+        <h6>Figura 1 · Resolución 40163 — anatomía de la medida</h6>
+        <div class="num">40163</div>
+        <div class="sub">expedida 18 mar 2026 · vigencia transitoria 6 meses</div>
+        <hr>
+        <div class="row">
+          <div><strong>Habilita</strong>Térmicas pueden comercializar gas importado no requerido para generación en mercado secundario.</div>
+          <div><strong>Vehículo operativo</strong>Circular Bolsa Mercantil (26/03) con procedimiento de declaraciones para participantes.</div>
+          <div><strong>Objetivo</strong>Maximizar capacidad de regasificación subutilizada; aumentar oferta y flexibilidad mayorista.</div>
+          <div><strong>Riesgo divulgado</strong>Tensiones geopolíticas y estrechez de suministro: posibles alzas de precio durante la vigencia.</div>
+        </div>
+      </figure>
+
+      <div class="body columns-2" style="margin-top:18px;">
+        <p>La medida confirma un escenario activo de gestión del abastecimiento. Al permitir que plantas térmicas reasignen gas importado no requerido para generación, el regulador convierte capacidad ociosa de regasificación en oferta líquida del mercado secundario, con efecto directo sobre la atención de demanda no térmica y sobre la formación de precios mayoristas.</p>
+        <p>El análisis legal de Hogan Lovells sostiene que la habilitación opera durante seis meses y aplica sobre infraestructura de importación/regasificación asociada a térmicas. Para compradores industriales y comercializadores, el corolario inmediato es contractual: la ventana exige revisar cláusulas de precio, indexación y firmeza para capturar volúmenes recolocados.</p>
+        <p>El procedimiento de la Bolsa Mercantil, dirigido a participantes del mercado de gas natural, reduce ambigüedad operativa y acelera la adopción. Es la pieza que articula la norma con la ejecución y, por tanto, condicionará trazabilidad, cumplimiento y gestión del riesgo regulatorio durante la vigencia transitoria.</p>
+        <p>El contexto reportado por La República subraya un dato sensible: la dependencia importadora oscila entre 20% y 25% de la demanda según fuente y definición. La Resolución 40163 no resuelve el déficit estructural, pero amortigua su impacto operativo en el corto plazo.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: alert + secondary -->
+    <div class="col">
+      <div class="alert">
+        <span class="badge">Alerta · Nivel Alto</span>
+        <h5>Presión de seguridad de abastecimiento de gas</h5>
+        <div class="body" style="font-size:13px;">
+          <p style="margin:4px 0 0;">La activación de la medida transitoria confirma estrechez en el suministro. Tensiones geopolíticas se citan como riesgo explícito de alza de precios durante los seis meses de vigencia.</p>
+        </div>
+        <div style="margin-top:8px;">
+          <span class="tag">#Res40163</span><span class="tag">#GNL</span><span class="tag">#Térmicas</span>
+        </div>
+      </div>
+
+      <div class="alert" style="border-color:var(--accent-2);background:rgba(138,106,26,.06);">
+        <span class="badge" style="background:var(--accent-2);">Alerta · Nivel Medio</span>
+        <h5 style="color:var(--accent-2);">Riesgo operativo en territorios aislados</h5>
+        <div class="body" style="font-size:13px;">
+          <p style="margin:4px 0 0;">Puente aéreo de combustible Puerto Asís → Puerto Leguízamo (~1.400 gal ACPM, hasta 20.000 gal sostenidos) evidencia vulnerabilidad logística de generación con diésel. Evento línea Los Palos–Toledo señala riesgos de coordinación entre agentes.</p>
+        </div>
+        <div style="margin-top:8px;">
+          <span class="tag">#PuertoLeguízamo</span><span class="tag">#ISA</span><span class="tag">#Continuidad</span>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="eyebrow">Resumen · 5 señales del periodo</div>
+      <div class="body" style="font-size:13px;">
+        <p>— <strong>Gas:</strong> Res. 40163 habilita mercado secundario de gas importado por 6 meses.</p>
+        <p>— <strong>Política:</strong> Minenergía abre foros de paridad ACPM y alivios a proyectos de generación.</p>
+        <p>— <strong>Eléctrico:</strong> Evento Los Palos–Toledo de origen externo a ISA Energía.</p>
+        <p>— <strong>Transición:</strong> Colombia en CERAWeek con narrativa de transición justa y ordenada.</p>
+        <p>— <strong>Capital:</strong> Parex reafirma apuesta por Colombia con foco en gas y activos existentes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <span class="lab">TICKER</span>
+    <span class="it">Res. <b>40163</b> vigente 6 meses</span>
+    <span class="it">Gas importado <b>20–25%</b> demanda</span>
+    <span class="it">Adenda 7 Caribe <b>2026–2036</b></span>
+    <span class="it">Foro ACPM <b>27/03</b> abierto</span>
+    <span class="it">Foro alivios gen. <b>24/03 → 08/04</b></span>
+    <span class="it">UPME portal <b>OFF 28/03</b> 8a-12m</span>
+    <span class="it">Pacífico <b>Buenaventura</b> en cierre fin.</span>
+    <span class="it">CERAWeek <b>Houston</b> ✓</span>
+  </div>
+
+  <!-- ========== SECTION I — REGULATION ========== -->
+  <div class="section-head">
+    <span class="no">§ I</span>
+    <span class="t">Regulación y Política</span>
+    <span class="line"></span>
+    <span class="meta">Minenergía · UPME · ANH</span>
+  </div>
+
+  <div class="stories">
+    <article class="story">
+      <div class="eyebrow">Minenergía · Foros</div>
+      <h3 class="head">Paridad internacional ACPM: foro abierto desde el 27 de marzo</h3>
+      <div class="byline">Minenergía (Foros) · 27 Mar 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Impacto Medio</span></div>
+      <div class="body">
+        <p>Se abrió un espacio de participación ciudadana para comentar la metodología de determinación del precio de paridad internacional para ACPM dentro del mecanismo diferencial de estabilización. Aunque es un asunto de combustibles líquidos — no de gas — afecta señales de costo en transporte y logística.</p>
+        <p><strong>Impacto sectorial:</strong> impactos indirectos sobre demanda energética y riesgos de abastecimiento regional, especialmente en zonas no interconectadas que dependen de generación con diésel/ACPM.</p>
+      </div>
+      <div><span class="tag">#ACPM</span><span class="tag">#Paridad</span><span class="tag">#Foro</span></div>
+    </article>
+
+    <article class="story">
+      <div class="eyebrow">Minenergía · Foros</div>
+      <h3 class="head">Alivios a proyectos de generación, cogeneración y autogeneración</h3>
+      <div class="byline">Minenergía (Foros) · 24 Mar — 08 Abr 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Impacto Medio</span></div>
+      <div class="body">
+        <p>Foro publicado con ventana de comentarios entre el 24 de marzo y el 8 de abril. Está orientado a “alivios” para proyectos de generación, cogeneración y autogeneración en condiciones operativas y administrativas, según el encabezado del foro disponible.</p>
+        <p><strong>Impacto sectorial:</strong> señal de política para destrabar o ajustar condiciones de proyectos; relevante para cronogramas de entrada en operación y, por extensión, para expectativas de confiabilidad y precios del mercado eléctrico.</p>
+      </div>
+      <div class="pull" style="font-size:16px;">
+        “Una ventana de cuatro semanas para destrabar el cronograma del pipeline de generación.”
+        <span class="src">Mesa de Inteligencia · Geam Energy</span>
+      </div>
+      <div><span class="tag">#Generación</span><span class="tag">#Alivios</span><span class="tag">#Política</span></div>
+    </article>
+
+    <article class="story">
+      <div class="eyebrow">UPME · Operativo</div>
+      <h3 class="head">Mantenimiento programado del portal: ventana de 4 horas el 28/03</h3>
+      <div class="byline">UPME · 28 Mar 2026 &nbsp;|&nbsp; <span class="impact low"><span class="dot"></span>Bajo</span></div>
+      <div class="body">
+        <p>La UPME informó indisponibilidad temporal del portal web el sábado 28 de marzo entre 8:00 a. m. y 12:00 m., por mejoras de la plataforma. Riesgo operativo para agentes que usan el portal para descargar documentos o radicar/consultar información.</p>
+        <p><strong>Recomendación:</strong> ajustar cronogramas internos y planes de contingencia documental; anticipar descargas críticas previas a la ventana.</p>
+      </div>
+      <div class="meta" style="margin-top:6px;">Nota de vigilancia ANH: en el rango 23–30/03 no se evidenciaron publicaciones nuevas en la sección de noticias; el listado consultado muestra entradas con fechas anteriores (principalmente febrero 2026).</div>
+      <div><span class="tag">#UPME</span><span class="tag">#ANH</span><span class="tag">#Operativo</span></div>
+    </article>
+  </div>
+
+  <!-- ========== SECTION II — GAS ========== -->
+  <div class="section-head">
+    <span class="no">§ II</span>
+    <span class="t">Mercado de Gas</span>
+    <span class="line"></span>
+    <span class="meta">Ecopetrol · Naturgas · Bolsa Mercantil · Hogan Lovells · GNL Global</span>
+  </div>
+
+  <div class="stories" style="grid-template-columns:1.4fr 1fr 1fr;">
+    <article class="story">
+      <div class="eyebrow">Resolución 40163 · Implementación</div>
+      <h2 class="head" style="font-size:30px;">La Bolsa Mercantil articula la operatividad de la Res. 40163</h2>
+      <div class="deck">Una circular del 26 de marzo establece el procedimiento para declaraciones requeridas por la norma transitoria. Ecopetrol publicó la Adenda 7 del proceso de comercialización de gas importado Caribe 2026–2036.</div>
+      <div class="byline">Bolsa Mercantil de Colombia · Hogan Lovells · Ecopetrol · 26 Mar 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Impacto Alto</span></div>
+
+      <figure class="map-fig">
+        <svg viewBox="0 0 420 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Mapa de infraestructura de gas importado">
+          <defs>
+            <pattern id="seaH" width="6" height="6" patternUnits="userSpaceOnUse">
+              <rect width="6" height="6" fill="#c4b89c"/>
+              <path d="M0 4 Q1.5 2 3 4 T6 4" stroke="#141210" stroke-width=".6" fill="none"/>
+            </pattern>
+            <pattern id="landH" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+              <rect width="4" height="4" fill="#ebe4d4"/>
+              <line x1="0" y1="0" x2="4" y2="0" stroke="#141210" stroke-width=".3" opacity=".4"/>
+            </pattern>
+            <marker id="arrM" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#7a1a17"/>
+            </marker>
+          </defs>
+
+          <rect x="1" y="1" width="418" height="218" fill="none" stroke="#141210"/>
+          <text x="12" y="18" font-family="Source Serif 4, serif" font-size="10" font-weight="700" letter-spacing="2" fill="#7a1a17">FIG. 2 · INFRAESTRUCTURA DE GAS IMPORTADO — COLOMBIA</text>
+          <line x1="12" y1="24" x2="408" y2="24" stroke="#141210"/>
+
+          <!-- Sea -->
+          <rect x="1" y="25" width="418" height="60" fill="url(#seaH)"/>
+          <!-- Land -->
+          <rect x="1" y="85" width="418" height="133" fill="url(#landH)"/>
+
+          <!-- Country outline (stylized) -->
+          <path d="M 60,85 Q 90,80 130,85 L 200,82 L 280,86 L 340,90 L 360,140 L 320,200 L 240,210 L 160,205 L 100,180 L 70,140 Z" fill="#f2ede2" stroke="#141210" stroke-width="1"/>
+
+          <!-- Caribe SPEC node (Cartagena) -->
+          <g transform="translate(150,90)">
+            <circle r="8" fill="#7a1a17" stroke="#141210"/>
+            <text y="-12" text-anchor="middle" font-family="Playfair Display, serif" font-size="11" font-weight="700">SPEC · Cartagena</text>
+            <text y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#6b625a">terminal regasificación</text>
+          </g>
+
+          <!-- Pacific Buenaventura node -->
+          <g transform="translate(95,165)">
+            <circle r="7" fill="none" stroke="#7a1a17" stroke-width="1.5" stroke-dasharray="2 2"/>
+            <text y="-12" text-anchor="middle" font-family="Playfair Display, serif" font-size="11" font-weight="700">Pacífico · Buenaventura</text>
+            <text y="20" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#6b625a">en cierre financiero</text>
+          </g>
+
+          <!-- Ballena (La Guajira) -->
+          <g transform="translate(245,90)">
+            <circle r="6" fill="#141210"/>
+            <text y="-10" text-anchor="middle" font-family="Playfair Display, serif" font-size="10" font-weight="700">Ballena · La Guajira</text>
+            <text y="18" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#6b625a">producción nacional</text>
+          </g>
+
+          <!-- Antonio Ricaurte (frontera VEN) -->
+          <g transform="translate(290,115)">
+            <rect x="-5" y="-5" width="10" height="10" fill="#ebe4d4" stroke="#141210"/>
+            <text y="-10" text-anchor="middle" font-family="Source Serif 4, serif" font-size="9" font-style="italic">Antonio Ricaurte</text>
+          </g>
+
+          <!-- Interior demand -->
+          <g transform="translate(190,150)">
+            <circle r="5" fill="#141210"/>
+            <text y="-9" text-anchor="middle" font-family="Playfair Display, serif" font-size="10" font-weight="700">Interior</text>
+            <text y="16" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#6b625a">Bogotá · Medellín</text>
+          </g>
+
+          <!-- Pipelines -->
+          <path d="M 158,90 Q 175,120 190,150" stroke="#7a1a17" stroke-width="1.6" stroke-dasharray="4 3" fill="none" marker-end="url(#arrM)"/>
+          <path d="M 245,96 Q 220,120 200,150" stroke="#141210" stroke-width="1.4" fill="none" marker-end="url(#arrM)"/>
+          <path d="M 102,165 Q 140,160 185,155" stroke="#7a1a17" stroke-width="1.4" stroke-dasharray="4 3" fill="none" marker-end="url(#arrM)"/>
+
+          <!-- Legend -->
+          <rect x="280" y="160" width="128" height="52" fill="#f2ede2" stroke="#141210"/>
+          <text x="288" y="172" font-family="Source Serif 4, serif" font-size="9" font-weight="700">LEYENDA</text>
+          <line x1="288" y1="178" x2="358" y2="178" stroke="#7a1a17" stroke-width="1.6" stroke-dasharray="4 3"/>
+          <text x="362" y="182" font-family="Source Serif 4, serif" font-size="8.5">gas importado</text>
+          <line x1="288" y1="190" x2="358" y2="190" stroke="#141210" stroke-width="1.4"/>
+          <text x="362" y="194" font-family="Source Serif 4, serif" font-size="8.5">producción nac.</text>
+          <circle cx="293" cy="204" r="4" fill="none" stroke="#7a1a17" stroke-width="1.4" stroke-dasharray="2 2"/>
+          <text x="362" y="207" font-family="Source Serif 4, serif" font-size="8.5">en proyecto</text>
+
+          <!-- Ship icon Caribe -->
+          <g transform="translate(120,55)" stroke="#141210">
+            <path d="M0,8 L4,12 L26,12 L30,8 Z" fill="#141210"/>
+            <rect x="2" y="2" width="26" height="6" fill="#ebe4d4"/>
+          </g>
+        </svg>
+      </figure>
+
+      <div class="body columns-2" style="margin-top:14px;">
+        <p>La circular de la Bolsa Mercantil dirigida a participantes del mercado de gas natural establece un procedimiento para las declaraciones requeridas por la Resolución 40163, de carácter transitorio. Reduce ambigüedad operativa y acelera la adopción de la medida; es clave para cumplimiento, trazabilidad y gestión de riesgos regulatorios y contractuales.</p>
+        <p>En paralelo, Ecopetrol publicó la Adenda 7 (26/03/2026) dentro del proceso de comercialización de gas importado Caribe 2026–2036, junto con bases y cronogramas referenciados en el portal comercial. Es señal de avance en la contractualización de suministro importado en costa Caribe.</p>
+        <p>Para agentes del interior y del mismo Caribe, lo relevante es la planificación de portafolio de aprovisionamiento: riesgo precio, firmeza, obligaciones ToP y estrategias de cobertura. La ventana operativa permite alinear posiciones contractuales antes del segundo semestre.</p>
+      </div>
+      <div><span class="tag">#Res40163</span><span class="tag">#BolsaMercantil</span><span class="tag">#Ecopetrol</span><span class="tag">#Caribe2026</span></div>
+    </article>
+
+    <article class="story">
+      <div class="eyebrow">Pacífico · Infraestructura</div>
+      <h3 class="head">Regasificadora del Pacífico apunta a reforzar seguridad energética</h3>
+      <div class="byline">MundoMaritimo · 23 Mar 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body">
+        <p>El proyecto en Buenaventura avanza, según el artículo, con cierre de financiación. De materializarse en cronograma, incrementaría resiliencia del sistema gasífero al diversificar puntos de entrada y reducir exposición a fallas o limitaciones del Caribe.</p>
+        <p><strong>Crítico para:</strong> demanda del interior y respaldo a térmicas en escenarios hidrológicos adversos.</p>
+      </div>
+      <div class="compare">
+        <h6>Puntos de entrada de GNL</h6>
+        <div class="row"><span class="lbl">SPEC Cartagena</span><div class="track"><div class="fill" style="width:100%;"></div></div><span class="val">activo</span></div>
+        <div class="row"><span class="lbl">Pacífico Buenaventura</span><div class="track"><div class="fill alt" style="width:55%;"></div></div><span class="val">proyecto</span></div>
+        <div class="row"><span class="lbl">Antonio Ricaurte (VEN)</span><div class="track"><div class="fill alt" style="width:25%;"></div></div><span class="val">opcional</span></div>
+        <div class="cap">Diversificación de entradas reduce exposición a fallas del Caribe.</div>
+      </div>
+      <div><span class="tag">#Buenaventura</span><span class="tag">#GNL</span><span class="tag">#Pacífico</span></div>
+    </article>
+
+    <article class="story">
+      <div class="eyebrow">Naturgas · Posicionamiento</div>
+      <h3 class="head">Murgas: “El gas natural hace posible la transición”</h3>
+      <div class="byline">GNL Global · 23 Mar 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+      <div class="body">
+        <p>El artículo enfatiza el rol del gas natural como habilitador de la transición energética y como pilar de seguridad energética, en el contexto de decisiones de matriz y abastecimiento que el país enfrenta.</p>
+        <p><strong>Impacto:</strong> refuerza una narrativa sectorial — de demanda y regulación — favorable al gas como combustible de respaldo. Útil para posicionamiento corporativo y para leer el riesgo reputacional si la sustitución industrial migra hacia combustibles más intensivos en carbono.</p>
+      </div>
+      <div class="meta" style="margin-top:6px;">Nota de calidad: GNL Global incorporado mediante extractos públicos por intermitencias técnicas en consulta directa.</div>
+      <div><span class="tag">#Naturgas</span><span class="tag">#Transición</span><span class="tag">#GNLGlobal</span></div>
+    </article>
+  </div>
+
+  <!-- ========== SECTION III — ELECTRICITY ========== -->
+  <div class="section-head">
+    <span class="no">§ III</span>
+    <span class="t">Mercado Eléctrico</span>
+    <span class="line"></span>
+    <span class="meta">ISA · XM · Sinergox</span>
+  </div>
+
+  <div class="stories">
+    <article class="story">
+      <div class="eyebrow">ISA Intercolombia · Operación</div>
+      <h3 class="head">Línea Los Palos–Toledo: evento ajeno a ISA Energía</h3>
+      <div class="byline">ISA Intercolombia · 27 Mar 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body">
+        <p>Tras la revisión del evento del 27 de marzo en la línea de transmisión Los Palos–Toledo, ISA informó que el origen fue externo a su operación, asociado a trabajos de otra empresa del sector en la subestación Los Palos.</p>
+        <p><strong>Impacto sectorial:</strong> evidencia riesgo de coordinación entre agentes en infraestructura crítica; eleva probabilidad de eventos no planificados, afectaciones regionales (p. ej. Arauca) y costos asociados a calidad del servicio.</p>
+      </div>
+      <div><span class="tag">#ISA</span><span class="tag">#LosPalos</span><span class="tag">#Arauca</span></div>
+    </article>
+
+    <article class="story">
+      <div class="eyebrow">ISA · Mantenimiento de emergencia</div>
+      <h3 class="head">Subestación Santa Marta: trabajos de emergencia el 26/03</h3>
+      <div class="byline">ISA Intercolombia · 25 Mar 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+      <div class="body">
+        <p>Se anunció una intervención de emergencia en la subestación Santa Marta para asegurar continuidad y confiabilidad, programada para el jueves 26 de marzo entre 4:00 a. m. y 12:00 m.</p>
+        <p><strong>Riesgo operativo temporal</strong> por maniobras y restricciones; requiere coordinación con operadores y comercializadores para minimizar impactos y estabilizar indicadores de calidad del servicio regional.</p>
+      </div>
+      <div class="pull" style="font-size:15px;">
+        “Coordinación entre agentes: variable crítica de confiabilidad.”
+        <span class="src">Mesa de Inteligencia</span>
+      </div>
+      <div><span class="tag">#SantaMarta</span><span class="tag">#Confiabilidad</span></div>
+    </article>
+
+    <article class="story">
+      <div class="eyebrow">Puerto Leguízamo · Logística</div>
+      <h3 class="head">Plan de emergencia: puente aéreo de combustible para evitar apagones</h3>
+      <div class="byline">El Espectador · 26 Mar 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body">
+        <p>Puente aéreo Puerto Asís — Puerto Leguízamo: primer envío cercano a 1.400 galones de ACPM, con proyección de varios trayectos diarios (~6.000 galones) y operación sostenida hasta ~20.000 galones. Adicionalmente se autorizó compra de 10.000 galones.</p>
+      </div>
+      <div class="bars" aria-hidden="true">
+        <b style="height:14%"></b><b style="height:30%"></b><b style="height:42%"></b><b style="height:60%"></b><b style="height:78%"></b><b style="height:96%"></b>
+      </div>
+      <div class="meta" style="margin-top:4px;">Escalamiento de envíos · galones ACPM</div>
+      <div class="body" style="margin-top:6px;">
+        <p><strong>Señal:</strong> vulnerabilidad logística en zonas aisladas; riesgo de continuidad si fallan transporte aéreo o fluvial. Potencial impacto reputacional y costos fiscales y operativos.</p>
+      </div>
+      <div><span class="tag">#PuertoLeguízamo</span><span class="tag">#ACPM</span><span class="tag">#ZNI</span></div>
+    </article>
+  </div>
+
+  <!-- XM block -->
+  <div class="stories" style="grid-template-columns:1fr;margin-top:-6px;">
+    <article class="story" style="border-left:none;padding-left:0;">
+      <div class="eyebrow">XM · Actualizaciones operativas</div>
+      <h3 class="head">Sinergox actualiza módulo de análisis multidimensional; ajustes a pérdidas STN y cargos SDL</h3>
+      <div class="byline">XM · 25–27 Mar 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+      <div class="body columns-2">
+        <p>Se publicaron avisos sobre actualización tecnológica del módulo de análisis multidimensional del portal Sinergox (25/03), y comunicaciones sobre índices de pérdidas y factores STN, así como ajuste definitivo de cargos por uso del SDL (27/03), según los extractos públicos disponibles.</p>
+        <p><strong>Impacto sectorial:</strong> cambios y actualizaciones de parámetros y plataformas pueden afectar liquidaciones, facturación y análisis de exposición de los agentes; exige revisión de impactos en costos regulados y validación de modelos internos de pérdidas y cargos.</p>
+        <p class="meta" style="text-transform:none;letter-spacing:0;font-style:italic;color:var(--muted);">Nota de calidad: en algunas publicaciones de XM la consulta del texto completo presentó restricciones técnicas; el monitoreo se apoyó en extractos públicos del periodo.</p>
+      </div>
+      <div><span class="tag">#XM</span><span class="tag">#Sinergox</span><span class="tag">#SDL</span><span class="tag">#STN</span></div>
+    </article>
+  </div>
+
+  <!-- ========== SECTION CLIMA — EL NIÑO ========== -->
+  <div class="section-head">
+    <span class="no">§ CL</span>
+    <span class="t">Clima · Riesgo Hidrológico</span>
+    <span class="line"></span>
+    <span class="meta">NOAA-CPC · IDEAM · ENSO 2026–2027</span>
+  </div>
+
+  <div class="stories" style="grid-template-columns:1.4fr 1fr;">
+    <article class="story">
+      <div class="eyebrow">ENSO · Proyección oficial</div>
+      <h2 class="head" style="font-size:30px;">El Niño llegaría con fuerza desde septiembre con probabilidad superior al 90%</h2>
+      <div class="deck">La proyección NOAA-CPC de abril 2026 consolida un escenario cálido sostenido. El país acumularía cerca de cinco meses de baja precipitación previos al pico del evento, con presión directa sobre embalses y formación de precios.</div>
+      <div class="byline">NOAA-CPC · IDEAM · Mesa de Inteligencia &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Impacto Alto</span></div>
+
+      <figure style="margin:6px 0 10px;padding:14px 16px 12px;border:1px solid var(--ink);background:var(--paper-2);">
+        <figcaption style="display:flex;flex-direction:column;gap:2px;margin-bottom:10px;border-bottom:1px solid var(--ink);padding-bottom:8px;">
+          <span style="font-family:'Source Serif 4',serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;">Figura 3 · Probabilidades ENSO</span>
+          <span style="font-family:'Playfair Display',serif;font-weight:900;font-size:18px;line-height:1.1;">NOAA CPC ENSO Probabilities — emitido Abril 2026</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;color:var(--muted);text-transform:uppercase;">Umbrales ±0,5 °C · ERSSTv5 · Niño-3.4 relativo</span>
+        </figcaption>
+
+        <div style="display:flex;gap:14px;margin-bottom:6px;font-family:'Source Serif 4',serif;font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--ink-2);">
+          <span><i style="display:inline-block;width:12px;height:9px;border:1px solid var(--ink);background:var(--ink);margin-right:5px;vertical-align:-1px;"></i>La Niña</span>
+          <span><i style="display:inline-block;width:12px;height:9px;border:1px solid var(--ink);background:#c4b89c;margin-right:5px;vertical-align:-1px;"></i>Neutral</span>
+          <span><i style="display:inline-block;width:12px;height:9px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg, var(--accent) 0 3px, #a84442 3px 6px);margin-right:5px;vertical-align:-1px;"></i>El Niño</span>
+        </div>
+
+        <div style="position:relative;padding-left:24px;">
+          <div style="position:absolute;left:0;top:0;bottom:18px;width:22px;font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;padding:1px 4px 0 0;">
+            <span>100</span><span>75</span><span>50</span><span>25</span><span>0</span>
+          </div>
+          <div style="position:relative;height:160px;border-left:1px solid var(--ink);border-bottom:1px solid var(--ink);background:linear-gradient(0deg, rgba(0,0,0,.07) 0 1px, transparent 1px) 0 0/100% 25% repeat-y;">
+            <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(9,1fr);align-items:end;padding:0 3px;">
+              <div style="position:relative;height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);background:var(--ink);height:1%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:99%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg, var(--accent) 0 3px, #a84442 3px 6px);height:0%"></div></div>
+              <div style="position:relative;height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);background:var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:80%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg, var(--accent) 0 3px, #a84442 3px 6px);height:20%"></div></div>
+              <div style="position:relative;height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);background:var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:39%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg, var(--accent) 0 3px, #a84442 3px 6px);height:61%"></div></div>
+              <div style="position:relative;height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);background:var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:21%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg, var(--accent) 0 3px, #a84442 3px 6px);height:79%"></div></div>
+              <div style="position:relative;height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);background:var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:13%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg, var(--accent) 0 3px, #a84442 3px 6px);height:87%;position:relative;"><span style="position:absolute;left:50%;transform:translateX(-50%);top:-13px;font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;color:var(--accent);">87</span></div></div>
+              <div style="position:relative;height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);background:var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:10%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg, var(--accent) 0 3px, #a84442 3px 6px);height:90%;position:relative;"><span style="position:absolute;left:50%;transform:translateX(-50%);top:-13px;font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;color:var(--accent);">90</span></div></div>
+              <div style="position:relative;height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);background:var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:8%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg, var(--accent) 0 3px, #a84442 3px 6px);height:92%;position:relative;"><span style="position:absolute;left:50%;transform:translateX(-50%);top:-13px;font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;color:var(--accent);">92</span></div></div>
+              <div style="position:relative;height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);background:var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:7%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg, var(--accent) 0 3px, #a84442 3px 6px);height:93%;position:relative;"><span style="position:absolute;left:50%;transform:translateX(-50%);top:-13px;font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;color:var(--accent);">93</span></div></div>
+              <div style="position:relative;height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);background:var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:8%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg, var(--accent) 0 3px, #a84442 3px 6px);height:92%;position:relative;"><span style="position:absolute;left:50%;transform:translateX(-50%);top:-13px;font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;color:var(--accent);">92</span></div></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(9,1fr);text-align:center;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-2);margin-top:5px;letter-spacing:.02em;">
+            <span>MAM</span><span>AMJ</span><span>MJJ</span><span>JJA</span><span>JAS</span><span>ASO</span><span>SON</span><span>OND</span><span>NDJ</span>
+          </div>
+        </div>
+        <div style="margin-top:10px;padding-top:8px;border-top:1px solid var(--ink);font-family:'Source Serif 4',serif;font-style:italic;font-size:11.5px;color:var(--muted);line-height:1.4;">
+          Fuente: NOAA Climate Prediction Center, abril 2026. La probabilidad de El Niño cruza el 50% en MJJ y se consolida por encima del 90% desde ASO; el pico se ubica en OND con 93%.
+        </div>
+      </figure>
+
+      <div class="body columns-2" style="margin-top:14px;">
+        <p>El IDEAM y los centros de monitoreo internacionales anticipan que el fenómeno se intensificaría desde septiembre, luego de varios meses consecutivos de caída en las lluvias. Para ese momento, el país acumularía cerca de cinco meses de sequía progresiva, con alertas tempranas en el sector energético por reducción esperada de niveles de embalse.</p>
+        <p>El cuadro de probabilidades NOAA-CPC marca tres umbrales operativos: el cruce al régimen cálido en MJJ (61%), la consolidación del evento en ASO (90%) y el pico estacional en OND (93%). Para la planeación del SIN, el periodo crítico se ubica entre septiembre 2026 y enero 2027.</p>
+        <p>Las presiones se traducen, vía la curva de mérito del despacho, en mayor exigencia al parque térmico y, por tanto, en demanda incremental sobre el suministro de gas natural. La Resolución 40163 — vigente seis meses — debería estar próxima a su expiración cuando inicie la ventana más severa.</p>
+      </div>
+      <div><span class="tag">#ElNiño</span><span class="tag">#NOAA</span><span class="tag">#IDEAM</span><span class="tag">#ENSO</span><span class="tag">#Hidrología</span></div>
+    </article>
+
+    <article class="story">
+      <div class="eyebrow">Implicaciones B2B</div>
+      <h3 class="head">Lectura para empresas del sector</h3>
+      <div class="byline">Mesa de Inteligencia &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body">
+        <p><strong>Generación.</strong> Mayor exigencia al parque térmico durante ASO–NDJ. Revisar disponibilidad de gas natural y combustibles líquidos; adelantar mantenimientos mayores antes de septiembre.</p>
+        <p><strong>Comercialización.</strong> Exposición creciente al precio de bolsa en hidrología deficitaria. Reforzar cobertura contractual y posiciones en contratos de largo plazo, particularmente con indexación a referencias internacionales habilitada por la CREG.</p>
+        <p><strong>Grandes consumidores.</strong> Evaluar opciones dual-fuel y PPA renovables como cobertura ante repunte de precios térmicos del segundo semestre.</p>
+        <p><strong>Transmisión y transporte.</strong> Asegurar capacidad firme de transporte de gas y de regasificación; anticipar coordinación con operadores para minimizar restricciones operativas durante el evento.</p>
+      </div>
+      <div class="pull" style="font-size:15px;">
+        “El periodo crítico para el SIN se ubica entre septiembre 2026 y enero 2027.”
+        <span class="src">Mesa de Inteligencia · Geam Energy</span>
+      </div>
+      <div><span class="tag">#Térmica</span><span class="tag">#PPA</span><span class="tag">#DualFuel</span><span class="tag">#Cobertura</span></div>
+    </article>
+  </div>
+
+  <!-- ========== SECTION IV & V — TWO-COLUMN ========== -->
+  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:28px;">
+    <div>
+      <div class="section-head">
+        <span class="no">§ IV</span>
+        <span class="t">Transición & Renovables</span>
+        <span class="line"></span>
+      </div>
+      <article>
+        <div class="eyebrow">Minenergía · CERAWeek</div>
+        <h3 class="head">Colombia presenta en Houston una transición “justa, ordenada y responsable”</h3>
+        <div class="byline">Minenergía · 25 Mar 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+        <div class="body columns-2">
+          <p>En CERAWeek (Houston), el ministro Edwin Palma presentó un enfoque de transición que combina expansión de energías limpias con medidas de corto y mediano plazo para seguridad energética y precios competitivos.</p>
+          <p>Para inversionistas, es un mensaje de continuidad de pipeline solar y eólico, condicionado a destrabar infraestructura y articulación institucional. Implica cronogramas y bancabilidad bajo observación.</p>
+          <p><strong>Lectura:</strong> refuerza la señal de política pro-renovables con narrativa explícita de confiabilidad — un equilibrio que el mercado venía reclamando desde 2025.</p>
+        </div>
+        <div><span class="tag">#CERAWeek</span><span class="tag">#Renovables</span><span class="tag">#EdwinPalma</span><span class="tag">#Pipeline</span></div>
+      </article>
+
+      <article style="margin-top:18px;">
+        <div class="eyebrow">Capital · Upstream</div>
+        <h3 class="head">Parex reafirma apuesta por Colombia pese a retos regulatorios</h3>
+        <div class="byline">Valora Analitik · 29 Mar 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+        <div class="body">
+          <p>El CEO global de Parex Resources plantea que, aun con retos regulatorios, percibe estabilidad institucional y respeto de contratos. Describe estrategia de maximizar activos existentes y foco en gas — necesidad país — sin depender de nuevas áreas de exploración.</p>
+          <p><strong>Indicio:</strong> apetito de M&amp;A y optimización de recobro y producción en campos existentes. Relevante para expectativas de oferta (gas asociado y no asociado) y para la lectura de riesgo regulatorio percibido por capital privado extranjero.</p>
+        </div>
+        <div><span class="tag">#Parex</span><span class="tag">#Upstream</span><span class="tag">#Gas</span></div>
+      </article>
+    </div>
+
+    <div>
+      <div class="section-head">
+        <span class="no">§ V</span>
+        <span class="t">Contradicciones</span>
+        <span class="line"></span>
+      </div>
+      <article>
+        <div class="eyebrow">Importaciones · Cifras divergentes</div>
+        <h3 class="head">¿20% o 25% de la demanda?</h3>
+        <div class="byline">La República · reportes sectoriales &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+        <div class="body">
+          <p>Una fuente periodística reporta que las importaciones “representan 25% de la demanda nacional” (atribuido a Naturgas), mientras otro reporte ubica el gas importado alrededor de “20% del gas comercializado”.</p>
+          <p><strong>Posible causa:</strong> diferencias de definición (demanda total vs. gas comercializado; regulada vs. no regulada; inclusión de volúmenes térmicos y contratos firmes) y de corte temporal (enero vs. febrero 2026; estimación gremial vs. estadística).</p>
+        </div>
+        <div class="sources" style="margin-top:10px;">
+          <h6>Resolución 40163: dos fechas</h6>
+          <ul>
+            <li>Expedición acto administrativo: <strong>18/03/2026</strong>.</li>
+            <li>Divulgación pública / pedagogía: <strong>27/03/2026</strong>.</li>
+            <li>Procedimiento operativo Bolsa Mercantil: <strong>26/03/2026</strong>.</li>
+          </ul>
+          <p style="margin:6px 0 0;"><em>Posible causa:</em> diferencia entre fecha de expedición y fecha de divulgación, comunicados o guía operativa posterior.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- ========== KPI PANEL ========== -->
+  <div class="section-head" style="margin-top:30px;">
+    <span class="no">§ KPI</span>
+    <span class="t">Indicadores del Periodo</span>
+    <span class="line"></span>
+    <span class="meta">23–30 Mar 2026 · Edición 27 Abr</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi">
+      <div class="l">Res. 40163</div>
+      <div class="v">6 m</div>
+      <div class="d down">vigencia transitoria</div>
+    </div>
+    <div class="kpi">
+      <div class="l">Gas importado</div>
+      <div class="v">20–25%</div>
+      <div class="d">demanda nacional</div>
+    </div>
+    <div class="kpi">
+      <div class="l">Foro alivios gen.</div>
+      <div class="v">16<span style="font-size:14px;"> días</span></div>
+      <div class="d">24/03 → 08/04</div>
+    </div>
+    <div class="kpi">
+      <div class="l">Puente aéreo ACPM</div>
+      <div class="v">~20k<span style="font-size:14px;">gal</span></div>
+      <div class="d down">P. Asís → P. Leguízamo</div>
+    </div>
+    <div class="kpi">
+      <div class="l">Caribe GNL</div>
+      <div class="v">2026<span style="font-size:14px;">–36</span></div>
+      <div class="d">Adenda 7 publicada</div>
+    </div>
+    <div class="kpi">
+      <div class="l">UPME portal</div>
+      <div class="v">4 h</div>
+      <div class="d">ventana 28/03</div>
+    </div>
+  </div>
+
+  <!-- Costa vs Interior split -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;">
+    <div class="sources">
+      <h6>Alertas críticas del periodo</h6>
+      <ul>
+        <li><strong>Suministro gas (corto plazo):</strong> medida transitoria + tensiones geopolíticas como riesgo explícito de alza.</li>
+        <li><strong>Continuidad ZNI:</strong> Puerto Leguízamo expone vulnerabilidad logística sostenida.</li>
+        <li><strong>Coordinación operativa:</strong> evento Los Palos–Toledo evidencia interfaces críticas entre agentes.</li>
+      </ul>
+    </div>
+    <div class="sources">
+      <h6>Agenda regulatoria próxima</h6>
+      <ul>
+        <li><strong>27 Mar.</strong> Apertura foro paridad ACPM (Minenergía).</li>
+        <li><strong>28 Mar.</strong> Ventana mantenimiento portal UPME (8a–12m).</li>
+        <li><strong>08 Abr.</strong> Cierre foro alivios a generación/cogeneración/autogeneración.</li>
+        <li><strong>2026 (sept).</strong> Vencimiento aprox. de los seis meses de la Res. 40163.</li>
+        <li><strong>2026–2036.</strong> Cronograma proceso comercialización gas Caribe (Ecopetrol).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FUENTES -->
+  <div class="section-head" style="margin-top:26px;">
+    <span class="no">§ FT</span>
+    <span class="t">Fuentes Consultadas</span>
+    <span class="line"></span>
+  </div>
+  <div style="columns:3;column-gap:22px;font-family:'Source Serif 4',serif;font-size:12px;line-height:1.5;">
+    <p><strong>Oficiales —</strong> Ministerio de Minas y Energía (Foros), UPME, ANH (sección de noticias), CREG (referencia normativa).</p>
+    <p><strong>Empresas / gremios —</strong> Ecopetrol (portal comercial), Bolsa Mercantil de Colombia, ISA Intercolombia, XM (extractos Sinergox), Naturgas, Parex Resources.</p>
+    <p><strong>Análisis legal —</strong> Hogan Lovells (análisis Resolución 40163).</p>
+    <p><strong>Medios —</strong> La República, El Espectador, Valora Analitik, MundoMaritimo, GNL Global (extractos públicos).</p>
+    <p style="break-inside:avoid;"><em>Nota metodológica:</em> el análisis se enfocó en publicaciones con fecha de emisión, actualización o divulgación dentro del rango 23–30 de marzo de 2026, priorizando fuentes oficiales y portales especializados. En el caso de XM y GNL Global se trabajó con extractos públicos por restricciones técnicas en la consulta directa del contenido completo.</p>
+  </div>
+
+  <div class="footer">
+    <span>El Radar Energético · Informe ejecutivo no comercial</span>
+    <span>Próxima edición · Lunes 04 de Mayo de 2026</span>
+    <span>— fin de la edición —</span>
+  </div>
+
+</div>
+</body>
+</html>
