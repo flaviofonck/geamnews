@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El Radar Energético — Edición Móvil · 27 Abr 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;600&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f2ede2;--paper-2:#ebe4d4;--ink:#141210;--ink-2:#2b2724;--rule:#1a1714;
+    --muted:#6b625a;--accent:#7a1a17;--accent-2:#8a6a1a;
+    --font-brand:'Montserrat', sans-serif;
+    --geam-cyan:#00AEEF;--geam-navy:#1B2F6B;--geam-red:#C8102E;
+  }
+  html,body{background:#d9d2c2;margin:0;padding:0;color:var(--ink);font-family:"Source Serif 4",Georgia,serif;}
+  body{background:radial-gradient(1200px 600px at 50% -10%,rgba(0,0,0,.06),transparent 60%),#d9d2c2;min-height:100vh;padding:40px 20px 80px;}
+  .paper{
+    max-width:1240px;margin:0 auto;background:var(--paper);
+    background-image:radial-gradient(transparent 1px,rgba(0,0,0,.02) 1.5px,transparent 2px),url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08  0 0 0 0 0.06  0 0 0 0 0.04  0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-size:3px 3px,200px 200px;padding:48px 56px 64px;
+    box-shadow:0 1px 0 rgba(0,0,0,.1),0 30px 60px rgba(0,0,0,.25),0 80px 120px rgba(0,0,0,.15);position:relative;
+  }
+  .paper::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.06),transparent 8%,transparent 92%,rgba(0,0,0,.08)),linear-gradient(90deg,rgba(0,0,0,.04),transparent 6%,transparent 94%,rgba(0,0,0,.04));mix-blend-mode:multiply;}
+  .top-bar{display:flex;justify-content:space-between;align-items:flex-end;font-family:"Source Serif 4",serif;font-style:italic;font-size:13px;border-bottom:1px solid var(--ink);padding-bottom:8px;letter-spacing:.02em;}
+  .top-bar .left,.top-bar .right{flex:1;}.top-bar .right{text-align:right;}
+  .top-bar .center{flex:0;white-space:nowrap;font-variant:small-caps;letter-spacing:.2em;font-style:normal;font-weight:600;}
+  .masthead{text-align:center;padding:14px 0 6px;border-bottom:3px double var(--ink);}
+  .masthead h1{font-family:var(--font-brand);font-size:clamp(40px,7.2vw,104px);font-weight:900;letter-spacing:-.01em;line-height:.95;margin:0;color:var(--geam-navy);white-space:nowrap;}
+  .masthead .kicker{font-family:"Playfair Display",serif;font-style:italic;font-size:15px;color:var(--ink-2);margin-top:6px;}
+  .masthead .latin{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.35em;font-size:11px;color:var(--muted);margin-top:10px;}
+  .dateline{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--ink);font-family:"Source Serif 4",serif;font-size:13px;}
+  .dateline .l{text-align:left;font-variant:small-caps;letter-spacing:.15em;}.dateline .c{font-style:italic;}.dateline .r{text-align:right;}
+  .geam-mark{display:inline-flex;align-items:center;gap:8px;justify-content:flex-end;}
+  .geam-brand-logo{display:block;height:42px;width:auto;}
+  .front{display:grid;grid-template-columns:1.1fr 1.6fr 1fr;gap:22px;padding:22px 0 10px;border-bottom:1px solid var(--ink);}
+  .col{position:relative;}.col+.col{border-left:1px solid var(--ink);padding-left:22px;}
+  .eyebrow{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.25em;font-size:11px;color:var(--accent);font-weight:600;margin-bottom:4px;}
+  h2.head{font-family:"Playfair Display",serif;font-weight:900;font-size:38px;line-height:1.02;margin:2px 0 6px;letter-spacing:-.01em;}
+  h3.head{font-family:"Playfair Display",serif;font-weight:800;font-size:24px;line-height:1.08;margin:2px 0 6px;}
+  h4.head{font-family:"Playfair Display",serif;font-weight:700;font-size:18px;line-height:1.12;margin:2px 0 4px;}
+  .deck{font-family:"Playfair Display",serif;font-style:italic;font-weight:400;font-size:16px;line-height:1.35;color:var(--ink-2);margin:4px 0 10px;}
+  .byline{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.18em;font-size:10.5px;color:var(--muted);margin:6px 0 10px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:4px 0;}
+  .body{font-family:"Source Serif 4",serif;font-size:14px;line-height:1.55;text-align:justify;hyphens:auto;}
+  .body p{margin:0 0 .7em;}
+  .body p:first-of-type::first-letter{font-family:"Playfair Display",serif;font-weight:900;float:left;font-size:56px;line-height:.88;padding:4px 8px 0 0;color:var(--ink);}
+  .columns-2{column-count:2;column-gap:22px;column-rule:1px solid rgba(0,0,0,.15);}
+  .columns-2 p:first-child::first-letter{all:unset;}
+  .divider{border:0;border-top:1px solid var(--ink);margin:14px 0;}.divider.thick{border-top:3px double var(--ink);}
+  .section-head{display:flex;align-items:center;gap:12px;margin:26px 0 10px;}
+  .section-head .t{font-family:"Playfair Display",serif;font-weight:900;font-size:22px;letter-spacing:.02em;}
+  .section-head .no{font-family:"JetBrains Mono",monospace;font-size:11px;border:1px solid var(--ink);padding:2px 6px;border-radius:2px;letter-spacing:.1em;}
+  .section-head .line{flex:1;border-top:1px solid var(--ink);}
+  .meta{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;}
+  .tag{display:inline-block;font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.12em;font-size:10.5px;border:1px solid var(--ink);padding:1px 7px;margin:0 4px 4px 0;color:var(--ink);}
+  .impact{display:inline-flex;align-items:center;gap:6px;font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.15em;font-size:10.5px;font-weight:600;padding:2px 8px;border:1px solid var(--ink);}
+  .impact .dot{width:8px;height:8px;background:var(--ink);display:inline-block;border-radius:50%;}
+  .impact.high{background:var(--accent);color:var(--paper);border-color:var(--accent);}.impact.high .dot{background:var(--paper);}
+  .impact.med{background:var(--accent-2);color:var(--paper);border-color:var(--accent-2);}.impact.med .dot{background:var(--paper);}
+  .impact.low{background:transparent;}
+  .alert{border:2px solid var(--accent);padding:14px 16px;margin:14px 0;background:rgba(122,26,23,.06);position:relative;}
+  .alert::before{content:"";position:absolute;top:-2px;left:-2px;right:-2px;height:6px;background:repeating-linear-gradient(45deg,var(--accent) 0 8px,transparent 8px 16px);}
+  .alert h5{font-family:"Playfair Display",serif;font-weight:900;font-size:17px;margin:6px 0 4px;color:var(--accent);letter-spacing:.02em;}
+  .alert .badge{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--paper);background:var(--accent);padding:2px 10px;display:inline-block;}
+  .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:1px solid var(--ink);margin:18px 0 6px;background:var(--paper-2);}
+  .kpi{padding:12px 14px;border-right:1px solid var(--ink);}.kpi:last-child{border-right:none;}
+  .kpi .l{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.15em;font-size:10.5px;color:var(--muted);}
+  .kpi .v{font-family:"Playfair Display",serif;font-weight:900;font-size:28px;line-height:1;margin-top:4px;}
+  .kpi .d{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--ink-2);margin-top:4px;letter-spacing:.05em;}
+  .kpi .d.up{color:#2d5a2d;}.kpi .d.down{color:var(--accent);}
+  .index{border-top:3px double var(--ink);border-bottom:3px double var(--ink);padding:10px 0;margin:14px 0;display:grid;grid-template-columns:repeat(6,1fr);gap:14px;font-family:"Source Serif 4",serif;font-size:12px;}
+  .index .it{border-left:1px solid rgba(0,0,0,.2);padding-left:10px;}.index .it:first-child{border-left:0;}
+  .index .n{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--muted);}.index .t{font-weight:700;font-size:13px;margin-top:2px;}
+  .stories{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;padding:8px 0 20px;}
+  .stories>.story{border-left:1px solid var(--ink);padding-left:22px;}.stories>.story:first-child{border-left:none;padding-left:0;}
+  .story .body{font-size:13.5px;}
+  .pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:12px 6px;margin:10px 0;font-family:"Playfair Display",serif;font-style:italic;font-weight:400;font-size:22px;line-height:1.2;text-align:center;}
+  .pull .src{display:block;font-family:"Source Serif 4",serif;font-style:normal;font-variant:small-caps;letter-spacing:.2em;font-size:11px;color:var(--muted);margin-top:8px;}
+  .sources{border:1px solid var(--ink);padding:12px 14px;background:var(--paper-2);font-family:"Source Serif 4",serif;font-size:12px;line-height:1.45;}
+  .sources h6{font-family:"Playfair Display",serif;font-weight:800;font-size:14px;margin:0 0 6px;letter-spacing:.02em;}
+  .sources ul{margin:0;padding-left:16px;}.sources li{margin-bottom:2px;}
+  .ticker{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 0;margin:12px 0;display:flex;gap:28px;align-items:center;font-family:"JetBrains Mono",monospace;font-size:11.5px;white-space:nowrap;overflow:hidden;}
+  .ticker .lab{background:var(--ink);color:var(--paper);padding:2px 8px;font-weight:600;letter-spacing:.1em;}
+  .ticker .it{display:inline-flex;align-items:center;gap:6px;}
+  .ticker .up{color:#2d5a2d;}.ticker .dn{color:var(--accent);}
+  .footer{border-top:3px double var(--ink);margin-top:20px;padding-top:14px;display:flex;justify-content:space-between;align-items:center;font-family:"Source Serif 4",serif;font-size:11.5px;color:var(--muted);font-variant:small-caps;letter-spacing:.15em;}
+  .bars{display:flex;align-items:flex-end;gap:3px;height:56px;margin-top:8px;}.bars b{display:block;width:10px;background:var(--ink);}
+  .res-fig{margin:6px 0 10px;padding:14px 16px 12px;border:1px solid var(--ink);background:var(--paper-2);}
+  .res-fig h6{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;margin:0 0 6px;}
+  .res-fig .num{font-family:"Playfair Display",serif;font-weight:900;font-size:42px;line-height:1;color:var(--ink);}
+  .res-fig .sub{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:4px;letter-spacing:.05em;}
+  .res-fig hr{border:0;border-top:1px solid var(--ink);margin:10px 0;}
+  .res-fig .row{display:grid;grid-template-columns:1fr 1fr;gap:12px;font-family:"Source Serif 4",serif;font-size:12px;}
+  .res-fig .row strong{font-family:"Playfair Display",serif;font-weight:800;font-size:14px;display:block;}
+  .map-fig{margin:6px 0 10px;padding:0;border:1px solid var(--ink);background:var(--paper-2);}
+  .map-fig svg{display:block;width:100%;height:auto;}
+  .compare{margin:10px 0;border:1px solid var(--ink);background:var(--paper-2);padding:14px 16px;}
+  .compare h6{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;margin:0 0 8px;}
+  .compare .row{display:grid;grid-template-columns:120px 1fr 60px;align-items:center;gap:10px;margin-bottom:8px;}
+  .compare .lbl{font-family:"Playfair Display",serif;font-weight:700;font-size:13px;}
+  .compare .track{height:18px;border:1px solid var(--ink);position:relative;background:var(--paper);}
+  .compare .fill{position:absolute;left:0;top:0;bottom:0;background:var(--ink);}
+  .compare .fill.alt{background:repeating-linear-gradient(45deg,var(--accent) 0 3px,#a84442 3px 6px);}
+  .compare .val{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;text-align:right;}
+  .compare .cap{font-family:"Source Serif 4",serif;font-style:italic;font-size:11px;color:var(--muted);margin-top:6px;border-top:1px solid var(--ink);padding-top:6px;}
+  .dl-btn{position:fixed;right:20px;bottom:20px;z-index:50;display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.18em;font-size:12px;font-weight:600;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.25);transition:transform .15s ease,background .15s ease;}
+  .dl-btn:hover{background:var(--accent);transform:translateY(-1px);}.dl-btn svg{width:14px;height:14px;}
+  @page{size:A3 portrait;margin:10mm;}
+  @media print{html,body{background:#d9d2c2!important;padding:0!important;margin:0!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}body{padding:0!important;}*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}.paper{box-shadow:none!important;max-width:none!important;width:auto!important;margin:0!important;padding:24px 28px!important;}.dl-btn{display:none!important;}.section-head,.front,.stories,.kpis,.footer,.index,figure,.alert,.res-fig,.map-fig,.compare,.pull,.sources,article,.ticker{break-inside:avoid;page-break-inside:avoid;}.ticker{flex-wrap:wrap;white-space:normal;}}
+
+  /* ============================================================
+     MOBILE EDITION
+     ============================================================ */
+  @media (max-width: 900px){
+    body{padding:14px 8px 60px;}
+    .paper{max-width:100%;padding:22px 16px 36px;box-shadow:0 1px 0 rgba(0,0,0,.1),0 12px 28px rgba(0,0,0,.18);}
+    .top-bar{flex-direction:column;align-items:flex-start;gap:4px;font-size:11.5px;text-align:left;}
+    .top-bar .right{text-align:left;}.top-bar .center{letter-spacing:.14em;}
+    .masthead h1{font-size:clamp(34px,11vw,56px);white-space:normal;line-height:.96;}
+    .masthead .kicker{font-size:13px;}.masthead .latin{font-size:10px;letter-spacing:.22em;}
+    .dateline{grid-template-columns:1fr;gap:6px;font-size:12px;text-align:center;}
+    .dateline .l,.dateline .r{text-align:center;}
+    .geam-mark{justify-content:center;}.geam-brand-logo{height:36px;}
+    .front,.stories,div[style*="grid-template-columns"]{grid-template-columns:1fr!important;gap:18px!important;}
+    .col+.col,.stories>.story{border-left:none!important;padding-left:0!important;border-top:1px solid var(--ink)!important;padding-top:16px!important;}
+    .stories>.story:first-child{border-top:none!important;padding-top:0!important;}
+    h2.head{font-size:28px;}h3.head{font-size:21px;}h4.head{font-size:17px;}
+    .deck{font-size:14.5px;}
+    .body{font-size:14.5px;line-height:1.6;text-align:left;hyphens:auto;}
+    .body p:first-of-type::first-letter{font-size:46px;padding:2px 6px 0 0;}
+    .columns-2{column-count:1;column-rule:none;}
+    .kpis{grid-template-columns:repeat(2,1fr);}
+    .kpi{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);}
+    .kpi:nth-child(2n){border-right:none;}.kpi .v{font-size:24px;}
+    .index{grid-template-columns:repeat(2,1fr);gap:10px 14px;padding:10px 0;}
+    .index .it{border-left:0;padding-left:0;}
+    .section-head{gap:10px;margin:22px 0 10px;}.section-head .t{font-size:18px;}
+    .pull{font-size:18px;padding:10px 4px;}
+    .sources{padding:10px 12px;font-size:12px;}
+    .footer{flex-direction:column;gap:6px;text-align:center;font-size:10.5px;letter-spacing:.12em;}
+    .ticker{flex-wrap:wrap;white-space:normal;gap:10px 14px;font-size:10.5px;}
+    .res-fig{padding:12px 14px;}.res-fig .num{font-size:34px;}.res-fig .row{grid-template-columns:1fr;gap:8px;}
+    .compare .row{grid-template-columns:90px 1fr 50px;gap:8px;}.compare .lbl{font-size:12px;}.compare .track{height:14px;}
+    .alert{padding:12px 14px;}.alert h5{font-size:15.5px;}
+    .tag{font-size:10px;letter-spacing:.1em;}.impact{font-size:10px;letter-spacing:.12em;padding:2px 6px;}
+    div[style*="columns:3"]{column-count:1!important;}
+    .dl-btn{right:12px;bottom:12px;padding:10px 14px;font-size:11px;letter-spacing:.14em;}
+    svg{max-width:100%;height:auto;}
+  }
+  @media (max-width: 420px){
+    .paper{padding:18px 12px 32px;}.masthead h1{font-size:clamp(30px,12vw,46px);}
+    .kpis{grid-template-columns:1fr;}.kpi{border-right:none;}.kpi:last-child{border-bottom:none;}
+    .index{grid-template-columns:1fr;}
+    h2.head{font-size:24px;}.compare .row{grid-template-columns:80px 1fr 44px;}
+  }
+</style>
+</head>
+<body>
+
+<button class="dl-btn" id="dl-pdf" title="Descargar PDF">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+  <span id="dl-label">Descargar PDF</span>
+</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+(function(){const btn=document.getElementById('dl-pdf');const label=document.getElementById('dl-label');btn.addEventListener('click',async()=>{const paper=document.querySelector('.paper');if(!paper)return;btn.disabled=true;label.textContent='Generando…';btn.style.display='none';try{if(document.fonts&&document.fonts.ready){await document.fonts.ready;}const canvas=await html2canvas(paper,{scale:2,useCORS:true,backgroundColor:getComputedStyle(document.body).backgroundColor||'#d9d2c2',windowWidth:paper.scrollWidth,windowHeight:paper.scrollHeight,logging:false});const imgW=canvas.width;const imgH=canvas.height;const pxToPt=0.75;const pageW=paper.scrollWidth*pxToPt;const pageHperPage=pageW*(297/210);const totalH=imgH*(pageW/imgW);const{jsPDF}=window.jspdf;const pdf=new jsPDF({unit:'pt',format:[pageW,pageHperPage],orientation:'portrait',compress:true});const pages=Math.ceil(totalH/pageHperPage);const pxPerPage=Math.floor(imgW*(pageHperPage/pageW));for(let i=0;i<pages;i++){const sliceH=Math.min(pxPerPage,imgH-i*pxPerPage);const slice=document.createElement('canvas');slice.width=imgW;slice.height=sliceH;const ctx=slice.getContext('2d');ctx.drawImage(canvas,0,i*pxPerPage,imgW,sliceH,0,0,imgW,sliceH);const dataUrl=slice.toDataURL('image/jpeg',0.92);if(i>0)pdf.addPage([pageW,pageHperPage],'portrait');const drawH=sliceH*(pageW/imgW);pdf.addImage(dataUrl,'JPEG',0,0,pageW,drawH,undefined,'FAST');}pdf.save('Radar-Energetico-Movil-GEAM.pdf');}catch(err){console.error(err);alert('No se pudo generar el PDF.');}finally{btn.style.display='';btn.disabled=false;label.textContent='Descargar PDF';}});})();
+</script>
+
+<div class="paper">
+
+  <div class="top-bar">
+    <div class="left">Vol. IV · Núm. 17 · Edición Semanal</div>
+    <div class="center">— Inteligencia Estratégica del Sector Energético —</div>
+    <div class="right">Circulación ejecutiva · Tirada digital</div>
+  </div>
+
+  <header class="masthead">
+    <h1><span class="geam">GEAM ENERGY</span> <span class="news">NEWS</span></h1>
+    <div class="kicker">Monitoreo de gas natural, electricidad e hidrocarburos en Colombia</div>
+    <div class="latin">Ex datis, consilium · Desde los datos, la decisión</div>
+  </header>
+
+  <div class="dateline">
+    <div class="l">Barranquilla — Colombia</div>
+    <div class="c">Lunes, 27 de Abril de 2026 · Periodo monitoreado: 15–26 de Abril de 2026</div>
+    <div class="r"><span class="geam-mark"><img class="geam-brand-logo" src="assets/logo-geam.png" alt="Geam Energy"></span></div>
+  </div>
+
+  <nav class="index">
+    <div class="it"><div class="n">§ I</div><div class="t">Regulación · CREG 101102</div></div>
+    <div class="it"><div class="n">§ II</div><div class="t">Mercado de Gas</div></div>
+    <div class="it"><div class="n">§ III</div><div class="t">Mercado Eléctrico</div></div>
+    <div class="it"><div class="n">§ CL</div><div class="t">Clima · ENSO</div></div>
+    <div class="it"><div class="n">§ V</div><div class="t">Contexto Internacional</div></div>
+    <div class="it"><div class="n">§ VI</div><div class="t">Contradicciones</div></div>
+  </nav>
+
+  <!-- FRONT PAGE -->
+  <section class="front">
+    <div class="col">
+      <div class="eyebrow">Resumen ejecutivo · Periodo 15–26 Abr</div>
+      <h3 class="head">Tres riesgos simultáneos presionan el sistema energético colombiano</h3>
+      <div class="byline">Mesa de Inteligencia · Geam Energy · 27 Abr 2026</div>
+      <div class="body">
+        <p>El periodo 15–26 de abril consolida la convergencia de tres vectores de riesgo que el sector no había enfrentado de forma simultánea desde 2015–2016: la transición regulatoria incompleta hacia la CREG 101102 (solo 25% del parque térmico migrado), la probabilidad del ~39% de déficit de suministro firme de gas en el segundo semestre, y la proyección NOAA-CPC que fija una probabilidad del 93% de El Niño en OND con cerca de cinco meses de sequía previa.</p>
+        <p>La ventana de acción es mayo–junio. Los agentes que no aseguren contratos firmes de gas, no adelanten mantenimientos y no completen la migración a la nueva fórmula CREG quedarán expuestos en el trimestre más crítico del año.</p>
+      </div>
+      <div class="pull">"La ventana de acción es mayo–junio. Quien no actúe antes de JAS enfrentará el evento sin coberturas."<span class="src">Mesa de Inteligencia · Geam Energy</span></div>
+      <div class="eyebrow" style="margin-top:14px;">Tendencia del periodo</div>
+      <div class="meta">Embalses <span style="color:var(--accent)">▼</span> &nbsp; Demanda <span style="color:#2d5a2d">▲</span> +5,67% &nbsp; Déficit gas <span style="color:var(--accent)">▲</span> ~39% &nbsp; Brent <span style="color:#2d5a2d">▲</span> $103</div>
+    </div>
+
+    <div class="col">
+      <div class="eyebrow">Portada · Regulación Gas</div>
+      <h2 class="head">CREG 101102 reescribe el precio base del gas para generadores: 25% del parque ya migró</h2>
+      <div class="deck">La nueva fórmula introduce cuatro componentes: precio base, factor de escasez, cargo de regasificación GNL y margen comercializador. Transición de 18 meses; 75% del parque aún opera bajo reglas pre-reforma.</div>
+      <div class="byline">Fuentes: CREG · Naturgas · Hogan Lovells · Ministerio de Minas · 15–25 Abr 2026</div>
+      <figure class="res-fig">
+        <h6>Figura 1 · CREG 101102 — anatomía de la nueva fórmula</h6>
+        <div class="num" style="font-size:36px;letter-spacing:-.02em;">101102</div>
+        <div class="sub">Resolución CREG · transición 18 meses · 25% plantas migradas al corte</div>
+        <hr>
+        <div class="row">
+          <div><strong>PB — Precio Base</strong>Producción doméstica + prima Brent. Reemplaza el contrato bilateral directo.</div>
+          <div><strong>FE — Factor Escasez</strong>Activado por embalses y demanda térmica. Puede elevar el precio efectivo hasta 22% sobre el base.</div>
+          <div><strong>CReg — Cargo Regasificación</strong>Prorrateo terminal GNL Cartagena (126 MMpcd) entre plantas acogidas.</div>
+          <div><strong>MC — Margen Comercializador</strong>Techo 8% sobre precio base. Margen predecible para el agente intermediario.</div>
+        </div>
+      </figure>
+      <div class="body columns-2" style="margin-top:18px;">
+        <p>La Resolución CREG 101102 introduce un cambio estructural en la formación de precios del gas natural para generación eléctrica. Al reemplazar los contratos bilaterales directos por una fórmula regulada de cuatro componentes, el regulador busca reducir la asimetría de información y mejorar la señal de precio en escenarios de escasez hídrica.</p>
+        <p>El Factor de Escasez (FE) es el componente más debatido. Naturgas y los principales generadores térmicos han solicitado revisión del umbral de activación, argumentando que en condiciones de El Niño el mecanismo podría activarse de forma anticipada y elevar los costos operativos del sector.</p>
+        <p>El análisis de Hogan Lovells señala que el 75% del parque que aún no ha migrado enfrenta un período de homologación contractual complejo, con contratos con cláusulas de precio fijo o indexación a referencias distintas a las establecidas por la CREG 101102. La migración tardía implica mayor exposición al riesgo de precio durante el evento El Niño.</p>
+        <p>La capacidad disponible de regasificación — 126 MMpcd en Cartagena — es el ancla del componente CReg. A 78% de utilización, la terminal tiene margen operativo, pero en el escenario de déficit doméstico la demanda adicional de GNL podría saturar la capacidad en el trimestre crítico ASO–NDJ.</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="alert">
+        <span class="badge">Alerta · Nivel Alto</span>
+        <h5>Probabilidad de déficit de gas: ~39%</h5>
+        <div class="body" style="font-size:13px;"><p style="margin:4px 0 0;">Modelos de balance gas-demanda proyectan riesgo significativo de déficit de suministro firme en el 2S-2026 por declinación producción + mayor demanda térmica ante El Niño.</p></div>
+        <div style="margin-top:8px;"><span class="tag">#DéficitGas</span><span class="tag">#GNL</span><span class="tag">#Térmicas</span></div>
+      </div>
+      <div class="alert" style="border-color:var(--accent-2);background:rgba(138,106,26,.06);">
+        <span class="badge" style="background:var(--accent-2);">Alerta Climática · El Niño</span>
+        <h5 style="color:var(--accent-2);">El Niño desde septiembre · OND 93%</h5>
+        <div class="body" style="font-size:13px;"><p style="margin:4px 0 0;">~5 meses de sequía previa (may–ago). Embalses del SIN entrarán al evento en estrés hídrico. Período crítico sep-2026 / ene-2027.</p></div>
+        <div style="margin-top:8px;"><span class="tag">#ElNiño</span><span class="tag">#ENSO</span><span class="tag">#Hidrología</span></div>
+      </div>
+      <hr class="divider">
+      <div class="eyebrow">Señales clave del periodo</div>
+      <div class="body" style="font-size:13px;">
+        <p>— <strong>Regulación:</strong> CREG 101102 en transición; 25% plantas migradas.</p>
+        <p>— <strong>Gas:</strong> GNL 126 MMpcd; déficit firme ~39% prob. 2S-26.</p>
+        <p>— <strong>TGI:</strong> 8 proyectos expansión; P1 Loop Ballena 68% avance.</p>
+        <p>— <strong>Eléctrico:</strong> Demanda +5,67% a/a; embalses 63% en descenso.</p>
+        <p>— <strong>Internacional:</strong> Brent $103/bbl; TTF €34,8/MWh — alcista.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <span class="lab">TICKER</span>
+    <span class="it">Embalses SIN <b class="dn">63%</b></span>
+    <span class="it">Demanda <b class="up">+5,67%</b> a/a</span>
+    <span class="it">GNL <b>126 MMpcd</b></span>
+    <span class="it">CREG 101102 <b class="dn">25%</b> migradas</span>
+    <span class="it">Déficit gas <b class="dn">~39%</b></span>
+    <span class="it">Brent <b class="up">$103/bbl</b></span>
+    <span class="it">El Niño OND <b class="dn">93%</b></span>
+    <span class="it">TGI Loop Ballena <b>68%</b></span>
+    <span class="it">WTI <b class="up">$99,4</b></span>
+    <span class="it">TTF <b>€34,8/MWh</b></span>
+  </div>
+
+  <!-- §I REGULACIÓN -->
+  <div class="section-head">
+    <span class="no">§ I</span><span class="t">Regulación · CREG 101102</span><span class="line"></span>
+    <span class="meta">CREG · Ministerio · Naturgas · Hogan Lovells</span>
+  </div>
+  <div class="stories">
+    <article class="story">
+      <div class="eyebrow">CREG · Nueva fórmula</div>
+      <h3 class="head">El 75% del parque térmico aún no migra — riesgo de asimetría en el evento El Niño</h3>
+      <div class="byline">CREG · Naturgas · 15–19 Abr 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>La migración incompleta (25% al corte) crea asimetría de riesgo: los que adoptaron la nueva fórmula acceden al Factor de Escasez; los que no, quedan expuestos al precio de bolsa sin mecanismo de señal de escasez en el evento El Niño.</p><p><strong>Para generadores:</strong> no migrar antes de JAS implica exposición al mayor precio de bolsa sin protección regulatoria en los meses pico del evento.</p></div>
+      <div><span class="tag">#CREG101102</span><span class="tag">#Térmicas</span><span class="tag">#Migración</span></div>
+    </article>
+    <article class="story">
+      <div class="eyebrow">TGI · Expansión</div>
+      <h3 class="head">8 proyectos TGI en marcha: Loop Ballena Norte al 68%, entrada Q4 2026</h3>
+      <div class="byline">TGI · ANH · UPME · 16–23 Abr 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+      <div class="body"><p>TGI avanza en 8 proyectos que sumarían 180 MMpcd antes de 2028. El Loop Ballena Norte (+45 MMpcd, 68% avance) está previsto para Q4 2026 — en el pico de El Niño, con margen ajustado para pruebas operativas.</p><p><strong>Relevancia regulatoria:</strong> condicionantes ambientales de P3-P8 determinarán si los cronogramas se cumplen en el período crítico 2026–2028.</p></div>
+      <div class="pull" style="font-size:16px;">"La infraestructura llega en el pico — el margen para imprevistos es mínimo."<span class="src">Mesa de Inteligencia</span></div>
+      <div><span class="tag">#TGI</span><span class="tag">#LoopBallena</span><span class="tag">#Expansión</span></div>
+    </article>
+    <article class="story">
+      <div class="eyebrow">Hogan Lovells · Análisis</div>
+      <h3 class="head">Contratos legacy vs. nueva fórmula: la homologación es el mayor cuello de botella</h3>
+      <div class="byline">Hogan Lovells · 17–24 Abr 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+      <div class="body"><p>Los contratos bilaterales con precio fijo o indexación diferente a la CREG 101102 requieren renegociación formal — proceso que puede tomar 3–6 meses adicionales. Varios generadores no podrán estar en la nueva fórmula antes del evento climático.</p><p><strong>Recomendación:</strong> iniciar análisis de portafolio en mayo; priorizar contratos con mayor exposición al Factor de Escasez.</p></div>
+      <div><span class="tag">#HoganLovells</span><span class="tag">#Contratos</span><span class="tag">#Regulación</span></div>
+    </article>
+  </div>
+
+  <!-- §II MERCADO DE GAS -->
+  <div class="section-head">
+    <span class="no">§ II</span><span class="t">Mercado de Gas</span><span class="line"></span>
+    <span class="meta">Ecopetrol · Naturgas · Bolsa Mercantil · GNL Global</span>
+  </div>
+  <div class="stories" style="grid-template-columns:1.4fr 1fr 1fr;">
+    <article class="story">
+      <div class="eyebrow">GNL · TGI · Infraestructura</div>
+      <h2 class="head" style="font-size:30px;">126 MMpcd GNL disponible; 8 proyectos TGI buscan sumar 180 MMpcd antes de 2028</h2>
+      <div class="deck">Terminal Cartagena al 78% con 126 MMpcd. TGI expande la red troncal. Probabilidad de déficit firme: ~39% para el segundo semestre.</div>
+      <div class="byline">Ecopetrol · TGI · GNL Global · 15–26 Abr 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <figure class="map-fig">
+        <svg viewBox="0 0 420 220" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <pattern id="seaHm" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#c4b89c"/><path d="M0 4 Q1.5 2 3 4 T6 4" stroke="#141210" stroke-width=".6" fill="none"/></pattern>
+            <pattern id="landHm" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(20)"><rect width="4" height="4" fill="#ebe4d4"/><line x1="0" y1="0" x2="4" y2="0" stroke="#141210" stroke-width=".3" opacity=".4"/></pattern>
+            <marker id="arrMm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2F6B"/></marker>
+          </defs>
+          <rect x="1" y="1" width="418" height="218" fill="none" stroke="#141210"/>
+          <text x="12" y="18" font-family="Source Serif 4, serif" font-size="10" font-weight="700" letter-spacing="2" fill="#7a1a17">FIG. 2 · TGI — 8 PROYECTOS DE EXPANSIÓN 2025–2028</text>
+          <line x1="12" y1="24" x2="408" y2="24" stroke="#141210"/>
+          <rect x="1" y="25" width="418" height="60" fill="url(#seaHm)"/>
+          <rect x="1" y="85" width="418" height="133" fill="url(#landHm)"/>
+          <path d="M 60,85 Q 90,80 130,85 L 200,82 L 280,86 L 340,90 L 360,140 L 320,200 L 240,210 L 160,205 L 100,180 L 70,140 Z" fill="#f2ede2" stroke="#141210" stroke-width="1"/>
+          <g transform="translate(220,88)"><circle r="7" fill="#7a1a17" stroke="#141210"/><text y="-11" text-anchor="middle" font-family="Playfair Display, serif" font-size="10" font-weight="700" fill="#7a1a17">P1 Loop Ballena</text><text y="19" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#6b625a">+45 MMpcd · Q4 2026</text></g>
+          <g transform="translate(165,105)"><circle r="6" fill="#7a1a17" stroke="#141210"/><text y="-10" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#141210">P2 Cción. Jobo</text></g>
+          <g transform="translate(185,138)"><circle r="6" fill="#1B2F6B" stroke="#141210"/><text y="-10" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#141210">P3 Loop Bquilla</text></g>
+          <g transform="translate(195,155)"><circle r="5" fill="#1B2F6B" stroke="#141210"/><text y="-9" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#141210">P4 Cogua–Vasc.</text></g>
+          <g transform="translate(165,175)"><circle r="5" fill="#1B2F6B" stroke="#141210"/><text y="-9" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#141210">P5 Vasc.–Cali</text></g>
+          <g transform="translate(120,160)"><circle r="4" fill="#8a6a1a" stroke="#141210"/><text y="-8" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="#6b625a">P6</text></g>
+          <g transform="translate(240,130)"><circle r="4" fill="#8a6a1a" stroke="#141210"/><text y="-8" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="#6b625a">P7</text></g>
+          <g transform="translate(100,140)"><circle r="4" fill="#8a6a1a" stroke="#141210"/><text y="-8" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="#6b625a">P8</text></g>
+          <path d="M 220,95 L 185,110 L 185,138 L 190,155 L 170,175" stroke="#1B2F6B" stroke-width="2" stroke-dasharray="5 3" fill="none" marker-end="url(#arrMm)"/>
+          <rect x="280" y="165" width="130" height="48" fill="#f2ede2" stroke="#141210"/>
+          <text x="288" y="177" font-family="Source Serif 4, serif" font-size="9" font-weight="700">LEYENDA</text>
+          <circle cx="293" cy="188" r="5" fill="#7a1a17" stroke="#141210"/><text x="302" y="192" font-family="Source Serif 4, serif" font-size="8.5">P1–P2 · Q4 2026–Q1 2027</text>
+          <circle cx="293" cy="203" r="5" fill="#1B2F6B" stroke="#141210"/><text x="302" y="207" font-family="Source Serif 4, serif" font-size="8.5">P3–P5 · 2027</text>
+          <circle cx="293" cy="218" r="4" fill="#8a6a1a" stroke="#141210"/><text x="302" y="222" font-family="Source Serif 4, serif" font-size="8.5">P6–P8 · 2028</text>
+        </svg>
+      </figure>
+      <div class="body columns-2" style="margin-top:14px;">
+        <p>La capacidad GNL de 126 MMpcd en SPEC Cartagena opera al 78%. Cuellos de botella logísticos en la cadena de carga limitan la utilización plena. En un escenario de déficit doméstico, la demanda adicional de GNL puede saturar la capacidad disponible en ASO–NDJ.</p>
+        <p>La producción doméstica cayó 1,2% frente al promedio del Q1-2026 por declinación en campos maduros del Caribe y restricciones de transporte en el gasoducto Ballena–Barrancabermeja. La Bolsa Mercantil reportó aumento en transacciones de gas de corto plazo — señal de incertidumbre sobre disponibilidad firme en el mediano plazo.</p>
+      </div>
+      <div><span class="tag">#GNL</span><span class="tag">#TGI</span><span class="tag">#Ecopetrol</span></div>
+    </article>
+    <article class="story">
+      <div class="eyebrow">Balance oferta-demanda</div>
+      <h3 class="head">Modelo de balance: ~39% probabilidad de déficit de suministro firme en 2S-2026</h3>
+      <div class="byline">Naturgas · 19–25 Abr 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>Tres vectores simultáneos: (i) declinación producción Caribe; (ii) mayor demanda térmica por El Niño; (iii) capacidad de transporte saturada en picos. Una probabilidad del 39% implica que en casi dos de cada cinco trayectorias el sistema no tendrá suministro firme suficiente.</p></div>
+      <div class="compare">
+        <h6>Capacidad vs. demanda proyectada 2S-26</h6>
+        <div class="row"><span class="lbl">Prod. doméstica</span><div class="track"><div class="fill" style="width:68%;"></div></div><span class="val">-1,2%</span></div>
+        <div class="row"><span class="lbl">GNL disponible</span><div class="track"><div class="fill" style="width:78%;"></div></div><span class="val">126 MMpcd</span></div>
+        <div class="row"><span class="lbl">Demanda proyect.</span><div class="track"><div class="fill alt" style="width:92%;"></div></div><span class="val">↑ El Niño</span></div>
+        <div class="cap">~39% prob. brecha oferta-demanda en escenario adverso.</div>
+      </div>
+      <div><span class="tag">#DéficitGas</span><span class="tag">#Balance</span></div>
+    </article>
+    <article class="story">
+      <div class="eyebrow">Bolsa Mercantil</div>
+      <h3 class="head">Contratos de corto plazo se activan ante incertidumbre sobre disponibilidad firme</h3>
+      <div class="byline">Bolsa Mercantil · 16–24 Abr 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+      <div class="body"><p>El incremento en transacciones de gas de corto plazo es señal de que los agentes anticipan restricciones en contratos firmes de mediano plazo — consistente con el escenario de ~39% de déficit en el 2S-2026.</p><p><strong>Para compradores industriales:</strong> asegurar volúmenes firmes ahora. El precio spot de corto plazo tiene alta probabilidad de superar el precio de contratos vigentes entre julio y diciembre 2026.</p><p>Ecopetrol publicó actualizaciones al proceso de comercialización de gas Caribe 2026–2036 — señal de avance en contractualización de largo plazo para la costa.</p></div>
+      <div><span class="tag">#BolsaMercantil</span><span class="tag">#Ecopetrol</span></div>
+    </article>
+  </div>
+
+  <!-- §III MERCADO ELÉCTRICO -->
+  <div class="section-head">
+    <span class="no">§ III</span><span class="t">Mercado Eléctrico</span><span class="line"></span>
+    <span class="meta">XM · UPME · SSPD</span>
+  </div>
+  <div class="stories">
+    <article class="story">
+      <div class="eyebrow">XM · Embalses · Despacho</div>
+      <h3 class="head">Embalses SIN en 63% con tendencia descendente; demanda crece 5,67% interanual</h3>
+      <div class="byline">XM · UPME · 15–26 Abr 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>Los embalses promediaron 63% durante el período — sobre el umbral crítico pero en descenso sostenido. El aporte hídrico estuvo bajo el promedio histórico de abril en las cuencas del SIN. La generación hidráulica representó el 63,4% del despacho total. La demanda creció <strong>+5,67% interanual</strong>, superando las proyecciones del Plan de Expansión UPME 2024–2038.</p></div>
+      <div class="bars" aria-hidden="true"><b style="height:80%"></b><b style="height:75%"></b><b style="height:72%"></b><b style="height:68%"></b><b style="height:65%"></b><b style="height:63%"></b></div>
+      <div class="meta" style="margin-top:4px;">Nivel embalses SIN · 15–26 Abr · descenso gradual</div>
+      <div><span class="tag">#Embalses</span><span class="tag">#Demanda</span><span class="tag">#SIN</span></div>
+    </article>
+    <article class="story">
+      <div class="eyebrow">Generación · Despacho</div>
+      <h3 class="head">Térmica sube a 29,1% del despacho — 4,8 puntos más que el mismo período de 2025</h3>
+      <div class="byline">XM · Sinergox · 15–26 Abr 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+      <div class="body"><p>El incremento de 4,8 puntos en la participación térmica compensa el menor aporte hídrico. Disponibilidad efectiva superior al 80%, con restricciones puntuales en la Costa Caribe por suministro de gas. Este patrón se agudizará durante El Niño.</p></div>
+      <div class="pull" style="font-size:15px;">"Hidráulica 63,4% · Térmica 29,1% · Solar 4,2% · Eólica 3,3%"<span class="src">XM · Mesa de Inteligencia</span></div>
+      <div><span class="tag">#Térmica</span><span class="tag">#Despacho</span></div>
+    </article>
+    <article class="story">
+      <div class="eyebrow">Precios bolsa · SSPD</div>
+      <h3 class="head">Precios en bolsa entre $280 y $340/kWh con presión alcista; sin racionamientos</h3>
+      <div class="byline">XM · SSPD · 15–26 Abr 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+      <div class="body"><p>Precios spot entre $280 y $340/kWh, con presión al alza al cierre del período. Sin racionamientos reportados por la SSPD. Suspensiones puntuales en La Guajira y Córdoba por mantenimientos preventivos — sin carácter sistémico.</p><p>XM publicó ajustes a índices de pérdidas STN y cargos SDL con impacto sobre liquidaciones de agentes del mercado regulado y no regulado.</p></div>
+      <div><span class="tag">#PrecioBolsa</span><span class="tag">#SSPD</span><span class="tag">#SDL</span></div>
+    </article>
+  </div>
+
+  <!-- §CL CLIMA -->
+  <div class="section-head">
+    <span class="no">§ CL</span><span class="t">Clima · Riesgo Hidrológico</span><span class="line"></span>
+    <span class="meta">NOAA-CPC · IDEAM · ENSO 2026–2027</span>
+  </div>
+  <div class="stories" style="grid-template-columns:1.4fr 1fr;">
+    <article class="story">
+      <div class="eyebrow">ENSO · Proyección oficial</div>
+      <h2 class="head" style="font-size:30px;">El Niño llegaría con fuerza desde septiembre con probabilidad superior al 90%</h2>
+      <div class="deck">La proyección NOAA-CPC de abril 2026 consolida un escenario cálido sostenido. El país acumularía cerca de cinco meses de baja precipitación previos al pico del evento. Los gremios ya piden medidas de ahorro.</div>
+      <div class="byline">NOAA-CPC · IDEAM · Mesa de Inteligencia &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Impacto Alto</span></div>
+      <figure style="margin:6px 0 10px;padding:14px 16px 12px;border:1px solid var(--ink);background:var(--paper-2);">
+        <figcaption style="display:flex;flex-direction:column;gap:2px;margin-bottom:10px;border-bottom:1px solid var(--ink);padding-bottom:8px;">
+          <span style="font-family:'Source Serif 4',serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;">Figura 3 · Probabilidades ENSO</span>
+          <span style="font-family:'Playfair Display',serif;font-weight:900;font-size:18px;line-height:1.1;">NOAA CPC ENSO Probabilities — emitido Abril 2026</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;color:var(--muted);text-transform:uppercase;">Umbrales ±0,5 °C · ERSSTv5 · Niño-3.4 relativo</span>
+        </figcaption>
+        <div style="display:flex;gap:14px;margin-bottom:6px;font-family:'Source Serif 4',serif;font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--ink-2);">
+          <span><i style="display:inline-block;width:12px;height:9px;border:1px solid var(--ink);background:var(--ink);margin-right:5px;vertical-align:-1px;"></i>La Niña</span>
+          <span><i style="display:inline-block;width:12px;height:9px;border:1px solid var(--ink);background:#c4b89c;margin-right:5px;vertical-align:-1px;"></i>Neutral</span>
+          <span><i style="display:inline-block;width:12px;height:9px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg,var(--accent) 0 3px,#a84442 3px 6px);margin-right:5px;vertical-align:-1px;"></i>El Niño</span>
+        </div>
+        <div style="position:relative;padding-left:24px;">
+          <div style="position:absolute;left:0;top:0;bottom:18px;width:22px;font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;padding:1px 4px 0 0;"><span>100</span><span>75</span><span>50</span><span>25</span><span>0</span></div>
+          <div style="position:relative;height:160px;border-left:1px solid var(--ink);border-bottom:1px solid var(--ink);background:linear-gradient(0deg,rgba(0,0,0,.07) 0 1px,transparent 1px) 0 0/100% 25% repeat-y;">
+            <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(9,1fr);align-items:end;padding:0 3px;">
+              <div style="height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);background:var(--ink);height:1%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:99%"></div><div style="width:8px;border:1px solid var(--ink);height:0%"></div></div>
+              <div style="height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:80%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg,var(--accent) 0 3px,#a84442 3px 6px);height:20%"></div></div>
+              <div style="height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:39%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg,var(--accent) 0 3px,#a84442 3px 6px);height:61%"></div></div>
+              <div style="height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:21%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg,var(--accent) 0 3px,#a84442 3px 6px);height:79%"></div></div>
+              <div style="height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:13%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg,var(--accent) 0 3px,#a84442 3px 6px);height:87%;position:relative;"><span style="position:absolute;left:50%;transform:translateX(-50%);top:-13px;font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;color:var(--accent);">87</span></div></div>
+              <div style="height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:10%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg,var(--accent) 0 3px,#a84442 3px 6px);height:90%;position:relative;"><span style="position:absolute;left:50%;transform:translateX(-50%);top:-13px;font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;color:var(--accent);">90</span></div></div>
+              <div style="height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:8%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg,var(--accent) 0 3px,#a84442 3px 6px);height:92%;position:relative;"><span style="position:absolute;left:50%;transform:translateX(-50%);top:-13px;font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;color:var(--accent);">92</span></div></div>
+              <div style="height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:7%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg,var(--accent) 0 3px,#a84442 3px 6px);height:93%;position:relative;"><span style="position:absolute;left:50%;transform:translateX(-50%);top:-13px;font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;color:var(--accent);">93</span></div></div>
+              <div style="height:100%;display:flex;justify-content:center;align-items:flex-end;gap:1.5px;"><div style="width:8px;border:1px solid var(--ink);height:0%"></div><div style="width:8px;border:1px solid var(--ink);background:#c4b89c;height:8%"></div><div style="width:8px;border:1px solid var(--ink);background:repeating-linear-gradient(45deg,var(--accent) 0 3px,#a84442 3px 6px);height:92%;position:relative;"><span style="position:absolute;left:50%;transform:translateX(-50%);top:-13px;font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;color:var(--accent);">92</span></div></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(9,1fr);text-align:center;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-2);margin-top:5px;letter-spacing:.02em;"><span>MAM</span><span>AMJ</span><span>MJJ</span><span>JJA</span><span>JAS</span><span>ASO</span><span>SON</span><span>OND</span><span>NDJ</span></div>
+        </div>
+        <div style="margin-top:10px;padding-top:8px;border-top:1px solid var(--ink);font-family:'Source Serif 4',serif;font-style:italic;font-size:11.5px;color:var(--muted);line-height:1.4;">Fuente: NOAA CPC, abril 2026. Probabilidad El Niño cruza 50% en MJJ y supera 90% desde ASO; pico OND con 93%.</div>
+      </figure>
+      <div class="body columns-2" style="margin-top:14px;">
+        <p>El IDEAM y los centros de monitoreo internacionales anticipan que el fenómeno se intensificaría desde septiembre, luego de varios meses de caída en las lluvias. Para ese momento, el país acumularía cerca de cinco meses de sequía progresiva — desde mayo hasta agosto — con alertas tempranas en el sector energético por reducción esperada de niveles de embalse en las cuencas estratégicas del SIN: Magdalena, Cauca y Nechí.</p>
+        <p>Los gremios industriales han solicitado formalmente al Ministerio de Minas y Energía la activación de protocolos de ahorro voluntario y la revisión del PROURE. Andesco proyecta una reducción del 15–20% en la oferta hídrica firme para OND. La ventana de acción — mayo y junio — es la última oportunidad para estructurar coberturas operativas y contractuales antes del período de mayor riesgo.</p>
+      </div>
+      <div><span class="tag">#ElNiño</span><span class="tag">#NOAA</span><span class="tag">#IDEAM</span><span class="tag">#ENSO</span><span class="tag">#Hidrología</span></div>
+    </article>
+    <article class="story">
+      <div class="eyebrow">Implicaciones B2B</div>
+      <h3 class="head">Lectura para empresas del sector</h3>
+      <div class="byline">Mesa de Inteligencia &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body">
+        <p><strong>Generación.</strong> Mayor exigencia al parque térmico durante ASO–NDJ. Revisar disponibilidad de gas y combustibles líquidos; adelantar mantenimientos antes de septiembre.</p>
+        <p><strong>Comercialización.</strong> Reforzar cobertura contractual y contratos de largo plazo con indexación habilitada por la CREG 101102.</p>
+        <p><strong>Grandes consumidores.</strong> Evaluar dual-fuel y PPA renovables como cobertura ante repunte de precios térmicos del segundo semestre.</p>
+        <p><strong>Transmisión y transporte.</strong> Asegurar capacidad firme de transporte de gas y regasificación; coordinar con operadores.</p>
+      </div>
+      <div class="pull" style="font-size:15px;">"El período crítico para el SIN: septiembre 2026 – enero 2027."<span class="src">Mesa de Inteligencia · Geam Energy</span></div>
+      <div><span class="tag">#Térmica</span><span class="tag">#PPA</span><span class="tag">#DualFuel</span><span class="tag">#Cobertura</span></div>
+    </article>
+  </div>
+
+  <!-- §V CONTEXTO INTERNACIONAL + §VI CONTRADICCIONES -->
+  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:28px;">
+    <div>
+      <div class="section-head">
+        <span class="no">§ V</span><span class="t">Contexto Internacional</span><span class="line"></span>
+        <span class="meta">ICE · CME · EIA · Argus</span>
+      </div>
+      <article>
+        <div class="eyebrow">Commodities energéticos · 15–26 Abr 2026</div>
+        <h3 class="head">Brent supera $103/bbl; TTF en €34,8 con presión alcista por inventarios europeos</h3>
+        <div class="byline">ICE · CME Group · EIA · 26 Abr 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+        <div class="body columns-2">
+          <p>El Brent cerró en $103/bbl el 26 de abril, sostenido por recortes OPEC+, tensiones en el Golfo de Adén y debilitamiento del dólar. El WTI cerró en $99,4/bbl con diferencial Brent-WTI de $3,6 por encima del promedio histórico.</p>
+          <p>El impacto sobre Colombia es directo: los contratos GNL de corto plazo se indexan parcialmente al Brent, elevando el costo de regasificación en Cartagena. La paridad Brent×17 ≈ $6,06/MMBtu señala un costo de oportunidad relevante frente a la producción doméstica.</p>
+        </div>
+        <div class="compare">
+          <h6>Cotizaciones internacionales · 26 Abr 2026</h6>
+          <div class="row"><span class="lbl">Brent Crude</span><div class="track"><div class="fill" style="width:100%;"></div></div><span class="val up">$103,0</span></div>
+          <div class="row"><span class="lbl">WTI Crude</span><div class="track"><div class="fill" style="width:97%;"></div></div><span class="val up">$99,4</span></div>
+          <div class="row"><span class="lbl">Henry Hub</span><div class="track"><div class="fill alt" style="width:37%;"></div></div><span class="val">$3,82</span></div>
+          <div class="row"><span class="lbl">TTF Gas EUR</span><div class="track"><div class="fill alt" style="width:68%;"></div></div><span class="val up">€34,8</span></div>
+          <div class="cap">USD/bbl para crudos · USD/MMBtu para Henry Hub · EUR/MWh para TTF. Var. 7d: Brent +2,1% · WTI +1,8% · HH −0,5% · TTF +3,2%.</div>
+        </div>
+        <div><span class="tag">#Brent</span><span class="tag">#WTI</span><span class="tag">#HenryHub</span><span class="tag">#TTF</span></div>
+      </article>
+    </div>
+    <div>
+      <div class="section-head">
+        <span class="no">§ VI</span><span class="t">Contradicciones</span><span class="line"></span>
+      </div>
+      <article>
+        <div class="eyebrow">Señal de precio vs. incentivo transición</div>
+        <h4 class="head">Brent $103 debería acelerar renovables — pero la incertidumbre CREG lo frena</h4>
+        <div class="byline">Análisis Mesa de Inteligencia &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+        <div class="body"><p>El Brent en $103/bbl mejora la competitividad de renovables. Sin embargo, la incertidumbre alrededor de la CREG 101102 y los vacíos en remuneración de firmeza eólico-solar frenan las decisiones de inversión de largo plazo.</p></div>
+        <div class="sources" style="margin-top:10px;">
+          <h6>Otras contradicciones del período</h6>
+          <ul>
+            <li><strong>Demanda +5,67% + embalses ↓ + déficit gas ~39%:</strong> el sistema cubre el diferencial con térmica cuyo gas está en riesgo.</li>
+            <li><strong>GNL solución vs. capacidad limitada:</strong> terminal al 78%; déficit doméstico puede saturar capacidad en el trimestre crítico.</li>
+            <li><strong>Loop Ballena Norte en el pico:</strong> Q4 2026 — el El Niño ya estará activo con margen ajustado para comisionamiento.</li>
+            <li><strong>CREG 101102 al 25% vs. déficit 39%:</strong> la herramienta regulatoria llega con baja adopción al momento de mayor necesidad.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="section-head" style="margin-top:30px;">
+    <span class="no">§ KPI</span><span class="t">Indicadores del Periodo</span><span class="line"></span>
+    <span class="meta">15–26 Abr 2026 · Edición Núm. 17</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="l">Embalses SIN</div><div class="v">63%</div><div class="d down">Promedio 15–26 Abr</div></div>
+    <div class="kpi"><div class="l">Demanda Energía</div><div class="v">+5,67%</div><div class="d up">Var. a/a · período</div></div>
+    <div class="kpi"><div class="l">GNL Capacidad</div><div class="v">126<span style="font-size:14px"> MMpcd</span></div><div class="d">Regasificación</div></div>
+    <div class="kpi"><div class="l">Nueva Fórmula</div><div class="v">25%</div><div class="d down">Plantas migradas</div></div>
+    <div class="kpi"><div class="l">Prob. Déficit Gas</div><div class="v">~39%</div><div class="d down">Modelación 2S-2026</div></div>
+    <div class="kpi"><div class="l">Brent Crude</div><div class="v">$103</div><div class="d up">USD/bbl · spot</div></div>
+  </div>
+
+  <!-- Alertas + Agenda -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;">
+    <div class="sources">
+      <h6>Alertas críticas del período</h6>
+      <ul>
+        <li><strong>Déficit gas ~39%:</strong> probabilidad no marginal de brecha oferta-demanda firme en 2S-2026. Acción contractual requerida en mayo–junio.</li>
+        <li><strong>El Niño OND 93%:</strong> ~5 meses sequía previa. Embalses entran al evento en estrés. Período crítico sep-2026 / ene-2027.</li>
+        <li><strong>Fragmentación CREG 101102:</strong> 75% del parque fuera de la nueva fórmula — asimetría de riesgo en el evento climático.</li>
+      </ul>
+    </div>
+    <div class="sources">
+      <h6>Agenda regulatoria y operativa próxima</h6>
+      <ul>
+        <li><strong>May–Jun 2026.</strong> Ventana crítica para contratos firmes de gas con contingencia climática.</li>
+        <li><strong>May–Jun 2026.</strong> Plazo recomendado para completar migración a CREG 101102.</li>
+        <li><strong>Q4 2026.</strong> Entrada prevista P1 Loop Ballena Norte (+45 MMpcd) — TGI.</li>
+        <li><strong>Sep 2026.</strong> Inicio intensificación El Niño (ASO 90% → SON 92%).</li>
+        <li><strong>OND 2026.</strong> Pico El Niño 93% — máximo estrés del SIN.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EDITORIAL -->
+  <div class="section-head" style="margin-top:30px;">
+    <span class="no">§ ED</span><span class="t">Síntesis Ejecutiva · Editorial</span><span class="line"></span>
+    <span class="meta">Mesa de Inteligencia · Geam Energy · 27 Abr 2026</span>
+  </div>
+  <div style="border:2px solid var(--ink);padding:20px 22px;background:var(--paper-2);margin-bottom:22px;">
+    <div class="body columns-2">
+      <p>El período 15–26 de abril de 2026 consolida una imagen de convergencia de riesgos sin precedente reciente en el sector energético colombiano. A diferencia del episodio El Niño 2015–2016 — cuando el único vector crítico era la hidrología — el escenario actual suma tres tensiones que se retroalimentan: una transición regulatoria incompleta, un riesgo de suministro de gas que ya no es marginal, y un evento climático de alta probabilidad que amplificará las dos primeras.</p>
+      <p>La fragmentación de la migración a la CREG 101102 es el riesgo más subestimado del período. Con el 75% del parque térmico aún bajo contratos pre-reforma, el sistema carece de la señal de precio adecuada para gestionar el riesgo de escasez de forma simétrica. El Factor de Escasez — el instrumento diseñado para este escenario — solo beneficia a quienes completaron la migración.</p>
+      <p>La probabilidad del ~39% de déficit de suministro firme de gas merece atención especial: en casi dos de cada cinco trayectorias del sistema el gas no alcanzará para cubrir la demanda comprometida durante el segundo semestre. Ese es el contexto en el que operarán los embalses en descenso, el parque térmico en mayor exigencia y los contratos de GNL con Brent en $103.</p>
+      <p>La ventana de acción existe pero es corta: mayo y junio de 2026. Los agentes que aseguren contratos firmes de gas con cláusulas de contingencia climática, completen la migración a la CREG 101102 y adelanten mantenimientos mayores en su parque térmico estarán en una posición sustancialmente mejor cuando el evento alcance su pico en OND.</p>
+    </div>
+    <div class="byline" style="margin-top:14px;">Mesa de Inteligencia GEAM · Vol. IV · Núm. 17 · 27 Abr 2026 · Circulación restringida B2B</div>
+  </div>
+
+  <!-- FUENTES -->
+  <div class="section-head">
+    <span class="no">§ FT</span><span class="t">Fuentes Consultadas</span><span class="line"></span>
+  </div>
+  <div style="columns:3;column-gap:22px;font-family:'Source Serif 4',serif;font-size:12px;line-height:1.5;">
+    <p><strong>Oficiales —</strong> CREG (Resolución 101102), Ministerio de Minas y Energía, UPME (Plan de Expansión), ANH, XM (Sinergox / liquidaciones).</p>
+    <p><strong>Empresas / gremios —</strong> Ecopetrol (gas Caribe), TGI (expansión), Naturgas, Bolsa Mercantil de Colombia, SSPD, Andesco.</p>
+    <p><strong>Análisis legal —</strong> Hogan Lovells (CREG 101102 / contratos legacy).</p>
+    <p><strong>Clima —</strong> NOAA Climate Prediction Center (ENSO Probabilities, abril 2026), IDEAM (proyección hidrológica Q2–Q4 2026).</p>
+    <p><strong>Mercados internacionales —</strong> ICE (Brent, TTF), CME Group (WTI, Henry Hub), Argus Media, EIA.</p>
+    <p style="break-inside:avoid;"><em>Nota metodológica:</em> el análisis cubre publicaciones entre el 15 y el 26 de abril de 2026. Las probabilidades de déficit de gas son estimaciones de modelación y no constituyen proyecciones oficiales del regulador.</p>
+  </div>
+
+  <div class="footer">
+    <span>El Radar Energético · Vol. IV · Núm. 17</span>
+    <span>Próxima edición · Lunes 04 de Mayo de 2026</span>
+    <span>— fin de la edición —</span>
+  </div>
+
+</div>
+</body>
+</html>
