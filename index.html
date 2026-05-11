@@ -1,0 +1,2100 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>El Radar Energético — Edición Móvil · 10 May 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;600&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f2ede2;
+      --paper-2: #ebe4d4;
+      --ink: #141210;
+      --ink-2: #2b2724;
+      --rule: #1a1714;
+      --muted: #6b625a;
+      --accent: #7a1a17;
+      --accent-2: #8a6a1a;
+      --font-brand: 'Montserrat', sans-serif;
+      --geam-cyan: #00AEEF;
+      --geam-navy: #1B2F6B;
+      --geam-red: #C8102E;
+    }
+
+    html,
+    body {
+      background: #d9d2c2;
+      margin: 0;
+      padding: 0;
+      color: var(--ink);
+      font-family: "Source Serif 4", Georgia, serif;
+    }
+
+    body {
+      background: radial-gradient(1200px 600px at 50% -10%, rgba(0, 0, 0, .06), transparent 60%), #d9d2c2;
+      min-height: 100vh;
+      padding: 40px 20px 80px;
+    }
+
+    .paper {
+      max-width: 1240px;
+      margin: 0 auto;
+      background: var(--paper);
+      background-image: radial-gradient(transparent 1px, rgba(0, 0, 0, .02) 1.5px, transparent 2px), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08  0 0 0 0 0.06  0 0 0 0 0.04  0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      background-size: 3px 3px, 200px 200px;
+      padding: 48px 56px 64px;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, .1), 0 30px 60px rgba(0, 0, 0, .25), 0 80px 120px rgba(0, 0, 0, .15);
+      position: relative;
+    }
+
+    .paper::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(0, 0, 0, .06), transparent 8%, transparent 92%, rgba(0, 0, 0, .08)), linear-gradient(90deg, rgba(0, 0, 0, .04), transparent 6%, transparent 94%, rgba(0, 0, 0, .04));
+      mix-blend-mode: multiply;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-family: "Source Serif 4", serif;
+      font-style: italic;
+      font-size: 13px;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 8px;
+      letter-spacing: .02em;
+    }
+
+    .top-bar .left,
+    .top-bar .right {
+      flex: 1;
+    }
+
+    .top-bar .right {
+      text-align: right;
+    }
+
+    .top-bar .center {
+      flex: 0;
+      white-space: nowrap;
+      font-variant: small-caps;
+      letter-spacing: .2em;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .masthead {
+      text-align: center;
+      padding: 14px 0 6px;
+      border-bottom: 3px double var(--ink);
+    }
+
+    .masthead h1 {
+      font-family: var(--font-brand);
+      font-size: clamp(40px, 7.2vw, 104px);
+      font-weight: 900;
+      letter-spacing: -.01em;
+      line-height: .95;
+      margin: 0;
+      color: var(--geam-navy);
+      white-space: nowrap;
+    }
+
+    .masthead .kicker {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 15px;
+      color: var(--ink-2);
+      margin-top: 6px;
+    }
+
+    .masthead .latin {
+      font-family: "Source Serif 4", serif;
+      font-variant: small-caps;
+      letter-spacing: .35em;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .dateline {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 10px 4px;
+      border-bottom: 1px solid var(--ink);
+      font-family: "Source Serif 4", serif;
+      font-size: 13px;
+    }
+
+    .dateline .l {
+      text-align: left;
+      font-variant: small-caps;
+      letter-spacing: .15em;
+    }
+
+    .dateline .c {
+      font-style: italic;
+    }
+
+    .dateline .r {
+      text-align: right;
+    }
+
+    .geam-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .geam-brand-logo {
+      display: block;
+      height: 42px;
+      width: auto;
+    }
+
+    .front {
+      display: grid;
+      grid-template-columns: 1.1fr 1.6fr 1fr;
+      gap: 22px;
+      padding: 22px 0 10px;
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .col {
+      position: relative;
+    }
+
+    .col+.col {
+      border-left: 1px solid var(--ink);
+      padding-left: 22px;
+    }
+
+    .eyebrow {
+      font-family: "Source Serif 4", serif;
+      font-variant: small-caps;
+      letter-spacing: .25em;
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    h2.head {
+      font-family: "Playfair Display", serif;
+      font-weight: 900;
+      font-size: 38px;
+      line-height: 1.02;
+      margin: 2px 0 6px;
+      letter-spacing: -.01em;
+    }
+
+    h3.head {
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 1.08;
+      margin: 2px 0 6px;
+    }
+
+    h4.head {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.12;
+      margin: 2px 0 4px;
+    }
+
+    .deck {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.35;
+      color: var(--ink-2);
+      margin: 4px 0 10px;
+    }
+
+    .byline {
+      font-family: "Source Serif 4", serif;
+      font-variant: small-caps;
+      letter-spacing: .18em;
+      font-size: 10.5px;
+      color: var(--muted);
+      margin: 6px 0 10px;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      padding: 4px 0;
+    }
+
+    .body {
+      font-family: "Source Serif 4", serif;
+      font-size: 14px;
+      line-height: 1.55;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .body p {
+      margin: 0 0 .7em;
+    }
+
+    .body p:first-of-type::first-letter {
+      font-family: "Playfair Display", serif;
+      font-weight: 900;
+      float: left;
+      font-size: 56px;
+      line-height: .88;
+      padding: 4px 8px 0 0;
+      color: var(--ink);
+    }
+
+    .columns-2 {
+      column-count: 2;
+      column-gap: 22px;
+      column-rule: 1px solid rgba(0, 0, 0, .15);
+    }
+
+    .columns-2 p:first-child::first-letter {
+      all: unset;
+    }
+
+    .divider {
+      border: 0;
+      border-top: 1px solid var(--ink);
+      margin: 14px 0;
+    }
+
+    .divider.thick {
+      border-top: 3px double var(--ink);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 26px 0 10px;
+    }
+
+    .section-head .t {
+      font-family: "Playfair Display", serif;
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: .02em;
+    }
+
+    .section-head .no {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      border: 1px solid var(--ink);
+      padding: 2px 6px;
+      border-radius: 2px;
+      letter-spacing: .1em;
+    }
+
+    .section-head .line {
+      flex: 1;
+      border-top: 1px solid var(--ink);
+    }
+
+    .meta {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10.5px;
+      color: var(--muted);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: "Source Serif 4", serif;
+      font-variant: small-caps;
+      letter-spacing: .12em;
+      font-size: 10.5px;
+      border: 1px solid var(--ink);
+      padding: 1px 7px;
+      margin: 0 4px 4px 0;
+      color: var(--ink);
+    }
+
+    .impact {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: "Source Serif 4", serif;
+      font-variant: small-caps;
+      letter-spacing: .15em;
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border: 1px solid var(--ink);
+    }
+
+    .impact .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--ink);
+      display: inline-block;
+      border-radius: 50%;
+    }
+
+    .impact.high {
+      background: var(--accent);
+      color: var(--paper);
+      border-color: var(--accent);
+    }
+
+    .impact.high .dot {
+      background: var(--paper);
+    }
+
+    .impact.med {
+      background: var(--accent-2);
+      color: var(--paper);
+      border-color: var(--accent-2);
+    }
+
+    .impact.med .dot {
+      background: var(--paper);
+    }
+
+    .impact.low {
+      background: transparent;
+    }
+
+    .alert {
+      border: 2px solid var(--accent);
+      padding: 14px 16px;
+      margin: 14px 0;
+      background: rgba(122, 26, 23, .06);
+      position: relative;
+    }
+
+    .alert::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      height: 6px;
+      background: repeating-linear-gradient(45deg, var(--accent) 0 8px, transparent 8px 16px);
+    }
+
+    .alert h5 {
+      font-family: "Playfair Display", serif;
+      font-weight: 900;
+      font-size: 17px;
+      margin: 6px 0 4px;
+      color: var(--accent);
+      letter-spacing: .02em;
+    }
+
+    .alert .badge {
+      font-family: "Source Serif 4", serif;
+      font-variant: small-caps;
+      letter-spacing: .22em;
+      font-size: 10.5px;
+      color: var(--paper);
+      background: var(--accent);
+      padding: 2px 10px;
+      display: inline-block;
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+      border: 1px solid var(--ink);
+      margin: 18px 0 6px;
+      background: var(--paper-2);
+    }
+
+    .kpi {
+      padding: 12px 14px;
+      border-right: 1px solid var(--ink);
+    }
+
+    .kpi:last-child {
+      border-right: none;
+    }
+
+    .kpi .l {
+      font-family: "Source Serif 4", serif;
+      font-variant: small-caps;
+      letter-spacing: .15em;
+      font-size: 10.5px;
+      color: var(--muted);
+    }
+
+    .kpi .v {
+      font-family: "Playfair Display", serif;
+      font-weight: 900;
+      font-size: 28px;
+      line-height: 1;
+      margin-top: 4px;
+    }
+
+    .kpi .d {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      color: var(--ink-2);
+      margin-top: 4px;
+      letter-spacing: .05em;
+    }
+
+    .kpi .d.up {
+      color: #2d5a2d;
+    }
+
+    .kpi .d.down {
+      color: var(--accent);
+    }
+
+    .index {
+      border-top: 3px double var(--ink);
+      border-bottom: 3px double var(--ink);
+      padding: 10px 0;
+      margin: 14px 0;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      font-family: "Source Serif 4", serif;
+      font-size: 12px;
+    }
+
+    .index .it {
+      border-left: 1px solid rgba(0, 0, 0, .2);
+      padding-left: 10px;
+    }
+
+    .index .it:first-child {
+      border-left: 0;
+    }
+
+    .index .n {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .index .t {
+      font-weight: 700;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .stories {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 22px;
+      padding: 8px 0 20px;
+    }
+
+    .stories>.story {
+      border-left: 1px solid var(--ink);
+      padding-left: 22px;
+    }
+
+    .stories>.story:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .story .body {
+      font-size: 13.5px;
+    }
+
+    .pull {
+      border-top: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+      padding: 12px 6px;
+      margin: 10px 0;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .pull .src {
+      display: block;
+      font-family: "Source Serif 4", serif;
+      font-style: normal;
+      font-variant: small-caps;
+      letter-spacing: .2em;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .sources {
+      border: 1px solid var(--ink);
+      padding: 12px 14px;
+      background: var(--paper-2);
+      font-family: "Source Serif 4", serif;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .sources h6 {
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
+      font-size: 14px;
+      margin: 0 0 6px;
+      letter-spacing: .02em;
+    }
+
+    .sources ul {
+      margin: 0;
+      padding-left: 16px;
+    }
+
+    .sources li {
+      margin-bottom: 2px;
+    }
+
+    .ticker {
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      padding: 6px 0;
+      margin: 12px 0;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11.5px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .ticker .lab {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 2px 8px;
+      font-weight: 600;
+      letter-spacing: .1em;
+    }
+
+    .ticker .it {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ticker .up {
+      color: #2d5a2d;
+    }
+
+    .ticker .dn {
+      color: var(--accent);
+    }
+
+    .footer {
+      border-top: 3px double var(--ink);
+      margin-top: 20px;
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "Source Serif 4", serif;
+      font-size: 11.5px;
+      color: var(--muted);
+      font-variant: small-caps;
+      letter-spacing: .15em;
+    }
+
+    .bars {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 4px;
+      height: 72px;
+      margin-top: 12px;
+      padding: 8px 12px;
+      background: var(--paper-2);
+      border: 1px solid var(--ink);
+      position: relative;
+    }
+
+    .bars::before {
+      content: '';
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 8px;
+      height: 1px;
+      background: var(--ink);
+      opacity: 0.3;
+    }
+
+    .bars b {
+      display: block;
+      flex: 1;
+      max-width: 32px;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--ink) 100%);
+      border: 1px solid var(--ink);
+      position: relative;
+      transition: all 0.2s ease;
+    }
+
+    .bars b:hover {
+      background: linear-gradient(180deg, var(--geam-red) 0%, var(--accent) 100%);
+      transform: translateY(-2px);
+    }
+
+    .res-fig {
+      margin: 6px 0 10px;
+      padding: 14px 16px 12px;
+      border: 1px solid var(--ink);
+      background: var(--paper-2);
+    }
+
+    .res-fig h6 {
+      font-family: "Source Serif 4", serif;
+      font-variant: small-caps;
+      letter-spacing: .22em;
+      font-size: 10.5px;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0 0 6px;
+    }
+
+    .res-fig .num {
+      font-family: "Playfair Display", serif;
+      font-weight: 900;
+      font-size: 42px;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .res-fig .sub {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 4px;
+      letter-spacing: .05em;
+    }
+
+    .res-fig hr {
+      border: 0;
+      border-top: 1px solid var(--ink);
+      margin: 10px 0;
+    }
+
+    .res-fig .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      font-family: "Source Serif 4", serif;
+      font-size: 12px;
+    }
+
+    .res-fig .row strong {
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
+      font-size: 14px;
+      display: block;
+    }
+
+    .map-fig {
+      margin: 6px 0 10px;
+      padding: 0;
+      border: 1px solid var(--ink);
+      background: var(--paper-2);
+    }
+
+    .map-fig svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .compare {
+      margin: 10px 0;
+      border: 1px solid var(--ink);
+      background: var(--paper-2);
+      padding: 14px 16px;
+    }
+
+    .compare h6 {
+      font-family: "Source Serif 4", serif;
+      font-variant: small-caps;
+      letter-spacing: .22em;
+      font-size: 10.5px;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+
+    .compare .row {
+      display: grid;
+      grid-template-columns: 120px 1fr 60px;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .compare .lbl {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .compare .track {
+      height: 18px;
+      border: 1px solid var(--ink);
+      position: relative;
+      background: var(--paper);
+    }
+
+    .compare .fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: var(--ink);
+    }
+
+    .compare .fill.alt {
+      background: repeating-linear-gradient(45deg, var(--accent) 0 3px, #a84442 3px 6px);
+    }
+
+    .compare .val {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .compare .cap {
+      font-family: "Source Serif 4", serif;
+      font-style: italic;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 6px;
+      border-top: 1px solid var(--ink);
+      padding-top: 6px;
+    }
+
+    .dl-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+      font-family: "Source Serif 4", serif;
+      font-variant: small-caps;
+      letter-spacing: .18em;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .25);
+      transition: transform .15s ease, background .15s ease;
+    }
+
+    .dl-btn:hover {
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .dl-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .pdf-page-break {
+      display: block;
+      height: 1px;
+      margin: 0;
+      padding: 0;
+      border: none;
+      visibility: hidden;
+      page-break-before: always;
+    }
+
+    @page {
+      size: A3 portrait;
+      margin: 10mm;
+    }
+
+    @media print {
+
+      html,
+      body {
+        background: #d9d2c2 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      body {
+        padding: 0 !important;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .paper {
+        box-shadow: none !important;
+        max-width: none !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 24px 28px !important;
+      }
+
+      .dl-btn {
+        display: none !important;
+      }
+
+      .section-head,
+      .front,
+      .stories,
+      .kpis,
+      .footer,
+      .index,
+      figure,
+      .alert,
+      .res-fig,
+      .map-fig,
+      .compare,
+      .pull,
+      .sources,
+      article,
+      .ticker {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .ticker {
+        flex-wrap: wrap;
+        white-space: normal;
+      }
+    }
+
+    /* ============================================================
+     MOBILE EDITION
+     ============================================================ */
+    @media (max-width: 900px) {
+      body {
+        padding: 14px 8px 60px;
+      }
+
+      .paper {
+        max-width: 100%;
+        padding: 22px 16px 36px;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, .1), 0 12px 28px rgba(0, 0, 0, .18);
+      }
+
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        font-size: 11.5px;
+        text-align: left;
+      }
+
+      .top-bar .right {
+        text-align: left;
+      }
+
+      .top-bar .center {
+        letter-spacing: .14em;
+      }
+
+      .masthead h1 {
+        font-size: clamp(34px, 11vw, 56px);
+        white-space: normal;
+        line-height: .96;
+      }
+
+      .masthead .kicker {
+        font-size: 13px;
+      }
+
+      .masthead .latin {
+        font-size: 10px;
+        letter-spacing: .22em;
+      }
+
+      .dateline {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .dateline .l,
+      .dateline .r {
+        text-align: center;
+      }
+
+      .geam-mark {
+        justify-content: center;
+      }
+
+      .geam-brand-logo {
+        height: 36px;
+      }
+
+      .front,
+      .stories,
+      div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+      }
+
+      .col+.col,
+      .stories>.story {
+        border-left: none !important;
+        padding-left: 0 !important;
+        border-top: 1px solid var(--ink) !important;
+        padding-top: 16px !important;
+      }
+
+      .stories>.story:first-child {
+        border-top: none !important;
+        padding-top: 0 !important;
+      }
+
+      h2.head {
+        font-size: 28px;
+      }
+
+      h3.head {
+        font-size: 21px;
+      }
+
+      h4.head {
+        font-size: 17px;
+      }
+
+      .deck {
+        font-size: 14.5px;
+      }
+
+      .body {
+        font-size: 14.5px;
+        line-height: 1.6;
+        text-align: left;
+        hyphens: auto;
+      }
+
+      .body p:first-of-type::first-letter {
+        font-size: 46px;
+        padding: 2px 6px 0 0;
+      }
+
+      .columns-2 {
+        column-count: 1;
+        column-rule: none;
+      }
+
+      .kpis {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .kpi {
+        border-right: 1px solid var(--ink);
+        border-bottom: 1px solid var(--ink);
+      }
+
+      .kpi:nth-child(2n) {
+        border-right: none;
+      }
+
+      .kpi .v {
+        font-size: 24px;
+      }
+
+      .index {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px 14px;
+        padding: 10px 0;
+      }
+
+      .index .it {
+        border-left: 0;
+        padding-left: 0;
+      }
+
+      .section-head {
+        gap: 10px;
+        margin: 22px 0 10px;
+      }
+
+      .section-head .t {
+        font-size: 18px;
+      }
+
+      .pull {
+        font-size: 18px;
+        padding: 10px 4px;
+      }
+
+      .sources {
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+
+      .footer {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+        font-size: 10.5px;
+        letter-spacing: .12em;
+      }
+
+      .ticker {
+        flex-wrap: wrap;
+        white-space: normal;
+        gap: 10px 14px;
+        font-size: 10.5px;
+      }
+
+      .res-fig {
+        padding: 12px 14px;
+      }
+
+      .res-fig .num {
+        font-size: 34px;
+      }
+
+      .res-fig .row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .compare .row {
+        grid-template-columns: 90px 1fr 50px;
+        gap: 8px;
+      }
+
+      .compare .lbl {
+        font-size: 12px;
+      }
+
+      .compare .track {
+        height: 14px;
+      }
+
+      .alert {
+        padding: 12px 14px;
+      }
+
+      .alert h5 {
+        font-size: 15.5px;
+      }
+
+      .tag {
+        font-size: 10px;
+        letter-spacing: .1em;
+      }
+
+      .impact {
+        font-size: 10px;
+        letter-spacing: .12em;
+        padding: 2px 6px;
+      }
+
+      div[style*="columns:3"] {
+        column-count: 1 !important;
+      }
+
+      .dl-btn {
+        right: 12px;
+        bottom: 12px;
+        padding: 10px 14px;
+        font-size: 11px;
+        letter-spacing: .14em;
+      }
+
+      svg {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .paper {
+        padding: 18px 12px 32px;
+      }
+
+      .masthead h1 {
+        font-size: clamp(30px, 12vw, 46px);
+      }
+
+      .kpis {
+        grid-template-columns: 1fr;
+      }
+
+      .kpi {
+        border-right: none;
+      }
+
+      .kpi:last-child {
+        border-bottom: none;
+      }
+
+      .index {
+        grid-template-columns: 1fr;
+      }
+
+      h2.head {
+        font-size: 24px;
+      }
+
+      .compare .row {
+        grid-template-columns: 80px 1fr 44px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <button class="dl-btn" id="dl-pdf" title="Descargar PDF">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M12 3v12" />
+      <path d="M7 10l5 5 5-5" />
+      <path d="M5 21h14" />
+    </svg>
+    <span id="dl-label">Descargar PDF</span>
+  </button>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+    (function () {
+      const btn = document.getElementById('dl-pdf');
+      const label = document.getElementById('dl-label');
+
+      btn.addEventListener('click', async () => {
+        const paper = document.querySelector('.paper');
+        if (!paper) return;
+
+        btn.disabled = true;
+        label.textContent = 'Generando…';
+        btn.style.display = 'none';
+
+        const hiddenImages = [];
+        const savedStyles = [];
+
+        try {
+          if (document.fonts && document.fonts.ready) {
+            await document.fonts.ready;
+          }
+
+          // Hide problematic images for html2canvas (only cross-origin or incomplete)
+          document.querySelectorAll('img').forEach(img => {
+            if (img.crossOrigin === 'anonymous' || !img.complete) {
+              hiddenImages.push({ element: img, display: img.style.display });
+              img.style.display = 'none';
+            }
+          });
+
+          // Remove visual effects that cause bands in PDF
+          savedStyles.push({ el: paper, prop: 'boxShadow', val: paper.style.boxShadow });
+          paper.style.boxShadow = 'none';
+
+          const afterStyle = document.createElement('style');
+          afterStyle.id = 'pdf-no-overlay';
+          afterStyle.textContent = '.paper::after { display: none !important; }';
+          document.head.appendChild(afterStyle);
+
+          await new Promise(resolve => setTimeout(resolve, 300));
+
+          // Collect page-break positions
+          const breakOffsets = Array.from(paper.querySelectorAll('.pdf-page-break[data-force-page="true"]'))
+            .map(el => el.offsetTop);
+
+          // Render full paper to canvas
+          const canvas = await html2canvas(paper, {
+            scale: 2,
+            useCORS: false,
+            allowTaint: true,
+            backgroundColor: '#f2ede2',
+            logging: false,
+            ignoreElements: (el) => false
+          });
+
+          // Restore visual effects
+          paper.style.boxShadow = savedStyles[0].val;
+          afterStyle.remove();
+          hiddenImages.forEach(item => { item.element.style.display = item.display; });
+
+          const imgW = canvas.width;
+          const imgH = canvas.height;
+          const contentW = paper.scrollWidth;
+          const contentH = paper.scrollHeight;
+
+          // A3 dimensions in points
+          const A3_W_PT = 841.89;
+          const A3_H_PT = 1190.55;
+
+          // How many CSS pixels fit in one PDF page height
+          const pxPerPt = contentW / A3_W_PT;
+          const pageHPx = A3_H_PT * pxPerPt;
+
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF({
+            unit: 'pt',
+            format: [A3_W_PT, A3_H_PT],
+            orientation: 'portrait',
+            compress: true
+          });
+
+          const canvasScale = imgW / contentW;
+
+          // Build boundaries: 0, breaks, total height
+          const bounds = [0, ...breakOffsets, contentH]
+            .filter((v, i, a) => a.indexOf(v) === i)
+            .sort((a, b) => a - b);
+
+          let pageNum = 0;
+
+          for (let s = 0; s < bounds.length - 1; s++) {
+            const secStart = bounds[s];
+            const secEnd = bounds[s + 1];
+            const secH = secEnd - secStart;
+            if (secH <= 0) continue;
+
+            const pagesNeeded = Math.ceil(secH / pageHPx);
+
+            for (let p = 0; p < pagesNeeded; p++) {
+              const yStart = secStart + (p * pageHPx);
+              const yEnd = Math.min(yStart + pageHPx, secEnd);
+              const sliceH = yEnd - yStart;
+              if (sliceH <= 0) continue;
+
+              const yCanvas = yStart * canvasScale;
+              const hCanvas = sliceH * canvasScale;
+
+              const slice = document.createElement('canvas');
+              slice.width = imgW;
+              slice.height = Math.ceil(hCanvas);
+              const ctx = slice.getContext('2d');
+              ctx.drawImage(canvas, 0, yCanvas, imgW, hCanvas, 0, 0, imgW, Math.ceil(hCanvas));
+
+              const dataUrl = slice.toDataURL('image/jpeg', 0.95);
+
+              if (pageNum > 0) pdf.addPage([A3_W_PT, A3_H_PT], 'portrait');
+
+              // Height in PDF points that this slice should occupy
+              const drawH = sliceH * (A3_W_PT / contentW);
+
+              // Background matching paper color
+              pdf.setFillColor(242, 237, 226);
+              pdf.rect(0, 0, A3_W_PT, A3_H_PT, 'F');
+
+              // Draw at correct proportions
+              pdf.addImage(dataUrl, 'JPEG', 0, 0, A3_W_PT, drawH, undefined, 'FAST');
+
+              pageNum++;
+            }
+          }
+
+          pdf.save('Radar-Energetico-GEAM-10May2026.pdf');
+
+        } catch (err) {
+          console.error('PDF generation error:', err);
+          alert('Error al generar PDF. Revisa la consola.');
+          // Restore on error
+          if (savedStyles.length) paper.style.boxShadow = savedStyles[0].val;
+          const oldStyle = document.getElementById('pdf-no-overlay');
+          if (oldStyle) oldStyle.remove();
+          hiddenImages.forEach(item => { item.element.style.display = item.display; });
+        } finally {
+          btn.style.display = '';
+          btn.disabled = false;
+          label.textContent = 'Descargar PDF';
+        }
+      });
+    })();
+    </script>
+
+  <div class="paper">
+
+    <div class="top-bar">
+      <div class="left">Vol. IV · Núm. 18 · Edición Semanal</div>
+      <div class="center">— Inteligencia Estratégica del Sector Energético —</div>
+      <div class="right">Circulación ejecutiva · Tirada digital</div>
+    </div>
+
+    <header class="masthead">
+      <h1><span class="geam">GEAM ENERGY</span> <span class="news">NEWS</span></h1>
+      <div class="kicker">Monitoreo de gas natural, electricidad e hidrocarburos en Colombia</div>
+      <div class="latin">Ex datis, consilium · Desde los datos, la decisión</div>
+    </header>
+
+    <div class="dateline">
+      <div class="l">Barranquilla — Colombia</div>
+      <div class="c">Sábado, 10 de Mayo de 2026 · Periodo monitoreado: 3–10 de Mayo de 2026</div>
+      <div class="r"><span class="geam-mark"><img class="geam-brand-logo" src="assets/logo-geam.png"
+            alt="Geam Energy"></span></div>
+    </div>
+
+    <nav class="index">
+      <div class="it">
+        <div class="n">§ I</div>
+        <div class="t">Regulación y Política</div>
+      </div>
+      <div class="it">
+        <div class="n">§ II</div>
+        <div class="t">Mercado de Gas</div>
+      </div>
+      <div class="it">
+        <div class="n">§ III</div>
+        <div class="t">Mercado Eléctrico</div>
+      </div>
+      <div class="it">
+        <div class="n">§ IV</div>
+        <div class="t">Clima · El Niño</div>
+      </div>
+      <div class="it">
+        <div class="n">§ V</div>
+        <div class="t">Internacional</div>
+      </div>
+      <div class="it">
+        <div class="n">§ VI</div>
+        <div class="t">KPIs y Alertas</div>
+      </div>
+    </nav>
+
+    <!-- FRONT PAGE -->
+    <section class="front">
+      <div class="col">
+        <div class="eyebrow">Resumen ejecutivo · Periodo 3–10 May</div>
+        <h3 class="head">Crisis de gas converge con tensiones geopolíticas y riesgo de suministro</h3>
+        <div class="byline">Mesa de Inteligencia · Geam Energy · 10 May 2026</div>
+        <div class="body">
+          <p>El sector energético colombiano enfrenta una convergencia de riesgos sin precedentes. La audiencia del
+            tribunal canadiense sobre contratos de Canacol (15 de mayo) pone en riesgo el 7,5% del suministro nacional,
+            mientras el MinMinas publica decreto para regular mercado secundario y limitar intermediación. La
+            regasificadora SPEC reprograma mantenimiento para julio anticipando El Niño.</p>
+          <p>Simultáneamente, tensiones en el Estrecho de Ormuz impulsan el Brent a US$101,42 y el GNL spot en Asia a
+            US$17,80/MMBtu. Qatar extiende fuerza mayor hasta mediados de junio. Los embalses se recuperan superando el
+            65%, mientras la Corte Constitucional tumba el Decreto 044 que gravaba a generadoras, generando un agujero
+            fiscal crítico.</p>
+        </div>
+        <div class="pull">"Colombia ya no es autosuficiente en gas desde diciembre 2024. El 29% de la demanda se cubre
+          con importaciones."<span class="src">Análisis Sectorial SPEC</span></div>
+        <div class="eyebrow" style="margin-top:14px;">Tendencia del periodo</div>
+        <div class="meta">Embalses <span style="color:#2d5a2d">▲</span> 65%+ &nbsp; Brent <span
+            style="color:#2d5a2d">▲</span> $101 &nbsp; GNL Asia <span style="color:var(--accent)">▲</span> $17,80 &nbsp;
+          Dólar <span style="color:var(--accent)">▲</span> $3.736</div>
+      </div>
+
+      <div class="col">
+        <div class="eyebrow">Portada · Crisis Gas Natural</div>
+        <h2 class="head">Tribunal canadiense decidirá el 15 de mayo futuro de contratos de Canacol: 7,5% del suministro
+          en riesgo</h2>
+        <div class="deck">La Corte del Rey de Alberta aplazó al 15 de mayo la audiencia sobre terminación de 19
+          contratos de gas (75 mpcd). Si se autoriza, activa riesgo de desabastecimiento en Costa Caribe y Norte de
+          Santander. Autoridades colombianas deben definir excepción de orden público.</div>
+        <div class="byline">Fuentes: Valora Analitik · Naturgas · SuperSociedades · 9–10 May 2026</div>
+        <figure class="res-fig">
+          <h6>Figura 1 · Canacol — Riesgo sistémico de suministro</h6>
+          <div class="num" style="font-size:36px;letter-spacing:-.02em;">7,5%</div>
+          <div class="sub">Porcentaje del suministro nacional en riesgo · 75 mpcd · 12 empresas afectadas</div>
+          <hr>
+          <div class="row">
+            <div><strong>Canacol Energy</strong>Proceso de insolvencia desde nov 2025. Busca terminar contratos para
+              evitar penalizaciones >US$380M.</div>
+            <div><strong>Impacto Regional</strong>7 departamentos Costa Caribe + Norte de Santander. Riesgo directo de
+              desabastecimiento residencial estratos 1-3.</div>
+            <div><strong>Decisión Final</strong>Si Canadá autoriza, SuperSociedades, MinMinas, CREG, ANH deben coordinar
+              aplicación local. Excepción orden público (Ley 1116/2006).</div>
+            <div><strong>Cronograma</strong>15 mayo: Audiencia Alberta. Post-fallo: Revisión Colombia. Riesgo de venta a
+              precios más altos afectando tarifas.</div>
+          </div>
+        </figure>
+        <div class="body columns-2" style="margin-top:18px;">
+          <p>La Corte del Rey de Alberta aplazó al 15 de mayo la audiencia sobre la solicitud de Canacol Energy para
+            terminar 19 contratos de transporte y suministro con 12 empresas en Colombia. La compañía, que representa el
+            ~12% del mercado nacional de gas, busca evitar penalizaciones superiores a US$380 millones en su proceso de
+            insolvencia iniciado en noviembre 2025.</p>
+          <p>José Plata (Serrano Martínez CMA) explicó que cualquier decisión del tribunal canadiense debe pasar por
+            revisión de la Superintendencia de Sociedades y entidades del sector energético colombiano. Las autoridades
+            podrían no adoptar la medida por razones de orden público, dada la estrechez actual del mercado.</p>
+          <p>Si se autoriza la terminación, Canacol podría vender gas a precios más altos en el mercado spot, afectando
+            tarifas y subsidios de estratos 1-3 en la región Caribe. La decisión final requiere coordinación entre
+            MinMinas, CREG, Superservicios, SIC y ANH.</p>
+          <p>Naturgas ha solicitado aplicar la excepción de orden público contemplada en la Ley 1116 de 2006,
+            argumentando que la suspensión de contratos pondría en riesgo el suministro de un servicio público esencial
+            en un momento de alta vulnerabilidad del sistema.</p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="alert">
+          <span class="badge">Alerta · Nivel Alto</span>
+          <h5>Audiencia Canacol — 15 de mayo</h5>
+          <div class="body" style="font-size:13px;">
+            <p style="margin:4px 0 0;">Tribunal de Alberta decide sobre terminación de contratos. 7,5% suministro
+              nacional en riesgo. Autoridades colombianas deben definir excepción orden público antes de la fecha.</p>
+          </div>
+          <div style="margin-top:8px;"><span class="tag">#Canacol</span><span class="tag">#Gas</span><span
+              class="tag">#Suministro</span></div>
+        </div>
+        <div class="alert" style="border-color:var(--accent-2);background:rgba(138,106,26,.06);">
+          <span class="badge" style="background:var(--accent-2);">Alerta · SPEC Mantenimiento</span>
+          <h5 style="color:var(--accent-2);">Regasificadora fuera 30 jul–3 ago</h5>
+          <div class="body" style="font-size:13px;">
+            <p style="margin:4px 0 0;">Mantenimiento reprogramado a julio (orig. oct-nov). Terminal cubre 29% demanda
+              nacional. Cinco días fuera en pico El Niño. Riesgo si hay disrupción adicional.</p>
+          </div>
+          <div style="margin-top:8px;"><span class="tag">#SPEC</span><span class="tag">#GNL</span><span
+              class="tag">#Infraestructura</span></div>
+        </div>
+        <hr class="divider">
+        <div class="eyebrow">Señales clave del periodo</div>
+        <div class="body" style="font-size:13px;">
+          <p>— <strong>Regulación:</strong> Decreto 044 tumba Corte; MinMinas publica borrador gas secundario.</p>
+          <p>— <strong>Gas:</strong> GNL importado 29% demanda; Canacol 7,5% en riesgo; FSRU La Guajira aprobado.</p>
+          <p>— <strong>Eléctrico:</strong> Embalses 65%+ recuperación; ISA nueva presidenta encargada.</p>
+          <p>— <strong>Internacional:</strong> Brent $101,42; GNL Asia $17,80; Qatar fuerza mayor hasta jun.</p>
+          <p>— <strong>Fiscal:</strong> Ecopetrol: -26,1% utilidades Q1 2026; dólar $3.736 presión alcista.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker">
+      <span class="lab">TICKER</span>
+      <span class="it">Embalses SIN <b class="up">65%+</b></span>
+      <span class="it">Canacol <b class="dn">7,5%</b> riesgo</span>
+      <span class="it">GNL importado <b>29%</b> demanda</span>
+      <span class="it">Brent <b class="up">$101,42</b></span>
+      <span class="it">Dólar <b class="up">$3.736</b></span>
+      <span class="it">GNL Asia <b class="up">$17,80</b></span>
+      <span class="it">Decreto 044 <b class="dn">Inexequible</b></span>
+      <span class="it">Ecopetrol <b class="dn">-26,1%</b> Q1</span>
+      <span class="it">WTI <b class="up">$95,42</b></span>
+      <span class="it">Henry Hub <b>$2,76</b></span>
+    </div>
+
+    <div class="pdf-page-break" data-force-page="true"></div>
+
+    <!-- §I REGULACIÓN -->
+    <div class="section-head">
+      <span class="no">§ I</span><span class="t">Regulación y Política</span><span class="line"></span>
+      <span class="meta">MinMinas · CREG · Corte Constitucional · UPME</span>
+    </div>
+    <div class="stories">
+      <article class="story">
+        <div class="eyebrow">Corte Constitucional · Decreto 044</div>
+        <h3 class="head">Corte tumba decreto que gravaba a generadoras: devolución retroactiva y agujero fiscal</h3>
+        <div class="byline">Corte Constitucional · Infobae · 06 May 2026 &nbsp;|&nbsp; <span class="impact high"><span
+              class="dot"></span>Alto</span></div>
+        <div class="body">
+          <p>La Sentencia C-115 de 2026 declaró inexequible el Decreto Legislativo 044 de 2026, eliminando la
+            contribución parafiscal transitoria a generadoras y ordenando devolución retroactiva mediante descuentos
+            tributarios. Plazo: 6 meses vía DIAN.</p>
+          <p><strong>Impacto fiscal:</strong> Inyecta liquidez a generadoras pero traslada presión a la SSPD. Los
+            recursos parafiscales estaban destinados a capitalizar distribuidoras intervenidas. Sin esta fuente, el
+            Gobierno debe buscar alternativas en el PGN o nuevas reformas tarifarias.</p>
+          <p><strong>Certificaciones:</strong> XM (ASIC) debe expedir certificaciones de energía entregada y precios de
+            bolsa como soporte para descuentos tributarios en declaraciones de renta.</p>
+        </div>
+        <div><span class="tag">#CorteConstitucional</span><span class="tag">#Decreto044</span><span
+            class="tag">#Impuestos</span></div>
+      </article>
+      <article class="story">
+        <div class="eyebrow">MinMinas · Mercado Secundario Gas</div>
+        <h3 class="head">Proyecto de decreto para regular mercado secundario de gas y limitar intermediación</h3>
+        <div class="byline">MinMinas · La República · 09 May 2026 &nbsp;|&nbsp; <span class="impact high"><span
+              class="dot"></span>Alto</span></div>
+        <div class="body">
+          <p>El MinMinas publicó borrador de decreto que reconfigura condiciones de contratación en mercado de gas,
+            introduciendo "contratos firmes sujetos a condiciones" y estableciendo límites a comercialización
+            secundaria.</p>
+          <p><strong>Topes al margen:</strong> Limita márgenes en gas importado. Hasta tercera negociación con margen
+            definido por ministerio; desde cuarta, precio no puede superar valor contratado originalmente.</p>
+          <p><strong>Demanda esencial:</strong> Define jerarquía: residenciales, pequeños comerciales, estaciones SNT y
+            GNCV primero. Excluye autogeneración sustituible por SIN.</p>
+          <p><strong>Objetivo:</strong> Contener precios ante estrechez estructural y erradicar especulación comercial
+            en desmedro del usuario final. Requiere resoluciones complementarias de la CREG.</p>
+        </div>
+        <div><span class="tag">#MinMinas</span><span class="tag">#Gas</span><span class="tag">#Regulación</span><span
+            class="tag">#Precios</span></div>
+      </article>
+      <article class="story">
+        <div class="eyebrow">MinMinas · Infraestructura Eléctrica</div>
+        <h3 class="head">Nuevos mecanismos para priorizar proyectos eléctricos y liberar puntos de conexión bloqueados
+        </h3>
+        <div class="byline">MinMinas · UPME · 06 May 2026 &nbsp;|&nbsp; <span class="impact med"><span
+              class="dot"></span>Medio</span></div>
+        <div class="body">
+          <p>Resolución para reformar asignación de capacidad de transporte en SIN. Otorga a UPME herramientas para
+            liberar puntos de conexión bloqueados por promotores especulativos sin cierre financiero.</p>
+          <p><strong>"Ventanilla única":</strong> Simplifica conexión de proyectos con PPAs o OEF asignadas por XM.
+            Auditorías estrictas sobre cronogramas: quienes no cumplan verán revocada su capacidad.</p>
+          <p><strong>Impacto:</strong> Ataca cuello de botella estructural para expansión. Más de 5.000 MW en portafolio
+            sin cierre financiero enfrentan auditorías. Prioriza plantas que aportan confiabilidad demostrable.</p>
+        </div>
+        <div><span class="tag">#Infraestructura</span><span class="tag">#UPME</span><span class="tag">#Conexiones</span>
+        </div>
+      </article>
+    </div>
+
+    <!-- §II MERCADO DE GAS -->
+    <div class="section-head">
+      <span class="no">§ II</span><span class="t">Mercado de Gas</span><span class="line"></span>
+      <span class="meta">Ecopetrol · Naturgas · UPME · SPEC · TGI</span>
+    </div>
+    <div class="stories" style="grid-template-columns:1.4fr 1fr 1fr;">
+      <article class="story">
+        <div class="eyebrow">FSRU La Guajira · Infraestructura</div>
+        <h2 class="head" style="font-size:30px;">UPME aprueba megaproyecto FSRU offshore La Guajira: 250 mpcd para
+          blindar abastecimiento</h2>
+        <div class="deck">La UPME aprobó técnicamente el desarrollo de la unidad flotante de almacenamiento y
+          regasificación (FSRU) offshore en La Guajira. Aportará hasta 250 millones de pies cúbicos diarios al Sistema
+          Nacional de Transporte. Colombia ya no es autosuficiente en gas desde dic 2024.</div>
+        <div class="byline">UPME · MinMinas · 07 May 2026 &nbsp;|&nbsp; <span class="impact high"><span
+              class="dot"></span>Alto</span></div>
+        <figure class="map-fig">
+          <svg viewBox="0 0 420 220" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <pattern id="seaHm" width="6" height="6" patternUnits="userSpaceOnUse">
+                <rect width="6" height="6" fill="#c4b89c" />
+                <path d="M0 4 Q1.5 2 3 4 T6 4" stroke="#141210" stroke-width=".6" fill="none" />
+              </pattern>
+              <pattern id="landHm" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+                <rect width="4" height="4" fill="#ebe4d4" />
+                <line x1="0" y1="0" x2="4" y2="0" stroke="#141210" stroke-width=".3" opacity=".4" />
+              </pattern>
+              <marker id="arrMm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6"
+                orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="#1B2F6B" />
+              </marker>
+            </defs>
+            <rect x="1" y="1" width="418" height="218" fill="none" stroke="#141210" />
+            <text x="12" y="18" font-family="Source Serif 4, serif" font-size="10" font-weight="700" letter-spacing="2"
+              fill="#7a1a17">FIG. 2 · INFRAESTRUCTURA GNL COLOMBIA — DOS TERMINALES</text>
+            <line x1="12" y1="24" x2="408" y2="24" stroke="#141210" />
+            <rect x="1" y="25" width="418" height="80" fill="url(#seaHm)" />
+            <rect x="1" y="105" width="418" height="113" fill="url(#landHm)" />
+            <path
+              d="M 60,105 Q 90,100 130,105 L 200,102 L 280,106 L 340,110 L 360,150 L 320,205 L 240,212 L 160,208 L 100,185 L 70,145 Z"
+              fill="#f2ede2" stroke="#141210" stroke-width="1" />
+            <g transform="translate(100,70)">
+              <circle r="9" fill="#C8102E" stroke="#141210" stroke-width="2" /><text y="-16" text-anchor="middle"
+                font-family="Playfair Display, serif" font-size="11" font-weight="800" fill="#7a1a17">FSRU La
+                Guajira</text><text y="24" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8"
+                fill="#141210">250 mpcd · Aprobado</text>
+            </g>
+            <g transform="translate(280,120)">
+              <circle r="8" fill="#1B2F6B" stroke="#141210" stroke-width="2" /><text y="-14" text-anchor="middle"
+                font-family="Playfair Display, serif" font-size="10" font-weight="700" fill="#1B2F6B">SPEC
+                Cartagena</text><text y="21" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8"
+                fill="#141210">126 mpcd · 29% demanda</text>
+            </g>
+            <path d="M 105,79 L 105,120" stroke="#C8102E" stroke-width="3" stroke-dasharray="6 4"
+              marker-end="url(#arrMm)" />
+            <path d="M 285,128 L 285,165" stroke="#1B2F6B" stroke-width="3" marker-end="url(#arrMm)" />
+            <rect x="20" y="165" width="140" height="45" fill="#f2ede2" stroke="#141210" />
+            <text x="28" y="177" font-family="Source Serif 4, serif" font-size="9" font-weight="700">GNL
+              IMPORTADO</text>
+            <circle cx="33" cy="188" r="5" fill="#C8102E" stroke="#141210" /><text x="42" y="192"
+              font-family="Source Serif 4, serif" font-size="8.5">FSRU Offshore · 250 mpcd</text>
+            <circle cx="33" cy="203" r="5" fill="#1B2F6B" stroke="#141210" /><text x="42" y="207"
+              font-family="Source Serif 4, serif" font-size="8.5">SPEC Terminal · 126 mpcd</text>
+          </svg>
+        </figure>
+        <div class="body columns-2" style="margin-top:14px;">
+          <p>La Unidad de Planeación Minero-Energética (UPME) aprobó técnicamente el desarrollo de la unidad flotante de
+            almacenamiento y regasificación (FSRU) offshore en La Guajira, infraestructura estratégica que aportará
+            hasta 250 millones de pies cúbicos diarios al Sistema Nacional de Transporte. Esta aprobación
+            institucionaliza definitivamente al Gas Natural Licuado importado como soporte marginal insustituible para
+            evitar una sequía severa de moléculas en el tejido industrial del país.</p>
+          <p>Colombia ya no es autosuficiente en gas natural desde diciembre de 2024. El 29% de la demanda nacional
+            actual se cubre con importaciones a través de la terminal de regasificación SPEC en Cartagena. La nueva FSRU
+            en La Guajira duplicará la capacidad de importación, diversificando geográficamente la entrada de GNL y
+            reduciendo vulnerabilidad ante mantenimientos o disrupciones operativas en Cartagena.</p>
+        </div>
+        <div><span class="tag">#FSRU</span><span class="tag">#GNL</span><span class="tag">#LaGuajira</span><span
+            class="tag">#UPME</span></div>
+      </article>
+      <article class="story">
+        <div class="eyebrow">SPEC · Mantenimiento</div>
+        <h3 class="head">Regasificadora de Cartagena saldrá de operación en julio previo a etapa crítica de El Niño</h3>
+        <div class="byline">SPEC · Andeg · Valora Analitik · 10 May 2026 &nbsp;|&nbsp; <span class="impact high"><span
+              class="dot"></span>Alto</span></div>
+        <div class="body">
+          <p>El mantenimiento preventivo de la terminal de regasificación de SPEC LNG se reprogramó del 30 de julio al 3
+            de agosto de 2026 (originalmente octubre-noviembre). La decisión fue solicitada por generadoras térmicas a
+            través de Andeg para tener infraestructura disponible durante pico de demanda por El Niño en segundo
+            semestre.</p>
+          <p><strong>Capacidad crítica:</strong> La terminal cubrió el 29% de la demanda nacional la semana pasada. 450
+            GBTUD reservados para térmicas, 25 GBTUD para hogares e industria. Abastece Termoflores, Tebsa y
+            Termocandelaria (~75% demanda eléctrica Caribe).</p>
+          <p><strong>Riesgo:</strong> En octubre 2025, un mantenimiento se extendió 2 días por falla eléctrica, poniendo
+            al país al borde del racionamiento. Reconocimiento implícito de que Colombia depende críticamente del GNL
+            importado.</p>
+        </div>
+        <div class="compare">
+          <h6>SPEC Cartagena — Capacidad y utilización</h6>
+          <div class="row"><span class="lbl">Capacidad total</span>
+            <div class="track">
+              <div class="fill" style="width:100%;"></div>
+            </div><span class="val">126 mpcd</span>
+          </div>
+          <div class="row"><span class="lbl">% demanda nacional</span>
+            <div class="track">
+              <div class="fill alt" style="width:29%;"></div>
+            </div><span class="val">29%</span>
+          </div>
+          <div class="row"><span class="lbl">Mantenimiento</span>
+            <div class="track">
+              <div class="fill alt" style="width:5%;"></div>
+            </div><span class="val">30 jul–3 ago</span>
+          </div>
+          <div class="cap">Cinco días fuera de servicio en el pico de transición hacia El Niño.</div>
+        </div>
+        <div><span class="tag">#SPEC</span><span class="tag">#GNL</span><span class="tag">#Infraestructura</span></div>
+      </article>
+      <article class="story">
+        <div class="eyebrow">Canacol · Contratos</div>
+        <h3 class="head">Empresas se plantan contra Canacol: alertan desplome en producción hasta junio 2026</h3>
+        <div class="byline">Valora Analitik · Naturgas · 09 May 2026 &nbsp;|&nbsp; <span class="impact high"><span
+              class="dot"></span>Alto</span></div>
+        <div class="body">
+          <p>Documentos sobre reestructuración de Canacol advierten sobre desplome en producción de gas hasta junio de
+            2026. El suministro estaría en juego si se concretan terminaciones contractuales.</p>
+          <p><strong>Riesgo operativo:</strong> Interrupción de suministro a 12 empresas distribuidoras. Presión sobre
+            alternativas de abastecimiento (GNL importado, producción de otros campos).</p>
+          <p><strong>Contexto:</strong> Si el tribunal canadiense autoriza la terminación de contratos el 15 de mayo, y
+            las autoridades colombianas no invocan la excepción de orden público, el sistema perdería acceso inmediato
+            al 7,5% del suministro nacional (75 mpcd) que Canacol actualmente provee bajo contratos.</p>
+        </div>
+        <div><span class="tag">#Canacol</span><span class="tag">#Gas</span><span class="tag">#Suministro</span></div>
+      </article>
+    </div>
+
+    <!-- §III MERCADO ELÉCTRICO -->
+    <div class="pdf-page-break" data-force-page="true"></div>
+    <div class="section-head">
+      <span class="no">§ III</span><span class="t">Mercado Eléctrico</span><span class="line"></span>
+      <span class="meta">XM · UPME · SSPD · ISA</span>
+    </div>
+    <div class="stories">
+      <article class="story">
+        <div class="eyebrow">XM · Embalses · Recuperación</div>
+        <h3 class="head">Embalses SIN superan el 65% con recuperación hidráulica sostenida tras subastas de energía
+          firme</h3>
+        <div class="byline">XM · UPME · 3–10 May 2026 &nbsp;|&nbsp; <span class="impact high"><span
+              class="dot"></span>Alto</span></div>
+        <div class="body">
+          <p>Los embalses del SIN superaron el 65% de su volumen útil durante el período 3–10 de mayo, consolidando la
+            recuperación hidrólica tras semanas de aportes por encima del promedio histórico. Este nivel disipa los
+            temores de racionamiento sistémico proyectados hasta 2028.</p>
+          <p><strong>Subastas exitosas:</strong> La adjudicación de 21,5 GWh/día en Obligaciones de Energía Firme (OEF)
+            blinda operativamente al sistema contra proyecciones adversas de desabastecimiento para 2027-2028. Sin
+            embargo, las tensiones se trasladan al ámbito regulatorio y financiero.</p>
+          <p><strong>Contexto:</strong> Durante abril, los embalses promediaban ~63% con tendencia descendente. La
+            recuperación de mayo confirma el fin del período crítico previo al evento El Niño.</p>
+        </div>
+        <div><span class="tag">#Embalses</span><span class="tag">#SIN</span><span class="tag">#XM</span></div>
+      </article>
+      <article class="story">
+        <div class="eyebrow">ISA · Empresas</div>
+        <h3 class="head">Olga Patricia Castaño, nueva presidenta (e) de ISA tras salida de Melguizo</h3>
+        <div class="byline">ISA · Valora Analitik · 05 May 2026 &nbsp;|&nbsp; <span class="impact med"><span
+              class="dot"></span>Medio</span></div>
+        <div class="body">
+          <p>La Junta Directiva de ISA designó a Olga Patricia Castaño como presidenta encargada, reemplazando a Gabriel
+            Jaime Melguizo. Castaño tiene 26 años en la organización y lideró las últimas cuatro formulaciones
+            estratégicas. Juan Pablo Zárate fue reelegido como presidente de la Junta Directiva.</p>
+          <p><strong>Continuidad:</strong> Segundo nombramiento tras la salida de Jorge Carrillo. Castaño conoce
+            profundamente la organización, lo que asegura estabilidad en la gestión de ISA como filial de Ecopetrol.</p>
+          <p><strong>Financiero:</strong> ISA habría registrado utilidad de $642.000 millones en Q1 2026, caída
+            interanual de 7,6%.</p>
+        </div>
+        <div><span class="tag">#ISA</span><span class="tag">#Empresas</span><span class="tag">#Transmisión</span></div>
+      </article>
+      <article class="story">
+        <div class="eyebrow">CREG · Nuevo Régimen</div>
+        <h3 class="head">CREG anuncia nuevo marco tarifario con transparencia en facturación y fomento a autogeneración
+        </h3>
+        <div class="byline">CREG · La FM · 05 May 2026 &nbsp;|&nbsp; <span class="impact med"><span
+              class="dot"></span>Medio</span></div>
+        <div class="body">
+          <p>La CREG anunció la estructuración de un nuevo marco regulatorio tarifario enfocado en transparencia de
+            facturación, descentralización mediante incentivos a autogeneración y mitigación de costos sistémicos para
+            el consumidor final.</p>
+          <p><strong>Cambio de paradigma:</strong> Desplaza el eje desde rentabilidad garantizada de prestadoras hacia
+            optimización de costo final y derechos del usuario. Revisión de metodologías tarifarias de comercialización
+            y distribución.</p>
+          <p><strong>Autogeneración:</strong> Fomento explícito a pequeña y mediana escala. Distribuidoras deben
+            transitar de venta neta de kWh hacia modelos de gestión de redes inteligentes y servicios de confiabilidad.
+          </p>
+        </div>
+        <div><span class="tag">#CREG</span><span class="tag">#Tarifas</span><span class="tag">#Autogeneración</span>
+        </div>
+      </article>
+    </div>
+
+    <!-- §IV CLIMA -->
+    <div class="section-head">
+      <span class="no">§ IV</span><span class="t">Clima · Riesgo Hidrológico</span><span class="line"></span>
+      <span class="meta">IDEAM · NOAA-CPC · ENSO 2026–2027</span>
+    </div>
+    <div class="stories" style="grid-template-columns:1.4fr 1fr;">
+      <article class="story">
+        <div class="eyebrow">IDEAM · Altas Temperaturas</div>
+        <h2 class="head" style="font-size:30px;">IDEAM advierte altas temperaturas y riesgo de incendios durante mayo:
+          24 municipios en alerta roja</h2>
+        <div class="deck">El IDEAM reportó condiciones de calor por encima de lo habitual hasta el 17 de mayo. Alertas
+          rojas por incendios llegaron a 24 municipios (de 0 a inicios de mes), concentradas 65% en región Caribe.
+          Lluvias por debajo de lo normal en regiones Andina, Caribe y Pacífica.</div>
+        <div class="byline">IDEAM · Valora Analitik · 10 May 2026 &nbsp;|&nbsp; <span class="impact med"><span
+              class="dot"></span>Medio</span></div>
+        <div class="body columns-2" style="margin-top:14px;">
+          <p>El Instituto de Hidrología, Meteorología y Estudios Ambientales (IDEAM) reportó condiciones de calor por
+            encima de lo habitual hasta el 17 de mayo. Las alertas rojas por incendios forestales llegaron a 24
+            municipios, concentradas 65% en la región Caribe. Este nivel de alertas no se veía desde inicios de mes,
+            cuando el indicador estaba en cero.</p>
+          <p><strong>Temperaturas proyectadas:</strong> Barranquilla 34-36°C, Cartagena 32-35°C, Riohacha 34-37°C.
+            Lluvias por debajo de lo normal en regiones Andina, Caribe y Pacífica.</p>
+          <p><strong>Impacto energético:</strong> Menor aporte hídrico esperado por reducción de lluvias. Presión sobre
+            generación térmica. Señal temprana de que El Niño podría manifestarse antes y con mayor intensidad de lo
+            previsto, coincidiendo con evaluaciones del mercado asiático de GNL.</p>
+          <p>Los gremios industriales ya han solicitado formalmente al Ministerio de Minas y Energía la activación de
+            protocolos de ahorro voluntario y la revisión del PROURE. Andesco proyecta una reducción del 15–20% en la
+            oferta hídrica firme para el trimestre OND.</p>
+        </div>
+        <div class="compare">
+          <h6>Alertas rojas incendios · Evolución mayo 2026</h6>
+          <div class="row"><span class="lbl">Inicios mayo</span>
+            <div class="track">
+              <div class="fill" style="width:0%;"></div>
+            </div><span class="val">0</span>
+          </div>
+          <div class="row"><span class="lbl">08 mayo</span>
+            <div class="track">
+              <div class="fill alt" style="width:24%;"></div>
+            </div><span class="val">24</span>
+          </div>
+          <div class="row"><span class="lbl">Caribe</span>
+            <div class="track">
+              <div class="fill alt" style="width:65%;"></div>
+            </div><span class="val">65%</span>
+          </div>
+          <div class="cap">24 municipios en alerta roja por incendios. 65% concentrados en región Caribe.</div>
+        </div>
+        <div><span class="tag">#IDEAM</span><span class="tag">#ElNiño</span><span class="tag">#Temperaturas</span><span
+            class="tag">#Hidrología</span></div>
+      </article>
+      <article class="story">
+        <div class="eyebrow">Proyección NOAA-CPC</div>
+        <h3 class="head">El Niño desde septiembre con probabilidad >90%: ventana de acción mayo-junio</h3>
+        <div class="byline">NOAA-CPC · Mesa de Inteligencia &nbsp;|&nbsp; <span class="impact high"><span
+              class="dot"></span>Alto</span></div>
+        <div class="body">
+          <p><strong>Cronograma El Niño:</strong> Probabilidad cruza 50% en MJJ y supera 90% desde ASO; pico OND con
+            93%. El país acumularía cerca de cinco meses de sequía progresiva desde mayo hasta agosto.</p>
+          <p><strong>Período crítico:</strong> Septiembre 2026 – enero 2027. Los embalses del SIN entrarán al evento en
+            estrés hídrico pese a la recuperación actual del 65%+.</p>
+          <p><strong>Implicaciones B2B:</strong></p>
+          <p>— <strong>Generación:</strong> Mayor exigencia al parque térmico durante ASO–NDJ. Revisar disponibilidad de
+            gas y combustibles líquidos; adelantar mantenimientos antes de septiembre.</p>
+          <p>— <strong>Comercialización:</strong> Reforzar cobertura contractual y contratos de largo plazo con
+            indexación habilitada.</p>
+          <p>— <strong>Grandes consumidores:</strong> Evaluar dual-fuel y PPA renovables como cobertura ante repunte de
+            precios térmicos del segundo semestre.</p>
+          <p>— <strong>Transmisión:</strong> Asegurar capacidad firme de transporte de gas y regasificación; coordinar
+            con operadores.</p>
+        </div>
+        <div class="pull" style="font-size:15px;">"La ventana de acción es mayo–junio. Quien no actúe antes de JAS
+          enfrentará el evento sin coberturas."<span class="src">Mesa de Inteligencia · Geam Energy</span></div>
+        <div><span class="tag">#ElNiño</span><span class="tag">#ENSO</span><span class="tag">#NOAA</span></div>
+      </article>
+    </div>
+
+    <!-- §V CONTEXTO INTERNACIONAL + §VI CONTRADICCIONES -->
+    <div class="pdf-page-break" data-force-page="true"></div>
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:28px;">
+      <div>
+        <div class="section-head">
+          <span class="no">§ V</span><span class="t">Contexto Internacional</span><span class="line"></span>
+          <span class="meta">ICE · CME · EIA · GNL Global · Qatar</span>
+        </div>
+        <article>
+          <div class="eyebrow">Commodities energéticos · 3–10 May 2026</div>
+          <h3 class="head">Brent supera $101 por tensiones en Estrecho de Ormuz; GNL Asia sube a $17,80/MMBtu</h3>
+          <div class="byline">ICE · GNL Global · CME Group · 04–10 May 2026 &nbsp;|&nbsp; <span
+              class="impact high"><span class="dot"></span>Alto</span></div>
+          <div class="body columns-2">
+            <p>El Brent cerró en $101,42/bbl (+1,36%) y WTI en $95,40/bbl (+0,62%) por interceptación de ataques iraníes
+              en el Estrecho de Ormuz por el Comando Central de EE.UU. La AIE advierte que la inestabilidad afecta cerca
+              de 14 millones de barriles/día del suministro global — aproximadamente 20% del comercio mundial de
+              petróleo.</p>
+            <p><strong>GNL Asia:</strong> Precio spot para entregas en junio estimado en $17,80/MMBtu (+$1,10 vs semana
+              anterior). QatarEnergy emitió más avisos de fuerza mayor para junio y julio. El Niño podría manifestarse
+              antes e intensificar demanda de refrigeración en Asia, reduciendo disponibilidad hidroeléctrica. Demanda
+              india sólida; China aparece con 10 cargamentos de verano.</p>
+            <p><strong>Qatar extiende fuerza mayor:</strong> La declaración de fuerza mayor sobre parte de sus
+              suministros de GNL se extendió hasta mediados de junio. El Estrecho de Ormuz, por donde transita ~20% del
+              comercio mundial de GNL, sigue afectado por tensiones de seguridad. Permite suspender entregas sin
+              penalidades, obligando a compradores a buscar volúmenes alternativos en mercado spot.</p>
+            <p><strong>Impacto Colombia:</strong> Presión alcista sostenida sobre precios de GNL importado. Impacto
+              directo en costo de generación térmica. Competencia intensificada entre cuencas del Atlántico y Pacífico
+              por cargamentos. Fletes: Atlántico US$97.500/día, Pacífico US$68.750/día.</p>
+          </div>
+          <div class="compare">
+            <h6>Cotizaciones internacionales · 08–10 May 2026</h6>
+            <div class="row"><span class="lbl">Brent Crude</span>
+              <div class="track">
+                <div class="fill" style="width:100%;"></div>
+              </div><span class="val up">$101,42</span>
+            </div>
+            <div class="row"><span class="lbl">WTI Crude</span>
+              <div class="track">
+                <div class="fill" style="width:94%;"></div>
+              </div><span class="val up">$95,40</span>
+            </div>
+            <div class="row"><span class="lbl">Henry Hub</span>
+              <div class="track">
+                <div class="fill" style="width:28%;"></div>
+              </div><span class="val">$2,76</span>
+            </div>
+            <div class="row"><span class="lbl">GNL Asia (Jun)</span>
+              <div class="track">
+                <div class="fill alt" style="width:89%;"></div>
+              </div><span class="val up">$17,80</span>
+            </div>
+            <div class="row"><span class="lbl">Dólar TRM</span>
+              <div class="track">
+                <div class="fill alt" style="width:74%;"></div>
+              </div><span class="val up">$3.736</span>
+            </div>
+            <div class="cap">USD/bbl crudos · USD/MMBtu gas · COP/USD dólar. Var. semanal: Brent +1,36% · WTI +0,62% ·
+              GNL Asia +6,6%.</div>
+          </div>
+          <article style="margin-top:18px;">
+            <div class="eyebrow">Ecopetrol · Resultados Q1 2026</div>
+            <h4 class="head">Ecopetrol reportará 12 mayo caída del 26,1% en utilidades Q1 2026</h4>
+            <div class="byline">Ecopetrol · Valora Analitik · 10 May 2026 &nbsp;|&nbsp; <span class="impact high"><span
+                  class="dot"></span>Alto</span></div>
+            <div class="body">
+              <p>Ecopetrol reportará el 12 de mayo utilidades estimadas en $2,3 billones (-26,1% interanual). Producción
+                de ~722.000 bpd (-3,1% interanual). Ventas estimadas en $28,9 billones (-7,9%). La revaluación del peso
+                y menor producción opacaron recuperación del Brent (US$78 promedio del trimestre). Ebitda proyectado:
+                $13 billones (margen 45%). Undécima caída trimestral consecutiva vs mismo periodo del año anterior desde
+                Q1 2023.</p>
+              <p><strong>Fiscal:</strong> Presión por impuesto al patrimonio y sobretasa de renta. FEPC con saldo de
+                $4-5 billones. ISA (filial) con utilidad de $642.000 millones (-7,6%).</p>
+            </div>
+            <div><span class="tag">#Ecopetrol</span><span class="tag">#Petróleo</span><span class="tag">#Empresas</span>
+            </div>
+          </article>
+          <div><span class="tag">#Brent</span><span class="tag">#WTI</span><span class="tag">#GNL</span><span
+              class="tag">#Ormuz</span><span class="tag">#Qatar</span></div>
+        </article>
+      </div>
+      <div>
+        <div class="section-head">
+          <span class="no">§ VI</span><span class="t">Síntesis y Riesgos</span><span class="line"></span>
+        </div>
+        <article>
+          <div class="eyebrow">Convergencia de riesgos sistémicos</div>
+          <h4 class="head">Tres crisis simultáneas: gas, geopolítica y regulación fiscal</h4>
+          <div class="byline">Análisis Mesa de Inteligencia &nbsp;|&nbsp; <span class="impact high"><span
+                class="dot"></span>Alto</span></div>
+          <div class="body">
+            <p>El período 3–10 de mayo consolida una convergencia de riesgos sin precedentes en el sector energético
+              colombiano, con tres crisis operando simultáneamente por primera vez desde 2015-2016:</p>
+            <p><strong>1. Crisis de suministro de gas:</strong> Canacol (tribunal 15 mayo) pone en riesgo 7,5% del
+              suministro nacional, mientras Colombia depende del 29% de importaciones de GNL con precios internacionales
+              en US$17,80/MMBtu. SPEC fuera de servicio 30 jul-3 ago en pico de transición a El Niño.</p>
+            <p><strong>2. Crisis geopolítica:</strong> Tensiones en Estrecho de Ormuz (20% comercio mundial GNL)
+              impulsan Brent >$101 y generan fuerza mayor de Qatar hasta mediados de junio. Competencia intensificada
+              por cargamentos spot.</p>
+            <p><strong>3. Crisis regulatoria-fiscal:</strong> Decreto 044 tumbado genera agujero fiscal para
+              distribuidoras intervenidas. Devolución retroactiva a generadoras inyecta liquidez pero traslada presión
+              al Estado. Gobierno publica decreto para regular mercado secundario de gas limitando márgenes.</p>
+            <p><strong>Ventana de acción:</strong> Mayo-junio 2026. Embalses recuperados a 65%+ dan margen temporal,
+              pero agentes deben asegurar contratos firmes de gas antes del evento El Niño (ASO 90%, OND 93%).</p>
+          </div>
+          <div class="sources" style="margin-top:10px;">
+            <h6>Contradicciones del período</h6>
+            <ul>
+              <li><strong>Recuperación embalses vs. El Niño inminente:</strong> 65%+ actual vs. 5 meses sequía previos
+                al pico OND.</li>
+              <li><strong>Dependencia GNL vs. capacidad limitada:</strong> 29% demanda cubierta con importaciones;
+                terminal SPEC al límite.</li>
+              <li><strong>Brent alto beneficia upstream pero asfixia subsidios:</strong> Ecopetrol con -26,1% utilidades
+                pese a Brent >$100.</li>
+              <li><strong>Decreto 044 tumba: liquidez a generadoras, crisis a distribuidoras:</strong> traslado de
+                tensión financiera al Estado.</li>
+              <li><strong>FSRU aprobado pero sin cronograma definitivo:</strong> solución estructural a mediano plazo,
+                no inmediata.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="section-head" style="margin-top:30px;">
+      <span class="no">§ KPI</span><span class="t">Indicadores del Periodo</span><span class="line"></span>
+      <span class="meta">3–10 May 2026 · Edición Núm. 18</span>
+    </div>
+    <div class="kpis">
+      <div class="kpi">
+        <div class="l">Embalses SIN</div>
+        <div class="v">65%+</div>
+        <div class="d up">Recuperación sostenida</div>
+      </div>
+      <div class="kpi">
+        <div class="l">Canacol Riesgo</div>
+        <div class="v">7,5%</div>
+        <div class="d down">Suministro nacional</div>
+      </div>
+      <div class="kpi">
+        <div class="l">GNL Importado</div>
+        <div class="v">29%<span style="font-size:14px"> %</span></div>
+        <div class="d">Demanda nacional</div>
+      </div>
+      <div class="kpi">
+        <div class="l">Brent Crude</div>
+        <div class="v">$101,42</div>
+        <div class="d up">USD/bbl · spot</div>
+      </div>
+      <div class="kpi">
+        <div class="l">Dólar TRM</div>
+        <div class="v">$3.736</div>
+        <div class="d up">COP/USD · presión</div>
+      </div>
+      <div class="kpi">
+        <div class="l">GNL Asia (Jun)</div>
+        <div class="v">$17,80</div>
+        <div class="d up">USD/MMBtu · spot</div>
+      </div>
+    </div>
+
+    <!-- Alertas + Agenda -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;">
+      <div class="sources">
+        <h6>Alertas críticas del período</h6>
+        <ul>
+          <li><strong>Audiencia Canacol — 15 mayo:</strong> Tribunal Alberta decide terminación contratos. 7,5%
+            suministro nacional en riesgo. Autoridades colombianas deben definir excepción orden público.</li>
+          <li><strong>SPEC Mantenimiento — 30 jul–3 ago:</strong> Terminal regasificación fuera 5 días. Cubre 29%
+            demanda nacional. Cinco días fuera en pico transición El Niño.</li>
+          <li><strong>Tensiones Estrecho Ormuz:</strong> Qatar fuerza mayor hasta mediados junio. 20% comercio mundial
+            GNL transita por zona. Brent >$101.</li>
+          <li><strong>El Niño manifestación anticipada:</strong> IDEAM reporta calor extremo y 24 municipios en alerta
+            roja. Probabilidad >90% desde ASO.</li>
+          <li><strong>Agujero fiscal Decreto 044:</strong> Corte tumba contribución parafiscal. Inyecta liquidez a
+            generadoras pero crisis fiscal para distribuidoras intervenidas.</li>
+        </ul>
+      </div>
+      <div class="sources">
+        <h6>Agenda regulatoria y operativa próxima</h6>
+        <ul>
+          <li><strong>12 Mayo 2026.</strong> Ecopetrol reporta resultados Q1 2026: -26,1% utilidades proyectadas.</li>
+          <li><strong>15 Mayo 2026.</strong> Audiencia Tribunal Alberta sobre contratos Canacol — decisión crítica.</li>
+          <li><strong>Mayo–Jun 2026.</strong> Ventana crítica para contratos firmes de gas con contingencia climática.
+          </li>
+          <li><strong>30 Jul–3 Ago 2026.</strong> Mantenimiento SPEC regasificadora — terminal fuera de servicio.</li>
+          <li><strong>Sep 2026.</strong> Inicio intensificación El Niño (ASO 90% → SON 92% → OND 93%).</li>
+          <li><strong>Q4 2026.</strong> Entrada prevista FSRU offshore La Guajira (+250 mpcd).</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EDITORIAL -->
+    <div class="pdf-page-break" data-force-page="true"></div>
+    <div class="section-head" style="margin-top:30px;">
+      <span class="no">§ ED</span><span class="t">Síntesis Ejecutiva · Editorial</span><span class="line"></span>
+      <span class="meta">Mesa de Inteligencia · Geam Energy · 10 May 2026</span>
+    </div>
+    <div style="border:2px solid var(--ink);padding:20px 22px;background:var(--paper-2);margin-bottom:22px;">
+      <div class="body columns-2">
+        <p>El período 3–10 de mayo de 2026 marca un punto de inflexión en el sector energético colombiano. Tres crisis
+          operan simultáneamente por primera vez desde 2015-2016: suministro de gas (Canacol 7,5% nacional en riesgo),
+          geopolítica internacional (Ormuz/Qatar afectan GNL), y regulatorio-fiscal (Decreto 044 tumbado genera agujero
+          fiscal). A diferencia del episodio El Niño 2015–2016, el escenario actual suma vectores de riesgo que se
+          retroalimentan.</p>
+        <p><strong>Crisis de suministro de gas doméstico:</strong> Canacol enfrenta audiencia definitiva el 15 de mayo
+          en Alberta por terminación de contratos que representan ~70 MMpcd. El MinMinas publicó decreto regulando
+          márgenes del mercado secundario. SPEC, que cubre 29% de la demanda nacional con GNL importado, tendrá
+          mantenimiento de 5 días (30 jul-3 ago) en pico de transición climática. El déficit gas estructural modelado en
+          39% para 2S-2026 permanece sin respuesta contractual sólida.</p>
+        <p><strong>Crisis geopolítica:</strong> Tensiones en el Estrecho de Ormuz impulsan Brent >$101 y WTI >$95. Qatar
+          extendió fuerza mayor hasta mediados de junio. GNL Asia spot cotiza en $17,80/MMBtu (+6,6% semanal), con
+          competencia intensificada entre cuencas del Atlántico y Pacífico. La manifestación anticipada de El Niño puede
+          reducir oferta hidroeléctrica asiática e intensificar demanda de refrigeración.</p>
+        <p><strong>Crisis regulatoria-fiscal:</strong> La Corte tumbó el Decreto 044. Devolución retroactiva (~$500 mil
+          millones) inyecta liquidez a generadoras pero traslada presión fiscal al Estado, que debe asumir costos de
+          distribuidoras intervenidas. UPME aplazó subastas de energía firme.</p>
+        <p><strong>Margen temporal:</strong> Embalses SIN superaron 65%+, disipando riesgo inmediato de racionamiento.
+          Sin embargo, IDEAM reporta calor extremo (24 municipios en alerta roja), lluvias bajo promedio, y proyección
+          de El Niño >90% desde ASO. Cinco meses de sequía progresiva (mayo-agosto) erosionarán el margen actual.</p>
+        <p><strong>Ventana de acción estratégica:</strong> Mayo–junio 2026. Los agentes deben asegurar contratos firmes
+          de gas, revisar coberturas contractuales, completar mantenimientos preventivos de parque térmico y evaluar
+          opciones de autogeneración antes del período crítico (septiembre-enero). Quien no actúe antes de JAS
+          enfrentará el evento sin coberturas.</p>
+      </div>
+      <div class="byline" style="margin-top:14px;">Mesa de Inteligencia GEAM · Vol. IV · Núm. 18 · 10 May 2026 ·
+        Circulación restringida B2B</div>
+    </div>
+
+    <!-- FUENTES -->
+    <div class="section-head">
+      <span class="no">§ FT</span><span class="t">Fuentes Consultadas</span><span class="line"></span>
+    </div>
+    <div style="columns:3;column-gap:22px;font-family:'Source Serif 4',serif;font-size:12px;line-height:1.5;">
+      <p><strong>Institucionales y reguladores —</strong> MinMinas (decretos gas y FSRU), Corte Constitucional
+        (sentencia Decreto 044), UPME (proyecciones demanda, aplazamiento subastas), CREG (nuevo marco tarifario), XM
+        (despacho SIN, niveles embalses), IDEAM (alertas temperaturas e incendios, hidrología), NOAA-CPC (proyección
+        ENSO), SSPD (suspensiones servicio), ANH (producción nacional).</p>
+      <p><strong>Empresas y operadores —</strong> Canacol Energy (audiencia Alberta, contratos tribunal), Ecopetrol
+        (proyección Q1 2026, FEPC), ISA (cambio presidencia, resultados Q1), Promigas (SPEC mantenimiento, capacidad
+        regasificación), TGI (proyectos expansión).</p>
+      <p><strong>Mercados y commodities —</strong> ICE Futures Europe (Brent Crude), CME Group (WTI Crude, Henry Hub),
+        Argus Media (GNL Asia spot, fletes), Superfinanciera (TRM dólar), Bloomberg Energy (análisis correlaciones).</p>
+      <p><strong>Gremios y asociaciones —</strong> Andesco (proyecciones oferta hídrica), Acolgen (posición Decreto
+        044), Naturgas (comercialización gas), ACIPET (upstream petróleo).</p>
+      <p><strong>Medios especializados —</strong> Valora Analitik (cobertura empresas, MinMinas, IDEAM), La República
+        (fiscal, empresas), Portafolio (financiero, energía), La FM (regulación CREG), Revista Dinero (análisis
+        sectorial), Sinergox (despacho SIN, inteligencia mercado).</p>
+      <p><strong>Analistas internacionales —</strong> AIE (seguridad suministro Ormuz), QatarEnergy (fuerza mayor GNL),
+        EIA (reportes semanales gas/petróleo).</p>
+      <p style="break-inside:avoid;"><em>Nota metodológica:</em> el análisis cubre publicaciones entre el 3 y el 10 de
+        mayo de 2026. Las proyecciones financieras de Ecopetrol Q1 son estimaciones de mercado previas al reporte
+        oficial del 12 de mayo. Los precios de commodities reflejan datos de cierre 08–10 mayo.</p>
+    </div>
+
+    <div class="footer">
+      <span>El Radar Energético · Vol. IV · Núm. 18</span>
+      <span>Próxima edición · Viernes 16 de Mayo de 2026</span>
+      <span>— fin de la edición —</span>
+    </div>
+
+  </div>
+</body>
+
+</html>
