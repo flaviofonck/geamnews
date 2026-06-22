@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El Radar Energético — Edición Semanal · 22 Jun 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;600&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+    svg: { fontCache: 'global' },
+    chtml: { scale: 0.95 }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+<style>
+  :root{
+    --paper:#f2ede2;--paper-2:#ebe4d4;--ink:#141210;--ink-2:#2b2724;--rule:#1a1714;
+    --muted:#6b625a;--accent:#7a1a17;--accent-2:#8a6a1a;
+    --font-brand:'Montserrat', sans-serif;
+    --geam-cyan:#00AEEF;--geam-navy:#1B2F6B;--geam-red:#C8102E;
+  }
+  html,body{background:#d9d2c2;margin:0;padding:0;color:var(--ink);font-family:"Source Serif 4",Georgia,serif;}
+  body{background:radial-gradient(1200px 600px at 50% -10%,rgba(0,0,0,.06),transparent 60%),#d9d2c2;min-height:100vh;padding:40px 20px 80px;}
+  .paper{
+    max-width:1240px;margin:0 auto;background:var(--paper);
+    background-image:radial-gradient(transparent 1px,rgba(0,0,0,.02) 1.5px,transparent 2px),url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08  0 0 0 0 0.06  0 0 0 0 0.04  0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-size:3px 3px,200px 200px;padding:48px 56px 64px;
+    box-shadow:0 1px 0 rgba(0,0,0,.1),0 30px 60px rgba(0,0,0,.25),0 80px 120px rgba(0,0,0,.15);position:relative;
+  }
+  .paper::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.06),transparent 8%,transparent 92%,rgba(0,0,0,.08)),linear-gradient(90deg,rgba(0,0,0,.04),transparent 6%,transparent 94%,rgba(0,0,0,.04));mix-blend-mode:multiply;}
+  .top-bar{display:flex;justify-content:space-between;align-items:flex-end;font-family:"Source Serif 4",serif;font-style:italic;font-size:13px;border-bottom:1px solid var(--ink);padding-bottom:8px;letter-spacing:.02em;}
+  .top-bar .left,.top-bar .right{flex:1;}.top-bar .right{text-align:right;}
+  .top-bar .center{flex:0;white-space:nowrap;font-variant:small-caps;letter-spacing:.2em;font-style:normal;font-weight:600;}
+  .masthead{text-align:center;padding:14px 0 6px;border-bottom:3px double var(--ink);}
+  .masthead h1{font-family:var(--font-brand);font-size:clamp(40px,7.2vw,104px);font-weight:900;letter-spacing:-.01em;line-height:.95;margin:0;color:var(--geam-navy);white-space:nowrap;}
+  .masthead .kicker{font-family:"Playfair Display",serif;font-style:italic;font-size:15px;color:var(--ink-2);margin-top:6px;}
+  .masthead .latin{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.35em;font-size:11px;color:var(--muted);margin-top:10px;}
+  .dateline{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--ink);font-family:"Source Serif 4",serif;font-size:13px;}
+  .dateline .l{text-align:left;font-variant:small-caps;letter-spacing:.15em;}.dateline .c{font-style:italic;}.dateline .r{text-align:right;}
+  .geam-mark{display:inline-flex;align-items:center;gap:8px;justify-content:flex-end;}
+  .geam-brand-logo{display:block;height:42px;width:auto;}
+  .front{display:grid;grid-template-columns:1.1fr 1.6fr 1fr;gap:22px;padding:22px 0 10px;border-bottom:1px solid var(--ink);}
+  .col{position:relative;}.col+.col{border-left:1px solid var(--ink);padding-left:22px;}
+  .eyebrow{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.25em;font-size:11px;color:var(--accent);font-weight:600;margin-bottom:4px;}
+  h2.head{font-family:"Playfair Display",serif;font-weight:900;font-size:38px;line-height:1.02;margin:2px 0 6px;letter-spacing:-.01em;}
+  h3.head{font-family:"Playfair Display",serif;font-weight:800;font-size:24px;line-height:1.08;margin:2px 0 6px;}
+  h4.head{font-family:"Playfair Display",serif;font-weight:700;font-size:18px;line-height:1.12;margin:2px 0 4px;}
+  .deck{font-family:"Playfair Display",serif;font-style:italic;font-weight:400;font-size:16px;line-height:1.35;color:var(--ink-2);margin:4px 0 10px;}
+  .byline{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.18em;font-size:10.5px;color:var(--muted);margin:6px 0 10px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:4px 0;}
+  .body{font-family:"Source Serif 4",serif;font-size:14px;line-height:1.55;text-align:justify;hyphens:auto;}
+  .body p{margin:0 0 .7em;}
+  .body p:first-of-type::first-letter{font-family:"Playfair Display",serif;font-weight:900;float:left;font-size:56px;line-height:.88;padding:4px 8px 0 0;color:var(--ink);}
+  .columns-2{column-count:2;column-gap:22px;column-rule:1px solid rgba(0,0,0,.15);}
+  .columns-2 p:first-child::first-letter{all:unset;}
+  .divider{border:0;border-top:1px solid var(--ink);margin:14px 0;}.divider.thick{border-top:3px double var(--ink);}
+  .section-head{display:flex;align-items:center;gap:12px;margin:26px 0 10px;}
+  .section-head .t{font-family:"Playfair Display",serif;font-weight:900;font-size:22px;letter-spacing:.02em;}
+  .section-head .no{font-family:"JetBrains Mono",monospace;font-size:11px;border:1px solid var(--ink);padding:2px 6px;border-radius:2px;letter-spacing:.1em;}
+  .section-head .line{flex:1;border-top:1px solid var(--ink);}
+  .meta{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;}
+  .tag{display:inline-block;font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.12em;font-size:10.5px;border:1px solid var(--ink);padding:1px 7px;margin:0 4px 4px 0;color:var(--ink);}
+  .impact{display:inline-flex;align-items:center;gap:6px;font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.15em;font-size:10.5px;font-weight:600;padding:2px 8px;border:1px solid var(--ink);}
+  .impact .dot{width:8px;height:8px;background:var(--ink);display:inline-block;border-radius:50%;}
+  .impact.high{background:var(--accent);color:var(--paper);border-color:var(--accent);}.impact.high .dot{background:var(--paper);}
+  .impact.med{background:var(--accent-2);color:var(--paper);border-color:var(--accent-2);}.impact.med .dot{background:var(--paper);}
+  .impact.low{background:transparent;}
+  .alert{border:2px solid var(--accent);padding:14px 16px;margin:14px 0;background:rgba(122,26,23,.06);position:relative;}
+  .alert::before{content:"";position:absolute;top:-2px;left:-2px;right:-2px;height:6px;background:repeating-linear-gradient(45deg,var(--accent) 0 8px,transparent 8px 16px);}
+  .alert h5{font-family:"Playfair Display",serif;font-weight:900;font-size:17px;margin:6px 0 4px;color:var(--accent);letter-spacing:.02em;}
+  .alert .badge{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--paper);background:var(--accent);padding:2px 10px;display:inline-block;}
+  .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:1px solid var(--ink);margin:18px 0 6px;background:var(--paper-2);}
+  .kpi{padding:12px 14px;border-right:1px solid var(--ink);}.kpi:last-child{border-right:none;}
+  .kpi .l{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.15em;font-size:10.5px;color:var(--muted);}
+  .kpi .v{font-family:"Playfair Display",serif;font-weight:900;font-size:28px;line-height:1;margin-top:4px;}
+  .kpi .d{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--ink-2);margin-top:4px;letter-spacing:.05em;}
+  .kpi .d.up{color:#2d5a2d;}.kpi .d.down{color:var(--accent);}
+  .index{border-top:3px double var(--ink);border-bottom:3px double var(--ink);padding:10px 0;margin:14px 0;display:grid;grid-template-columns:repeat(6,1fr);gap:14px;font-family:"Source Serif 4",serif;font-size:12px;}
+  .index .it{border-left:1px solid rgba(0,0,0,.2);padding-left:10px;}.index .it:first-child{border-left:0;}
+  .index .n{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--muted);}.index .t{font-weight:700;font-size:13px;margin-top:2px;}
+  .stories{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;padding:8px 0 20px;}
+  .stories>.story{border-left:1px solid var(--ink);padding-left:22px;}.stories>.story:first-child{border-left:none;padding-left:0;}
+  .story .body{font-size:13.5px;}
+  .pull{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:12px 6px;margin:10px 0;font-family:"Playfair Display",serif;font-style:italic;font-weight:400;font-size:22px;line-height:1.2;text-align:center;}
+  .pull .src{display:block;font-family:"Source Serif 4",serif;font-style:normal;font-variant:small-caps;letter-spacing:.2em;font-size:11px;color:var(--muted);margin-top:8px;}
+  .sources{border:1px solid var(--ink);padding:12px 14px;background:var(--paper-2);font-family:"Source Serif 4",serif;font-size:12px;line-height:1.45;}
+  .sources h6{font-family:"Playfair Display",serif;font-weight:800;font-size:14px;margin:0 0 6px;letter-spacing:.02em;}
+  .sources ul{margin:0;padding-left:16px;}.sources li{margin-bottom:2px;}
+  .ticker{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 0;margin:12px 0;display:flex;gap:28px;align-items:center;font-family:"JetBrains Mono",monospace;font-size:11.5px;white-space:nowrap;overflow:hidden;}
+  .ticker .lab{background:var(--ink);color:var(--paper);padding:2px 8px;font-weight:600;letter-spacing:.1em;}
+  .ticker .it{display:inline-flex;align-items:center;gap:6px;}
+  .ticker .up{color:#2d5a2d;}.ticker .dn{color:var(--accent);}
+  .footer{border-top:3px double var(--ink);margin-top:20px;padding-top:14px;display:flex;justify-content:space-between;align-items:center;font-family:"Source Serif 4",serif;font-size:11.5px;color:var(--muted);font-variant:small-caps;letter-spacing:.15em;}
+  .bars{display:flex;align-items:flex-end;gap:3px;height:56px;margin-top:8px;}.bars b{display:block;width:10px;background:var(--ink);}
+  .res-fig{margin:6px 0 10px;padding:14px 16px 12px;border:1px solid var(--ink);background:var(--paper-2);}
+  .res-fig h6{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;margin:0 0 6px;}
+  .res-fig .num{font-family:"Playfair Display",serif;font-weight:900;font-size:42px;line-height:1;color:var(--ink);}
+  .res-fig .sub{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:4px;letter-spacing:.05em;}
+  .res-fig hr{border:0;border-top:1px solid var(--ink);margin:10px 0;}
+  .res-fig .row{display:grid;grid-template-columns:1fr 1fr;gap:12px;font-family:"Source Serif 4",serif;font-size:12px;}
+  .res-fig .row strong{font-family:"Playfair Display",serif;font-weight:800;font-size:14px;display:block;}
+  .map-fig{margin:6px 0 10px;padding:0;border:1px solid var(--ink);background:var(--paper-2);}
+  .map-fig svg{display:block;width:100%;height:auto;}
+  .compare{margin:10px 0;border:1px solid var(--ink);background:var(--paper-2);padding:14px 16px;}
+  .compare h6{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;margin:0 0 8px;}
+  .compare .row{display:grid;grid-template-columns:120px 1fr 60px;align-items:center;gap:10px;margin-bottom:8px;}
+  .compare .lbl{font-family:"Playfair Display",serif;font-weight:700;font-size:13px;}
+  .compare .track{height:18px;border:1px solid var(--ink);position:relative;background:var(--paper);}
+  .compare .fill{position:absolute;left:0;top:0;bottom:0;background:var(--ink);}
+  .compare .fill.alt{background:repeating-linear-gradient(45deg,var(--accent) 0 3px,#a84442 3px 6px);}
+  .compare .val{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;text-align:right;}
+  .compare .cap{font-family:"Source Serif 4",serif;font-style:italic;font-size:11px;color:var(--muted);margin-top:6px;border-top:1px solid var(--ink);padding-top:6px;}
+  .dl-btn{position:fixed;right:20px;bottom:20px;z-index:50;display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.18em;font-size:12px;font-weight:600;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.25);transition:transform .15s ease,background .15s ease;}
+  .dl-btn:hover{background:var(--accent);transform:translateY(-1px);}.dl-btn svg{width:14px;height:14px;}
+  @page{size:A3 portrait;margin:10mm;}
+  @media print{html,body{background:#d9d2c2!important;padding:0!important;margin:0!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}body{padding:0!important;}*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}.paper{box-shadow:none!important;max-width:none!important;width:auto!important;margin:0!important;padding:24px 28px!important;}.dl-btn{display:none!important;}.section-head,.front,.stories,.kpis,.footer,.index,figure,.alert,.res-fig,.map-fig,.compare,.pull,.sources,article,.ticker{break-inside:avoid;page-break-inside:avoid;}.ticker{flex-wrap:wrap;white-space:normal;}}
+
+  /* ============================================================
+     MOBILE EDITION
+     ============================================================ */
+  @media (max-width: 900px){
+    body{padding:14px 8px 60px;}
+    .paper{max-width:100%;padding:22px 16px 36px;box-shadow:0 1px 0 rgba(0,0,0,.1),0 12px 28px rgba(0,0,0,.18);}
+    .top-bar{flex-direction:column;align-items:flex-start;gap:4px;font-size:11.5px;text-align:left;}
+    .top-bar .right{text-align:left;}.top-bar .center{letter-spacing:.14em;}
+    .masthead h1{font-size:clamp(34px,11vw,56px);white-space:normal;line-height:.96;}
+    .masthead .kicker{font-size:13px;}.masthead .latin{font-size:10px;letter-spacing:.22em;}
+    .dateline{grid-template-columns:1fr;gap:6px;font-size:12px;text-align:center;}
+    .dateline .l,.dateline .r{text-align:center;}
+    .geam-mark{justify-content:center;}.geam-brand-logo{height:36px;}
+    .front,.stories,div[style*="grid-template-columns"]{grid-template-columns:1fr!important;gap:18px!important;}
+    .col+.col,.stories>.story{border-left:none!important;padding-left:0!important;border-top:1px solid var(--ink)!important;padding-top:16px!important;}
+    .stories>.story:first-child{border-top:none!important;padding-top:0!important;}
+    h2.head{font-size:28px;}h3.head{font-size:21px;}h4.head{font-size:17px;}
+    .deck{font-size:14.5px;}
+    .body{font-size:14.5px;line-height:1.6;text-align:left;hyphens:auto;}
+    .body p:first-of-type::first-letter{font-size:46px;padding:2px 6px 0 0;}
+    .columns-2{column-count:1;column-rule:none;}
+    .kpis{grid-template-columns:repeat(2,1fr);}
+    .kpi{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);}
+    .kpi:nth-child(2n){border-right:none;}.kpi .v{font-size:24px;}
+    .index{grid-template-columns:repeat(2,1fr);gap:10px 14px;padding:10px 0;}
+    .index .it{border-left:0;padding-left:0;}
+    .section-head{gap:10px;margin:22px 0 10px;}.section-head .t{font-size:18px;}
+    .pull{font-size:18px;padding:10px 4px;}
+    .sources{padding:10px 12px;font-size:12px;}
+    .footer{flex-direction:column;gap:6px;text-align:center;font-size:10.5px;letter-spacing:.12em;}
+    .ticker{flex-wrap:wrap;white-space:normal;gap:10px 14px;font-size:10.5px;}
+    .res-fig{padding:12px 14px;}.res-fig .num{font-size:34px;}.res-fig .row{grid-template-columns:1fr;gap:8px;}
+    .compare .row{grid-template-columns:90px 1fr 50px;gap:8px;}.compare .lbl{font-size:12px;}.compare .track{height:14px;}
+    .alert{padding:12px 14px;}.alert h5{font-size:15.5px;}
+    .tag{font-size:10px;letter-spacing:.1em;}.impact{font-size:10px;letter-spacing:.12em;padding:2px 6px;}
+    div[style*="columns:3"]{column-count:1!important;}
+    .dl-btn{right:12px;bottom:12px;padding:10px 14px;font-size:11px;letter-spacing:.14em;}
+    svg{max-width:100%;height:auto;}
+  }
+  @media (max-width: 420px){
+    .paper{padding:18px 12px 32px;}.masthead h1{font-size:clamp(30px,12vw,46px);}
+    .kpis{grid-template-columns:1fr;}.kpi{border-right:none;}.kpi:last-child{border-bottom:none;}
+    .index{grid-template-columns:1fr;}
+    h2.head{font-size:24px;}.compare .row{grid-template-columns:80px 1fr 44px;}
+  }
+</style>
+</head>
+<body>
+
+<button class="dl-btn" id="dl-pdf" title="Descargar PDF">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+  <span id="dl-label">Descargar PDF</span>
+</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+(function(){const btn=document.getElementById('dl-pdf');const label=document.getElementById('dl-label');btn.addEventListener('click',async()=>{const paper=document.querySelector('.paper');if(!paper)return;btn.disabled=true;label.textContent='Generando…';btn.style.display='none';try{if(document.fonts&&document.fonts.ready){await document.fonts.ready;}const canvas=await html2canvas(paper,{scale:2,useCORS:true,backgroundColor:getComputedStyle(document.body).backgroundColor||'#d9d2c2',windowWidth:paper.scrollWidth,windowHeight:paper.scrollHeight,logging:false});const imgW=canvas.width;const imgH=canvas.height;const pxToPt=0.75;const pageW=paper.scrollWidth*pxToPt;const pageHperPage=pageW*(297/210);const totalH=imgH*(pageW/imgW);const{jsPDF}=window.jspdf;const pdf=new jsPDF({unit:'pt',format:[pageW,pageHperPage],orientation:'portrait',compress:true});const pages=Math.ceil(totalH/pageHperPage);const pxPerPage=Math.floor(imgW*(pageHperPage/pageW));for(let i=0;i<pages;i++){const sliceH=Math.min(pxPerPage,imgH-i*pxPerPage);const slice=document.createElement('canvas');slice.width=imgW;slice.height=sliceH;const ctx=slice.getContext('2d');ctx.drawImage(canvas,0,i*pxPerPage,imgW,sliceH,0,0,imgW,sliceH);const dataUrl=slice.toDataURL('image/jpeg',0.92);if(i>0)pdf.addPage([pageW,pageHperPage],'portrait');const drawH=sliceH*(pageW/imgW);pdf.addImage(dataUrl,'JPEG',0,0,pageW,drawH,undefined,'FAST');}pdf.save('Radar-Energetico-Movil-GEAM.pdf');}catch(err){console.error(err);alert('No se pudo generar el PDF.');}finally{btn.style.display='';btn.disabled=false;label.textContent='Descargar PDF';}});})();
+</script>
+<div class="paper">
+
+  <div class="top-bar">
+    <div class="left">Vol. IV · Núm. 24 · Edición Semanal</div>
+    <div class="center">— Inteligencia Estratégica del Sector Energético —</div>
+    <div class="right">Circulación ejecutiva · Tirada digital</div>
+  </div>
+
+  <header class="masthead">
+    <h1><span class="geam">GEAM ENERGY</span> <span class="news">NEWS</span></h1>
+    <div class="kicker">Monitoreo de gas natural, electricidad e hidrocarburos en Colombia</div>
+    <div class="latin">Ex datis, consilium · Desde los datos, la decisión</div>
+  </header>
+
+  <div class="dateline">
+    <div class="l">Barranquilla — Colombia</div>
+    <div class="c">Lunes, 22 de Junio de 2026 · Periodo monitoreado: 15 de Junio – 22 de Junio de 2026</div>
+    <div class="r"><span class="geam-mark"><img class="geam-brand-logo" src="assets/logo-geam.png" alt="Geam Energy"></span></div>
+  </div>
+
+  <nav class="index">
+    <div class="it"><div class="n">§ I</div><div class="t">Regulación · CREG / SAEB</div></div>
+    <div class="it"><div class="n">§ II</div><div class="t">Mercado de Gas · GNL / Regasificación</div></div>
+    <div class="it"><div class="n">§ III</div><div class="t">Mercado Eléctrico · Bolsa / Embalses</div></div>
+    <div class="it"><div class="n">§ IV</div><div class="t">Transición · Solar / LASolar</div></div>
+    <div class="it"><div class="n">§ V</div><div class="t">Contexto Internacional · Ormuz / Promigas</div></div>
+    <div class="it"><div class="n">§ AL</div><div class="t">Alertas Críticas</div></div>
+  </nav>
+
+  <!-- FRONT PAGE -->
+  <section class="front">
+    <div class="col">
+      <div class="eyebrow">Síntesis ejecutiva · 15–22 Jun</div>
+      <h3 class="head">Descalce estructural: gas en mínimos históricos y demanda eléctrica récord tensionan el SIN</h3>
+      <div class="byline">Mesa de Inteligencia · Geam Energy · 22 Jun 2026</div>
+      <div class="body">
+        <p>El sector energético atraviesa una coyuntura de alta complejidad por un inminente descalce entre la oferta firme y la demanda de energía y gas. Entre el 15 y el 22 de junio, la producción local de gas natural tocó mínimos históricos de 1.006 Mpcd fiscalizados, forzando al país a depender del GNL importado a precios que proyectan un alza del 32% para el trimestre junio–agosto (18,39 USD/MMBtu). En paralelo, la demanda eléctrica registró picos históricos de 258,69 GWh/día por olas de calor extremas, manteniendo el precio de bolsa elevado tras cerrar mayo en 516,36 COP/kWh y abrir junio con picos de 833,3 COP/kWh.</p>
+        <p>El nivel de embalses cerró la semana con una ligera recuperación técnica al 72,43%, aún por debajo de la senda de seguridad del 80% que exige XM para afrontar El Niño a fin de año. Los riesgos se concentran en la lenta entrada de generación —solo 306 MW de los 4.475 MW proyectados para 2026— y en barreras regulatorias como la restricción comercial a la regasificadora de TGI en La Guajira. Como contrapeso, la Resolución CREG 101 113 habilita el almacenamiento con baterías (SAEB) y avanza la terminal de Puerto Bahía (hasta 300 GBTUD en diciembre). La tendencia se consolida en <strong>Presión Crítica / Riesgo de Descalce Oferta–Demanda</strong>.</p>
+      </div>
+      <div class="pull">"El riesgo dejó de ser solo hidrológico: con el gas local en mínimos y el GNL importado al alza, la pregunta es quién asegura el respaldo firme y a qué precio."<span class="src">Mesa de Inteligencia · Geam Energy</span></div>
+      <div class="eyebrow" style="margin-top:14px;">Tendencia del periodo</div>
+      <div class="meta">Gas fiscalizado <span style="color:var(--accent)">▼</span> 1.006 Mpcd &nbsp; GNL importado <span style="color:var(--accent)">▲</span> +32% &nbsp; Embalses <span style="color:var(--accent)">▼</span> 72,43% &nbsp; Bolsa <span style="color:var(--accent)">▲</span> 833,3 COP/kWh</div>
+    </div>
+
+    <div class="col">
+      <div class="eyebrow">Portada · Gas local en mínimos históricos</div>
+      <h2 class="head">El gas local cae a un mínimo histórico de 1.006 Mpcd y dispara la dependencia del GNL importado (+32%)</h2>
+      <div class="deck">La producción fiscalizada se desplomó 21,8% interanual y la comercializada cayó a 694 Mpcd. Colombia importó 215,7 Mpcd vía SPEC —el 23,7% del gas disponible— justo cuando el precio del GNL subirá un 32% para el trimestre junio–agosto, a 18,39 USD/MMBtu.</div>
+      <div class="byline">Fuentes: ANH · Campetrol · La República · Abr–Jun 2026</div>
+      <figure class="res-fig">
+        <h6>Figura 1 · Producción nacional de gas fiscalizada · Abril 2026</h6>
+        <div class="num" style="font-size:40px;letter-spacing:-.02em;">1.006 <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--muted);">Mpcd · mínimo histórico</span></div>
+        <div class="sub">Nivel más bajo de la serie histórica · contracción interanual del 21,8% frente a los 1.286 Mpcd de abril de 2025</div>
+        <hr>
+        <div class="row">
+          <div><strong>Producción comercializada</strong>Cayó a 694 Mpcd en abril: −0,9% mensual y −14,2% interanual.</div>
+          <div><strong>Importación de GNL</strong>215,7 Mpcd vía SPEC en abril, el 23,7% de la disponibilidad nacional (909,7 Mpcd).</div>
+          <div><strong>Precio del GNL importado</strong>+32% para junio–agosto, de 13,96 a 18,39 USD/MMBtu, con traslado a tarifas.</div>
+          <div><strong>Causa estructural</strong>Fallas geológicas e intrusión de agua en el VIM y agotamiento de campos de la Orinoquía.</div>
+        </div>
+      </figure>
+      <div class="body columns-2" style="margin-top:18px;">
+        <p>La caída obedece a fallas geológicas e intrusión de agua en yacimientos del Valle Inferior del Magdalena y al agotamiento natural de los grandes campos tradicionales de la Orinoquía y el piedemonte llanero. La producción fiscalizada cayó 21,8% frente a los 1.286 Mpcd de abril de 2025.</p>
+        <p>Para equilibrar la balanza y evitar racionamientos en los sectores comercial, industrial y vehicular, Colombia importó 215,7 Mpcd vía la terminal SPEC LNG en Cartagena durante abril, equivalente al 23,7% de la disponibilidad total comercializada (909,7 Mpcd).</p>
+        <p>Este descalce expone a la cadena de suministro a la volatilidad del GNL global: el precio negociado por SPEC para junio–agosto sube 32%, de 13,96 a 18,39 USD/MMBtu, con traslado a tarifas residenciales, comerciales e industriales.</p>
+        <p>La dependencia del importado convierte el problema físico de oferta en uno de solvencia y logística —quién asegura los cargamentos y a qué precio— justo cuando el sistema más respaldo necesita ante la consolidación de El Niño.</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="alert">
+        <span class="badge">Alerta · Nivel Alto</span>
+        <h5>Riesgo de desabastecimiento de gas y energía firme</h5>
+        <div class="body" style="font-size:13px;"><p style="margin:4px 0 0;">La producción en mínimos (694 Mpcd comercializados) y el rezago de embalses (72,43% vs. 80%) exponen al SIN a un déficit del 2,3% en energía firme y del 24% en suministro de gas. Sin nuevos proyectos de generación, la matriz dependerá de un parque térmico expuesto a la escasez de gas y al GNL caro.</p></div>
+        <div style="margin-top:8px;"><span class="tag">#SIN</span><span class="tag">#Gas</span><span class="tag">#EnergíaFirme</span></div>
+      </div>
+      <div class="alert" style="border-color:var(--accent-2);background:rgba(138,106,26,.06);">
+        <span class="badge" style="background:var(--accent-2);">Alerta · Eléctrico</span>
+        <h5 style="color:var(--accent-2);">Insolvencia y cortes técnicos en Afinia</h5>
+        <div class="body" style="font-size:13px;"><p style="margin:4px 0 0;">Afinia registró pérdidas técnicas del 29% y 2.650 MW de demanda no atendida hasta mayo por disparo de protecciones. Con un consumo que crece 13,3% interanual en el Caribe, cualquier alza adicional del precio spot (ya &gt;833,3 COP/kWh) erosiona los contratos de cobertura.</p></div>
+        <div style="margin-top:8px;"><span class="tag">#Afinia</span><span class="tag">#Caribe</span><span class="tag">#Bolsa</span></div>
+      </div>
+      <hr class="divider">
+      <div class="eyebrow">Señales clave del periodo</div>
+      <div class="body" style="font-size:13px;">
+        <p>— <strong>Gas:</strong> producción fiscalizada 1.006 Mpcd (mín. histórico); comercializada 694 Mpcd.</p>
+        <p>— <strong>GNL:</strong> importado 215,7 Mpcd (23,7%); precio +32% a 18,39 USD/MMBtu (jun–ago).</p>
+        <p>— <strong>Hídrico:</strong> embalses 72,43%; meta XM 80%; brecha de 7,57 puntos.</p>
+        <p>— <strong>Eléctrico:</strong> demanda récord 258,69 GWh/día; bolsa 833,3 COP/kWh.</p>
+        <p>— <strong>Regulación:</strong> CREG 101 113 habilita baterías (SAEB); LASolar aprueba 19,9 MW en Neiva.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- §I REGULACIÓN Y POLÍTICA -->
+  <div class="section-head">
+    <span class="no">§ I</span><span class="t">Regulación y Política</span><span class="line"></span>
+    <span class="meta">CREG · ANLA · El Tiempo</span>
+  </div>
+  <div class="stories" style="grid-template-columns:1.3fr 1fr;">
+    <article class="story">
+      <div class="eyebrow">CREG · 19 Jun 2026 · Almacenamiento</div>
+      <h2 class="head" style="font-size:30px;">Resolución CREG 101 113: primer marco integral para integrar baterías (SAEB) al SIN</h2>
+      <div class="deck">La CREG expidió el primer marco regulatorio del país para la instalación, operación y remuneración de sistemas de almacenamiento con baterías, derogando la Resolución 098 de 2019.</div>
+      <div class="byline">CREG · Res. 101 113 de 2026 · 19 Jun 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>Define tres esquemas de participación formal —activos de red, SAEB independientes y recursos híbridos— e incorpora requerimientos de última generación como Grid-Forming (GFM), Grid-Following (GFL), inercia sintética y soporte de cortocircuito. Permite a las plantas solares y eólicas almacenar la energía no despachada durante el día para inyectarla en los picos de alta demanda nocturna, optimizando el balance y la estabilidad del SIN.</p><p>Financieramente, habilita convocatorias públicas para adjudicar proyectos de almacenamiento como activos de red, con un flujo de remuneración regulada que reduce la exposición al riesgo comercial del inversionista. Resuelve además las advertencias de la SIC sobre la representación comercial obligatoria de los SAEB independientes, obligando a publicar condiciones objetivas y no discriminatorias en los portales web.</p></div>
+      <div class="pull" style="font-size:16px;">"Por primera vez el país puede convertir la energía solar y eólica no despachada en respaldo nocturno firme: la batería entra al mercado como activo de red."<span class="src">Mesa de Inteligencia · Geam Energy</span></div>
+      <div><span class="tag">#Regulación</span><span class="tag">#Baterías</span><span class="tag">#SAEB</span><span class="tag">#CREG</span><span class="tag">#MEM</span></div>
+    </article>
+
+    <article class="story">
+      <div class="eyebrow">CREG · 15 Jun 2026</div>
+      <h3 class="head">Programa permanente de participación activa de la demanda en la bolsa de energía</h3>
+      <div class="byline">CREG · Res. 101 111 de 2026 · 15 Jun 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+      <div class="body"><p>Institucionaliza un mecanismo permanente para que los usuarios —individuales o agregados— reduzcan voluntariamente su consumo y reciban incentivos económicos indexados al precio de bolsa, exigiendo como único requisito tecnológico un medidor horario telemedido y un periodo de transición para organizar a los agregadores.</p><p>Mitiga los picos de consumo mediante desconexiones coordinadas —vital ante hidrología crítica y la presencia consolidada de El Niño— y genera ingresos directos para grandes consumidores (industria y comercio) que oferten desconexión, alineado con las lecciones de 2024 (ofertas promedio de 0,5 GWh-día).</p></div>
+      <div><span class="tag">#Demanda</span><span class="tag">#CREG</span><span class="tag">#Precios</span><span class="tag">#XM</span></div>
+    </article>
+  </div>
+
+  <!-- §I · segunda fila -->
+  <div class="stories" style="grid-template-columns:1.3fr 1fr;margin-top:6px;">
+    <article class="story">
+      <div class="eyebrow">El Tiempo · 14 Jun 2026 · Infraestructura</div>
+      <h3 class="head">Una restricción regulatoria frena la regasificadora de TGI en La Guajira</h3>
+      <div class="byline">El Tiempo · TGI · GEB · 14 Jun 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>La Transportadora de Gas Internacional (TGI), filial del Grupo Energía Bogotá, enfrenta una barrera de la CREG que le impide comercializar directamente el gas que proyecta importar por su nueva planta en La Guajira en 2027. La medida deriva de la estricta separación entre transporte y comercialización del marco legal vigente, bloqueando la integración vertical para este proyecto.</p><p>Paraliza la estructuración del flujo logístico desde el Caribe hacia el interior del país y pone en riesgo el cierre financiero de un acuerdo superior a 500 millones de dólares firmado con Höegh Evi para una FSRU de 300 Mpcd, retrasando un nodo crítico de respaldo térmico frente al declive de la producción nacional.</p></div>
+      <div><span class="tag">#Gas</span><span class="tag">#TGI</span><span class="tag">#CREG</span><span class="tag">#GEB</span><span class="tag">#LaGuajira</span></div>
+    </article>
+    <article class="story">
+      <figure class="res-fig" style="margin-top:0;">
+        <h6>Claves regulatorias · CREG, junio 2026</h6>
+        <div class="num">3 <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--muted);">esquemas SAEB</span></div>
+        <div class="sub">Activos de red, SAEB independientes y recursos híbridos habilitados por la Resolución 101 113</div>
+        <hr>
+        <div class="row">
+          <div><strong>Res. 101 113</strong>Primer marco integral de almacenamiento con baterías; deroga la 098 de 2019.</div>
+          <div><strong>Res. 101 111</strong>Programa permanente de respuesta de la demanda indexado a bolsa.</div>
+          <div><strong>Barrera TGI</strong>Prohibición de integración vertical bloquea la comercialización del GNL importado.</div>
+          <div><strong>Tecnología</strong>Exige GFM, GFL, inercia sintética y soporte de cortocircuito.</div>
+        </div>
+      </figure>
+      <div class="pull" style="font-size:15px;">"Modernización por baterías y demanda flexible, frente a barreras estructurales que aún frenan la infraestructura de importación."<span class="src">Mesa de Inteligencia</span></div>
+    </article>
+  </div>
+
+  <!-- §II MERCADO DE GAS -->
+  <div class="section-head">
+    <span class="no">§ II</span><span class="t">Mercado de Gas · GNL, Regasificación y Suministro</span><span class="line"></span>
+    <span class="meta">ANH · La República · Ecopetrol · Frontera · Promigas</span>
+  </div>
+  <div class="stories" style="grid-template-columns:1.3fr 1fr;">
+    <article class="story">
+      <div class="eyebrow">La República / ANLA · 22 Jun 2026 · Infraestructura</div>
+      <h2 class="head" style="font-size:30px;">De 14 proyectos de regasificación, solo SPEC opera mientras la ANLA agiliza nuevos terminales</h2>
+      <div class="deck">El balance de infraestructura de GNL revela que, pese a 14 iniciativas proyectadas, solo SPEC LNG está activa. La generación térmica demanda hasta el 55% de la electricidad, exponiendo un embudo físico en el abastecimiento.</div>
+      <div class="byline">La República · ANLA · 22 Jun 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>La ANLA acelera licencias para proyectos clave como Chuchupa-Ballena (250 Mpcd), Puerto Bahía (300 Mpcd) y Puerto Drummond (400 Mpcd) para diversificar los puntos de importación. Pero el embudo es físico: la generación térmica demanda hasta el <strong>55%</strong> de la electricidad generada, forzando al sistema a operar con limitaciones de suministro en nodos críticos.</p><p>Ante el recrudecimiento de El Niño a finales de 2026 y la falta de producción local, el parque térmico enfrentará restricciones severas si no se activan los terminales proyectados, presionando además el capex de las transportadoras que deben financiar la interconexión con las redes de Promigas y TGI.</p></div>
+      <div style="margin:10px 0 12px;border:1px solid var(--ink);background:var(--paper-2);overflow:hidden;">
+        <div style="padding:10px 14px;border-bottom:1px solid var(--ink);font-family:'Source Serif 4',serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;">Tabla 1 · Balance de oferta de gas · Abril 2026</div>
+        <table style="width:100%;border-collapse:collapse;font-family:'Source Serif 4',serif;font-size:12.5px;">
+          <tbody>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid rgba(0,0,0,.15);">Producción local fiscalizada (abr 2026)</td><td style="text-align:right;padding:8px 12px;border-bottom:1px solid rgba(0,0,0,.15);font-family:'JetBrains Mono',monospace;font-weight:600;">1.006 Mpcd</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid rgba(0,0,0,.15);">Producción comercializada (abr 2026)</td><td style="text-align:right;padding:8px 12px;border-bottom:1px solid rgba(0,0,0,.15);font-family:'JetBrains Mono',monospace;">694 Mpcd</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid rgba(0,0,0,.15);">Importación de GNL vía SPEC</td><td style="text-align:right;padding:8px 12px;border-bottom:1px solid rgba(0,0,0,.15);font-family:'JetBrains Mono',monospace;">215,7 Mpcd</td></tr>
+            <tr><td style="padding:8px 12px;border-bottom:1px solid rgba(0,0,0,.15);">Disponibilidad total comercializada</td><td style="text-align:right;padding:8px 12px;border-bottom:1px solid rgba(0,0,0,.15);font-family:'JetBrains Mono',monospace;">909,7 Mpcd</td></tr>
+            <tr><td style="padding:8px 12px;"><strong>Dependencia del gas importado</strong></td><td style="text-align:right;padding:8px 12px;font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">23,7%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div><span class="tag">#Gas</span><span class="tag">#GNL</span><span class="tag">#Regasificación</span><span class="tag">#ANLA</span><span class="tag">#SPEC</span></div>
+    </article>
+
+    <article class="story">
+      <div class="eyebrow">Ecopetrol · Frontera Energy · 25 May 2026</div>
+      <h3 class="head">Puerto Bahía entra en fase de ejecución: hasta 300 GBTUD de GNL en diciembre</h3>
+      <div class="byline">Ecopetrol · Frontera · 25 May 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>La ANI autorizó la modificación de la concesión portuaria de Puerto Bahía y la ANLA aprobó el cambio menor ambiental, permitiendo el inicio inmediato de obras civiles para la recepción de GNL en Cartagena. Contempla el arriendo de una FSRU y gasoductos de acople de 2,2 km y 200 m hacia la red de Promigas.</p><p>Requiere una inversión de 80 millones de dólares, financiada por Frontera Energy, con la asignación comercial de 60 GBTUD ya concluida a 18 agentes. Incorpora una oferta inicial de hasta <strong>300 GBTUD</strong> al balance del país en diciembre de 2026, como seguro de abastecimiento de cara al pico de sequía de 2027.</p></div>
+      <div><span class="tag">#Gas</span><span class="tag">#GNL</span><span class="tag">#Ecopetrol</span><span class="tag">#Frontera</span><span class="tag">#Cartagena</span></div>
+    </article>
+  </div>
+
+  <!-- §II GAS · TABLA REGASIFICACIÓN -->
+  <div class="stories" style="grid-template-columns:1fr;margin-top:6px;">
+    <article class="story">
+      <div style="margin:0 0 12px;border:1px solid var(--ink);background:var(--paper-2);overflow:hidden;">
+        <div style="padding:10px 14px;border-bottom:1px solid var(--ink);font-family:'Source Serif 4',serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;">Tabla 2 · Estado de proyectos clave de regasificación en Colombia · Datos al 22 Jun 2026</div>
+        <table style="width:100%;border-collapse:collapse;font-family:'Source Serif 4',serif;font-size:12px;">
+          <thead><tr style="background:var(--paper);">
+            <th style="text-align:left;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Proyecto / Terminal</th>
+            <th style="text-align:left;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Ubicación</th>
+            <th style="text-align:right;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Capacidad</th>
+            <th style="text-align:left;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Estado y cronograma</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);"><strong>SPEC LNG</strong> (El Cayao)</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Cartagena (Bolívar)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">475 Mpcd</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:#2d5a2d;font-weight:600;">En operación · expansión +50 Mpcd 2S-2027</td></tr>
+            <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Puerto Bahía (Ecopetrol/Frontera)</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Cartagena (Bolívar)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">130–300 Mpcd</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">En ejecución · operación dic 2026</td></tr>
+            <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Regasificadora del Pacífico</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Buenaventura (Valle)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">60 Mpcd</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">En trámites · operación sep–oct 2026</td></tr>
+            <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Regasificadora de TGI</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Manaure (La Guajira)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">250 Mpcd</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">FSRU acordada · operación 1T-2027</td></tr>
+            <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Ecopetrol Coveñas</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Coveñas (Córdoba)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">200 Mpcd</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">En planeación y licenciamiento · 2027</td></tr>
+            <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Chuchupa-Ballena-Riohacha</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">La Guajira (offshore)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">250 Mpcd</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Aprobado por ANLA · ampliación de importación</td></tr>
+            <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Puerto Drummond</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Ciénaga (Magdalena)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">400 Mpcd</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Aprobado por ANLA · importación y regasificación</td></tr>
+            <tr><td style="padding:6px 12px;">Terminal Marítimo de Coveñas</td><td style="padding:6px 12px;">Coveñas (Sucre)</td><td style="text-align:right;padding:6px 12px;font-family:'JetBrains Mono',monospace;">100 Mpcd</td><td style="padding:6px 12px;">Autorizado ambientalmente por ANLA</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div><span class="tag">#Regasificación</span><span class="tag">#GNL</span><span class="tag">#ANLA</span><span class="tag">#SPEC</span><span class="tag">#PuertoBahía</span><span class="tag">#TGI</span></div>
+    </article>
+  </div>
+
+  <!-- §III MERCADO ELÉCTRICO -->
+  <div class="section-head">
+    <span class="no">§ III</span><span class="t">Mercado Eléctrico · Bolsa, Demanda y Embalses</span><span class="line"></span>
+    <span class="meta">XM · La República · CREG · EPM</span>
+  </div>
+  <div class="stories">
+    <article class="story">
+      <div class="eyebrow">La República / XM · 10 Jun 2026</div>
+      <h3 class="head">Embalses al 72,43%: el SIN sigue 7,57 puntos por debajo de la meta del 80%</h3>
+      <div class="byline">La República · XM · 10 Jun 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>Tras iniciar junio en 69,43%, el nivel agregado de embalses se recuperó técnicamente al <strong>72,43%</strong> al cierre de la semana, aún 7,57 puntos por debajo de la meta de seguridad del 80% que XM estima indispensable para afrontar El Niño en el segundo semestre.</p><p>Persisten asimetrías regionales —Ituango opera al 104,4%— mientras el agregado obliga a forzar inyección térmica de respaldo con gas y carbón. EPM fue autorizada a elevar preventivamente la cota de Hidroituango a los 420 metros para acumular agua.</p></div>
+      <div class="compare">
+        <h6>Volumen útil de embalses vs. meta de seguridad</h6>
+        <div class="row"><span class="lbl">Embalses (XM)</span><div class="track"><div class="fill alt" style="width:72.43%;"></div></div><span class="val">72,43%</span></div>
+        <div class="row"><span class="lbl">Meta El Niño</span><div class="track"><div class="fill" style="width:80%;"></div></div><span class="val">80%</span></div>
+        <div class="cap">Brecha de 7,57 puntos frente al umbral de seguridad, con El Niño consolidándose hacia fin de año.</div>
+      </div>
+      <div><span class="tag">#Embalses</span><span class="tag">#XM</span><span class="tag">#ElNiño</span><span class="tag">#EPM</span></div>
+    </article>
+
+    <article class="story">
+      <div class="eyebrow">XM · 19 Jun 2026</div>
+      <h3 class="head">El precio de bolsa sube 84% en mayo y junio abre con picos de 833,3 COP/kWh</h3>
+      <div class="byline">XM · 19 Jun 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>El precio promedio de bolsa de mayo aumentó <strong>84,28%</strong> intermensual, a 516,36 COP/kWh frente a 336,91 de abril. La estrechez activó 2.098,97 GWh (28,72%) de las Obligaciones de Energía Firme del Cargo por Confiabilidad al superar los precios de escasez.</p><p>Junio abrió con un valor diario máximo de <strong>833,3 COP/kWh</strong> —máximo histórico del año—. Las compras netas en bolsa se dispararon 372,28% interanual (80.406 millones de pesos) y se trasladó un CERE de 76,06 COP/kWh a las tarifas reguladas.</p></div>
+      <div><span class="tag">#Bolsa</span><span class="tag">#XM</span><span class="tag">#OEF</span><span class="tag">#CargoPorConfiabilidad</span></div>
+    </article>
+
+    <article class="story">
+      <div class="eyebrow">XM / Afinia · Mayo 2026</div>
+      <h3 class="head">Demanda eléctrica récord de 258,69 GWh/día por las olas de calor</h3>
+      <div class="byline">XM · Afinia · 19 Jun 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+      <div class="body"><p>La demanda total de energía alcanzó <strong>6.892,29 GWh</strong> en mayo (258,69 GWh/día), un crecimiento del 8,31% interanual. El consumo se disparó 13,3% en la Costa Caribe por temperaturas superiores a los 38 °C.</p><p>El despacho térmico preventivo llegó a representar hasta el 17,76% de la generación diaria al cierre de mayo para contrarrestar el descenso de aportes hídricos, presionando aún más los costos del mercado mayorista.</p></div>
+      <div><span class="tag">#Demanda</span><span class="tag">#XM</span><span class="tag">#Caribe</span></div>
+    </article>
+  </div>
+
+  <!-- §IV TRANSICIÓN -->
+  <div class="section-head">
+    <span class="no">§ IV</span><span class="t">Transición Energética y Renovables</span><span class="line"></span>
+    <span class="meta">BEI · Enel · ANLA · Presidencia</span>
+  </div>
+  <div class="stories" style="grid-template-columns:1.4fr 1fr;">
+    <article class="story">
+      <div class="eyebrow">Banco Europeo de Inversiones · 15 Abr 2026</div>
+      <h3 class="head">BEI y Enel firman un crédito de USD 200 millones para un clúster solar en el Caribe</h3>
+      <div class="byline">BEI Global · Enel Colombia · 15 Abr 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>EIB Global y Enel Colombia formalizaron un financiamiento de <strong>200 millones de dólares</strong> para los proyectos solares Guayepo III y Atlántico, con cobertura del 50% de la exposición por la agencia italiana SACE. Permitirá avanzar <strong>360 MWac</strong> combinados e inyectar más de 1.077 GWh de energía limpia al SIN por año.</p><p>El crédito reduce el costo de financiamiento (WACC) del plan de inversiones de Enel hacia un clúster solar cercano a 1 GW y generará más de 1.000 empleos directos en Sabanalarga, Ponedera y Usiacurí, promoviendo la aceptación social y la transferencia tecnológica europea hacia el Caribe colombiano.</p></div>
+      <div><span class="tag">#Renovables</span><span class="tag">#Solar</span><span class="tag">#BEI</span><span class="tag">#Enel</span><span class="tag">#Caribe</span></div>
+    </article>
+    <article class="story">
+      <figure class="res-fig" style="margin-top:0;">
+        <h6>Transición · Ritmo de incorporación 2026</h6>
+        <div class="num">306 <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--muted);">MW de 4.475</span></div>
+        <div class="sub">Capacidad renovable variable ingresada al SIN en 2026 frente a la proyectada para la vigencia</div>
+        <hr>
+        <div class="row">
+          <div><strong>Rezago</strong>Demoras en redes de transmisión y consultas comunitarias en La Guajira.</div>
+          <div><strong>Aporte renovable</strong>La inyección no convencional cubre menos del 25% de lo requerido en demanda diurna.</div>
+          <div><strong>Clúster Enel</strong>360 MWac y más de 1.077 GWh/año con respaldo del BEI.</div>
+          <div><strong>LASolar</strong>Licenciamiento acelerado bajo el Decreto 1033 de 2025.</div>
+        </div>
+      </figure>
+      <div class="pull" style="font-size:15px;">"La financiación europea y el licenciamiento ágil destraban portafolios solares a escala de gigavatios, pero la entrada real sigue rezagada."<span class="src">Mesa de Inteligencia</span></div>
+    </article>
+  </div>
+
+  <!-- §IV · Solar LASolar -->
+  <div class="stories" style="grid-template-columns:1fr;margin-top:6px;">
+    <article class="story">
+      <div class="eyebrow">ANLA / Presidencia · 21 Jun 2026 · Solar</div>
+      <h3 class="head">Primer parque solar bajo el Decreto LASolar: 19,9 MW aprobados en Neiva en tiempo récord</h3>
+      <div class="byline">ANLA · Presidencia · 21 Jun 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+      <div class="body" style="column-count:2;column-gap:22px;column-rule:1px solid rgba(0,0,0,.15);"><p>La ANLA otorgó licencia ambiental para el parque fotovoltaico de 19,9 MW en Neiva, resolviendo el trámite en 30 días hábiles bajo el Decreto 1033 de 2025. Es el primer caso de éxito de licenciamiento bajo el marco abreviado de LASolar, que recorta los tiempos burocráticos de aprobación y demuestra la eficacia de la norma.</p><p>Permite instalar 39.032 módulos fotovoltaicos, 92 postes de soporte y una línea de transmisión de 5,4 km para su conexión con ElectroHuila. Optimiza la rentabilidad al reducir costos pre-operativos y aporta resiliencia a la región suroccidental, diversificando la matriz y reduciendo la dependencia de las termoeléctricas locales.</p></div>
+      <div><span class="tag">#Renovables</span><span class="tag">#Solar</span><span class="tag">#ANLA</span><span class="tag">#LASolar</span><span class="tag">#Huila</span></div>
+    </article>
+  </div>
+
+  <!-- §V CONTEXTO INTERNACIONAL + ALERTAS -->
+  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:28px;">
+    <div>
+      <div class="section-head">
+        <span class="no">§ V</span><span class="t">Contexto Internacional</span><span class="line"></span>
+        <span class="meta">Fitch · Promigas · ICE · EIA</span>
+      </div>
+      <article>
+        <div class="eyebrow">Fitch Ratings · 8 May 2026 · Crudo y gas</div>
+        <h3 class="head">Las tensiones en Ormuz mantienen la presión alcista sobre el gas TTF y el Brent</h3>
+        <div class="byline">Fitch Ratings · 8 May 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+        <div class="body columns-2">
+          <p>La persistencia de las tensiones en el Estrecho de Ormuz por el conflicto en Irán y los daños a la infraestructura de gas licuado en Catar elevaron las asunciones de precios globales. El marcador europeo TTF se mantuvo en <strong>44,143 EUR/MWh</strong> para los futuros de junio y el asiático JKM se disparó a 18,91 USD/MMBtu.</p>
+          <p>El Henry Hub norteamericano siguió deprimido en <strong>3,10 USD/MMBtu</strong> por cuellos de botella de licuefacción. En crudo, el Brent tocó picos de 94,25 USD/bbl antes de retroceder a la banda de los <strong>82,00 USD/bbl</strong> ante la expectativa de una tregua interina entre EE. UU. e Irán; el WTI cotizó en 91,30 USD/bbl con alta volatilidad.</p>
+        </div>
+        <figure class="res-fig">
+          <h6>Figura 3 · Referencias internacionales · Junio 2026</h6>
+          <div class="num" style="font-size:36px;">$82,0 <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--muted);">Brent USD/bbl</span></div>
+          <div class="sub">Retroceso desde picos de 94,25 USD/bbl por expectativas de tregua EE. UU.–Irán</div>
+          <hr>
+          <div class="row">
+            <div><strong>WTI</strong>91,30 USD/bbl · alta volatilidad por el cierre de Ormuz.</div>
+            <div><strong>Henry Hub (EE. UU.)</strong>3,10 USD/MMBtu · estable por restricciones de licuefacción.</div>
+            <div><strong>Dutch TTF (Europa)</strong>44,143 EUR/MWh · presión por buques de Catar.</div>
+            <div><strong>JKM (Asia)</strong>18,91 USD/MMBtu · marcado encarecimiento del GNL.</div>
+          </div>
+        </figure>
+        <div><span class="tag">#Brent</span><span class="tag">#WTI</span><span class="tag">#HenryHub</span><span class="tag">#TTF</span><span class="tag">#Ormuz</span></div>
+      </article>
+      <hr class="divider">
+      <article>
+        <div class="eyebrow">Promigas · 18 Jun 2026 · Financiamiento</div>
+        <h4 class="head">Promigas coloca USD 1.000 millones en bonos híbridos internacionales</h4>
+        <div class="byline">Promigas · 18 Jun 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+        <div class="body"><p>Promigas, junto a sus filiales peruanas, concluyó la emisión de bonos híbridos subordinados con calificación Ba1 de Moody's, que elevó la perspectiva corporativa de negativa a estable y reafirmó el Baa3 de sus bonos senior. La operación dota de caja para modernizar su red de gasoductos en el Caribe y la terminal SPEC, consolidándola como el actor dominante de infraestructura de gas en el norte de Sudamérica.</p></div>
+        <div><span class="tag">#Promigas</span><span class="tag">#Bonos</span><span class="tag">#Moody's</span><span class="tag">#Financiamiento</span></div>
+      </article>
+    </div>
+    <div>
+      <div class="section-head">
+        <span class="no">§ AL</span><span class="t">Alertas Críticas</span><span class="line"></span>
+      </div>
+      <article>
+        <div class="alert" style="margin-top:0;">
+          <span class="badge">Alerta 1 · Alto</span>
+          <h5>Riesgo de desabastecimiento de gas y estrechez de energía firme en el SIN</h5>
+          <div class="body" style="font-size:12.5px;"><p style="margin:4px 0 0;">La producción nacional en mínimos (694 Mpcd comercializados) y el rezago de embalses (72,43% vs. 80%) exponen al SIN a un déficit del 2,3% en energía firme y del 24% en suministro de gas. Sin nuevos proyectos de generación, la matriz dependerá de un parque térmico expuesto a la escasez de gas local y al GNL caro, elevando el riesgo de racionamientos técnicos.</p></div>
+        </div>
+        <div class="alert">
+          <span class="badge">Alerta 2 · Alto</span>
+          <h5>Insolvencia financiera y cortes técnicos en distribuidoras expuestas a bolsa</h5>
+          <div class="body" style="font-size:12.5px;"><p style="margin:4px 0 0;">Afinia registró pérdidas técnicas del 29% y 2.650 MW de demanda no atendida hasta mayo por sobrecargas de red. Con un consumo que crece 13,3% interanual en el Caribe, cualquier alza adicional del precio spot (ya &gt;833,3 COP/kWh) erosiona los contratos de cobertura y compromete la viabilidad de operadores regionales.</p></div>
+        </div>
+        <div class="alert" style="border-color:var(--accent-2);background:rgba(138,106,26,.06);">
+          <span class="badge" style="background:var(--accent-2);">Alerta 3 · Medio</span>
+          <h5 style="color:var(--accent-2);">Barrera regulatoria a la regasificadora de TGI en La Guajira</h5>
+          <div class="body" style="font-size:12.5px;"><p style="margin:4px 0 0;">La CREG impide a TGI comercializar directamente el gas que importaría por su planta de La Guajira, bloqueando la integración vertical y poniendo en riesgo un acuerdo de 500 millones de dólares con Höegh Evi por una FSRU de 300 Mpcd, un nodo crítico de respaldo térmico hacia 2027.</p></div>
+        </div>
+        <div class="alert" style="border-color:var(--accent-2);background:rgba(138,106,26,.06);">
+          <span class="badge" style="background:var(--accent-2);">Alerta 4 · Medio</span>
+          <h5 style="color:var(--accent-2);">Rezago de la incorporación renovable</h5>
+          <div class="body" style="font-size:12.5px;"><p style="margin:4px 0 0;">Solo 306 MW de los 4.475 MW renovables proyectados para 2026 han ingresado al SIN, por demoras en transmisión y consultas comunitarias. La inyección no convencional cubre menos del 25% de lo requerido en demanda diurna, agravando el déficit del 2,3% en energía firme.</p></div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="section-head" style="margin-top:30px;">
+    <span class="no">§ KPI</span><span class="t">Indicadores del Periodo</span><span class="line"></span>
+    <span class="meta">15–22 Jun 2026 · Edición Núm. 24</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="l">Embalses SIN</div><div class="v">72,43%</div><div class="d down">Útil · cierre sem · meta 80%</div></div>
+    <div class="kpi"><div class="l">Bolsa (mayo)</div><div class="v">516,36</div><div class="d down">COP/kWh · +84,28% m/m</div></div>
+    <div class="kpi"><div class="l">Bolsa diario (jun)</div><div class="v">833,3</div><div class="d down">COP/kWh · máx. histórico año</div></div>
+    <div class="kpi"><div class="l">Producción gas</div><div class="v">1.006<span style="font-size:14px"> Mpcd</span></div><div class="d down">abr 2026 · −21,8% a/a</div></div>
+    <div class="kpi"><div class="l">GNL SPEC</div><div class="v">$18,39</div><div class="d down">USD/MMBtu · +32% jun–ago</div></div>
+    <div class="kpi"><div class="l">Brent</div><div class="v">$82,0</div><div class="d down">USD/bbl · tregua EE.UU.–Irán</div></div>
+  </div>
+
+  <!-- TABLA DE VARIABLES -->
+  <div style="margin:14px 0 6px;border:1px solid var(--ink);background:var(--paper-2);overflow:hidden;">
+    <div style="padding:10px 14px;border-bottom:1px solid var(--ink);font-family:'Source Serif 4',serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;">Tabla 4 · KPIs y señales clave del mercado · Periodo 15–22 Jun 2026</div>
+    <table style="width:100%;border-collapse:collapse;font-family:'Source Serif 4',serif;font-size:12.5px;">
+      <thead><tr style="background:var(--paper);">
+        <th style="text-align:left;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Variable de mercado</th>
+        <th style="text-align:right;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Valor</th>
+        <th style="text-align:left;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Meta / Comportamiento · Corte</th>
+        <th style="text-align:left;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Fuente</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Embalses útiles agregados del SIN</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">72,43%</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">+7,00% m/m / −7,57% vs. meta 80%</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM / BMC</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Precio promedio de bolsa (mayo)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">516,36</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">COP/kWh · +84,28% intermensual</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Precio de bolsa diario (apertura junio)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">833,30</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">COP/kWh · máx. histórico del año</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Producción de gas fiscalizada (abr)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">1.006</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Mpcd · mín. histórico / −21,8% a/a</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">ANH / Campetrol</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Producción de gas comercializada (abr)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">694</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Mpcd · −0,9% m/m / −14,2% a/a</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">Gestor / Campetrol</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Importación de gas vía SPEC (abr)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">215,7</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Mpcd · 23,7% del gas nacional</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">SPEC / ANH</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Precio del GNL importado (SPEC)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">18,39</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">USD/MMBtu · +32% jun–ago</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">SPEC LNG</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Demanda eléctrica (mayo)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">258,69</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">GWh/día · +8,31% a/a · Caribe +13,3%</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM / Afinia</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Crudo Brent (spot)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">82,00</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">USD/bbl · picos previos 94,25</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">Pink Sheet (WB)</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Crudo WTI (spot)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">91,30</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">USD/bbl · volatilidad por Ormuz</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">Pink Sheet (WB)</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Henry Hub (EE. UU.)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">3,10</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">USD/MMBtu · estable</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">Fitch Ratings</td></tr>
+        <tr><td style="padding:6px 12px;">Dutch TTF (Europa · futuros)</td><td style="text-align:right;padding:6px 12px;font-family:'JetBrains Mono',monospace;">44,143</td><td style="padding:6px 12px;">EUR/MWh · presión por Catar</td><td style="padding:6px 12px;color:var(--muted);">Fitch Ratings</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Síntesis ejecutiva final + Agenda -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;">
+    <div class="sources">
+      <h6>Síntesis Ejecutiva Final</h6>
+      <ul>
+        <li><strong>Precios y demanda críticos:</strong> la bolsa rozó picos históricos de 833,3 COP/kWh, con demanda récord de 258,69 GWh/día y embalses al 72,43%, lejos de la senda segura del 80%.</li>
+        <li><strong>Contracción de la oferta de gas local:</strong> la inyección comercializada cayó a un mínimo histórico de 694 Mpcd, supliendo casi un cuarto del consumo con GNL importado (215,7 Mpcd vía SPEC).</li>
+        <li><strong>Riesgo financiero en la distribución:</strong> el alza del 32% del GNL para jun–ago y los altos precios spot comprometen la caja de comercializadoras como Afinia (pérdidas del 29%).</li>
+        <li><strong>Hitos de infraestructura:</strong> Puerto Bahía inició ejecución física y viabilizará hasta 300 GBTUD desde diciembre de 2026, mitigando la estrechez de mediano plazo.</li>
+        <li><strong>Avances normativos y de transición:</strong> la CREG expidió el primer marco de baterías (Res. 101 113) y la ANLA aprobó 19,9 MW solares vía LASolar, aunque solo 306 MW renovables ingresaron en 2026.</li>
+      </ul>
+    </div>
+    <div class="sources">
+      <h6>Agenda Regulatoria y Operativa Próxima</h6>
+      <ul>
+        <li><strong>22 Jun 2026.</strong> Balance de los 14 proyectos de regasificación: solo SPEC en operación (La República).</li>
+        <li><strong>Jun–Ago 2026.</strong> Trimestre con GNL importado al alza (+32%, 18,39 USD/MMBtu vía SPEC).</li>
+        <li><strong>Sep–Oct 2026.</strong> Entrada proyectada de la Terminal Regasificadora del Pacífico (Buenaventura, 60 Mpcd).</li>
+        <li><strong>Dic 2026.</strong> Puerto Bahía (Ecopetrol/Frontera) inyecta hasta 300 GBTUD al balance nacional.</li>
+        <li><strong>1T 2027.</strong> Entrada proyectada de la regasificadora de TGI en Manaure (250 Mpcd).</li>
+        <li><strong>2026.</strong> Convocatorias de la CREG para adjudicar SAEB como activos de red (Res. 101 113).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EDITORIAL -->
+  <div class="section-head" style="margin-top:30px;">
+    <span class="no">§ ED</span><span class="t">Editorial · Tendencia del Mercado</span><span class="line"></span>
+    <span class="meta">Mesa de Inteligencia · Geam Energy · 22 Jun 2026</span>
+  </div>
+  <div style="border:2px solid var(--ink);padding:20px 22px;background:var(--paper-2);margin-bottom:22px;">
+    <div class="body columns-2">
+      <p>La semana del 15 al 22 de junio consolida un riesgo de descalce estructural entre oferta firme y demanda. El gas local tocó un mínimo histórico —1.006 Mpcd fiscalizados, 694 comercializados— y el GNL importado pasó a cubrir cerca de un cuarto del consumo, con un alza del 32% para el trimestre que traslada presión directa a las tarifas. SPEC queda como amortiguador casi único mientras 13 de 14 proyectos de regasificación siguen sin operar.</p>
+      <p>En lo eléctrico, la combinación de demanda récord (258,69 GWh/día), embalses rezagados (72,43% frente al 80%) y un precio de bolsa que abrió junio en 833,3 COP/kWh activó las Obligaciones de Energía Firme y disparó las compras en bolsa un 372%. El sistema afronta El Niño con un déficit estimado del 2,3% en energía firme y del 24% en gas.</p>
+      <p>El frente financiero más sensible es la cadena de distribución: Afinia acumula pérdidas del 29% y 2.650 MW de demanda no atendida, y el alza del GNL erosiona los contratos de cobertura de las comercializadoras expuestas al spot, con riesgo de intervenciones o cortes técnicos localizados en el Caribe.</p>
+      <p>Los contrapesos son reales pero de mediano plazo: el primer marco de baterías (Res. CREG 101 113), el programa permanente de respuesta de la demanda, el clúster solar de Enel con respaldo del BEI y la entrada de Puerto Bahía en diciembre. La tendencia se consolida en <strong>Presión Crítica / Riesgo de Descalce Oferta–Demanda</strong>, y el segundo semestre dependerá de asegurar el gas de respaldo, blindar la solvencia de las distribuidoras y acelerar la diversificación de la matriz.</p>
+    </div>
+    <div class="byline" style="margin-top:14px;">Mesa de Inteligencia GEAM · Vol. IV · Núm. 24 · 22 Jun 2026 · Circulación restringida B2B</div>
+  </div>
+
+  <!-- FUENTES -->
+  <div class="section-head">
+    <span class="no">§ FT</span><span class="t">Fuentes Consultadas</span><span class="line"></span>
+  </div>
+  <div style="columns:3;column-gap:22px;font-family:'Source Serif 4',serif;font-size:12px;line-height:1.5;">
+    <p><strong>Regulación y política —</strong> CREG (Res. 101 113 y 101 111 de 2026; restricción comercial a TGI), ANLA y Presidencia (parque solar LASolar; Decreto 1033 de 2025).</p>
+    <p><strong>Mercado y operadores —</strong> XM (embalses, bolsa, OEF, demanda), ANH y Campetrol (producción de gas), Bolsa Mercantil de Colombia (BMC), terminal SPEC / Promigas, TGI (GEB), Ecopetrol y Frontera Energy (Puerto Bahía), EPM (Hidroituango).</p>
+    <p><strong>Gremios y prensa —</strong> La República, El Tiempo, El Colombiano, Review Energy, Valora Analitik.</p>
+    <p><strong>Clima —</strong> NOAA (consolidación de El Niño hacia finales de 2026).</p>
+    <p><strong>Internacional —</strong> Fitch Ratings (referencias Brent, WTI, Henry Hub y Dutch TTF); Pink Sheet del Banco Mundial; Promigas y Moody's (bonos híbridos); Banco Europeo de Inversiones y Enel.</p>
+    <p style="break-inside:avoid;"><em>Nota metodológica:</em> el análisis cubre publicaciones entre el 15 y el 22 de junio de 2026, con ampliación a abril–mayo de 2026 para contextualizar tendencias estructurales. Los precios internacionales corresponden a los cierres de junio; los indicadores hídricos y de bolsa, a los cortes reportados por XM y la CREG.</p>
+  </div>
+
+  <div class="footer">
+    <span>El Radar Energético · Vol. IV · Núm. 24</span>
+    <span>Próxima edición · Lunes 29 de Junio de 2026</span>
+    <span>— fin de la edición —</span>
+  </div>
+
+</div>
+</body>
+</html>
