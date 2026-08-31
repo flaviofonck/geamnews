@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>El Radar Energético — Edición Semanal · 27 Jul 2026</title>
+<title>El Radar Energético — Edición Semanal · 31 Ago 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;600&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script>
   window.MathJax = {
-    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: false },
     svg: { fontCache: 'global' },
     chtml: { scale: 0.95 }
   };
@@ -103,15 +103,15 @@
   .res-fig .row strong{font-family:"Playfair Display",serif;font-weight:800;font-size:14px;display:block;}
   .map-fig{margin:6px 0 10px;padding:0;border:1px solid var(--ink);background:var(--paper-2);}
   .map-fig svg{display:block;width:100%;height:auto;}
-  .compare{margin:10px 0;border:1px solid var(--ink);background:var(--paper-2);padding:14px 16px;}
-  .compare h6{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;margin:0 0 8px;}
-  .compare .row{display:grid;grid-template-columns:120px 1fr 60px;align-items:center;gap:10px;margin-bottom:8px;}
-  .compare .lbl{font-family:"Playfair Display",serif;font-weight:700;font-size:13px;}
+  .compare{margin:10px 0;border:1px solid var(--ink);background:var(--paper-2);padding:14px 16px;display:grid;grid-template-columns:max-content minmax(48px,1fr) 44px;gap:7px 8px;align-items:center;}
+  .compare h6{font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;margin:0;grid-column:1/-1;}
+  .compare .row{display:contents;}
+  .compare .lbl{font-family:"Playfair Display",serif;font-weight:700;font-size:11.5px;white-space:nowrap;}
   .compare .track{height:18px;border:1px solid var(--ink);position:relative;background:var(--paper);}
   .compare .fill{position:absolute;left:0;top:0;bottom:0;background:var(--ink);}
   .compare .fill.alt{background:repeating-linear-gradient(45deg,var(--accent) 0 3px,#a84442 3px 6px);}
   .compare .val{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;text-align:right;}
-  .compare .cap{font-family:"Source Serif 4",serif;font-style:italic;font-size:11px;color:var(--muted);margin-top:6px;border-top:1px solid var(--ink);padding-top:6px;}
+  .compare .cap{font-family:"Source Serif 4",serif;font-style:italic;font-size:11px;color:var(--muted);margin-top:0;border-top:1px solid var(--ink);padding-top:6px;grid-column:1/-1;}
   .dl-btn{position:fixed;right:20px;bottom:20px;z-index:50;display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-family:"Source Serif 4",serif;font-variant:small-caps;letter-spacing:.18em;font-size:12px;font-weight:600;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.25);transition:transform .15s ease,background .15s ease;}
   .dl-btn:hover{background:var(--accent);transform:translateY(-1px);}.dl-btn svg{width:14px;height:14px;}
   @page{size:A3 portrait;margin:10mm;}
@@ -149,7 +149,7 @@
     .footer{flex-direction:column;gap:6px;text-align:center;font-size:10.5px;letter-spacing:.12em;}
     .ticker{flex-wrap:wrap;white-space:normal;gap:10px 14px;font-size:10.5px;}
     .res-fig{padding:12px 14px;}.res-fig .num{font-size:34px;}.res-fig .row{grid-template-columns:1fr;gap:8px;}
-    .compare .row{grid-template-columns:90px 1fr 50px;gap:8px;}.compare .lbl{font-size:12px;}.compare .track{height:14px;}
+    .compare .row{grid-template-columns:none;}.compare .lbl{font-size:12.5px;}.compare .track{height:16px;}
     .alert{padding:12px 14px;}.alert h5{font-size:15.5px;}
     .tag{font-size:10px;letter-spacing:.1em;}.impact{font-size:10px;letter-spacing:.12em;padding:2px 6px;}
     div[style*="columns:3"]{column-count:1!important;}
@@ -160,8 +160,11 @@
     .paper{padding:18px 12px 32px;}.masthead h1{font-size:clamp(30px,12vw,46px);}
     .kpis{grid-template-columns:1fr;}.kpi{border-right:none;}.kpi:last-child{border-bottom:none;}
     .index{grid-template-columns:1fr;}
-    h2.head{font-size:24px;}.compare .row{grid-template-columns:80px 1fr 44px;}
+    h2.head{font-size:24px;}.compare .row{grid-template-columns:none;}
   }
+  .paper,.paper *{overflow-wrap:break-word;}
+  .kpi:nth-child(6n){border-right:none;}
+  .kpi:nth-child(-n+6){border-bottom:1px solid var(--ink);}
 </style>
 </head>
 <body>
@@ -178,7 +181,7 @@
 <div class="paper">
 
   <div class="top-bar">
-    <div class="left">Vol. IV · Núm. 28 · Edición Semanal</div>
+    <div class="left">Vol. IV · Núm. 29 · Edición Semanal</div>
     <div class="center">— Inteligencia Estratégica del Sector Energético —</div>
     <div class="right">Circulación ejecutiva · Tirada digital</div>
   </div>
@@ -191,80 +194,80 @@
 
   <div class="dateline">
     <div class="l">Barranquilla — Colombia</div>
-    <div class="c">Lunes, 27 de Julio de 2026 · Periodo monitoreado: 21 de Julio – 27 de Julio de 2026</div>
+    <div class="c">Lunes, 31 de Agosto de 2026 · Periodo monitoreado: 24 de Agosto – 31 de Agosto de 2026</div>
     <div class="r"><span class="geam-mark"><img class="geam-brand-logo" src="assets/logo-geam.png" alt="Geam Energy"></span></div>
   </div>
 
   <nav class="index">
     <div class="it"><div class="n">§ I</div><div class="t">Regulación · MinMinas / CREG</div></div>
-    <div class="it"><div class="n">§ II</div><div class="t">Mercado de Gas · SPEC / Offshore</div></div>
-    <div class="it"><div class="n">§ III</div><div class="t">Mercado Eléctrico · Embalses / Cartera</div></div>
-    <div class="it"><div class="n">§ IV</div><div class="t">Transición · Renovables / Subastas</div></div>
-    <div class="it"><div class="n">§ V</div><div class="t">Contexto Internacional · Crudo / GNL</div></div>
+    <div class="it"><div class="n">§ II</div><div class="t">Gas e Hidrocarburos · Sandía-1 / GNL</div></div>
+    <div class="it"><div class="n">§ III</div><div class="t">Mercado Eléctrico · Embalses / Bolsa</div></div>
+    <div class="it"><div class="n">§ IV</div><div class="t">Transición · FNCER / Financiamiento</div></div>
+    <div class="it"><div class="n">§ V</div><div class="t">Contexto Internacional · Ormuz / Crudo</div></div>
     <div class="it"><div class="n">§ AL</div><div class="t">Alertas Críticas</div></div>
   </nav>
 
   <!-- FRONT PAGE -->
   <section class="front">
     <div class="col">
-      <div class="eyebrow">Síntesis ejecutiva · 21–27 Jul</div>
-      <h3 class="head">El estrés se desplaza de la hidrología a las restricciones físicas de red y la iliquidez financiera</h3>
-      <div class="byline">Mesa de Inteligencia · Geam Energy · 27 Jul 2026</div>
+      <div class="eyebrow">Síntesis ejecutiva · 24–31 Ago</div>
+      <h3 class="head">La asimetría hídrica regional dispara el precio de bolsa a su máximo en veinte meses</h3>
+      <div class="byline">Mesa de Inteligencia · Geam Energy · 31 Ago 2026</div>
       <div class="body">
-        <p>El SIN y el mercado de gas ingresan en un periodo de alto estrés operativo y regulatorio. El Niño, con 81% de probabilidad de alta intensidad, se cruza con cuellos de botella de transporte y el mantenimiento de la regasificadora SPEC en Cartagena (30 jul–3 ago), que dejará indisponible el 76,6% de la capacidad térmica de la Costa Caribe.</p>
-        <p>La Resolución 40333 de 2026 confirmó que 31 subestaciones operan con su capacidad de cortocircuito agotada y 20 más al límite, restringiendo la transmisión hacia grandes nodos de consumo. A esto se suma un déficit de 3.107 GWh/año en Energía Firme y una cartera vencida de $2,9 billones en el mercado mayorista, con Air-e concentrando $1,9 billones. La tendencia es de Riesgo Significativo y Volatilidad Alta.</p>
+        <p>El cierre de agosto de 2026 confirma una aceleración de las presiones estructurales de oferta hídrica y de producción interna de hidrocarburos, amortiguadas por intervenciones regulatorias de emergencia y por anuncios de gran calado en infraestructura mar adentro y renovables.</p>
+        <p>El nivel agregado de los embalses del SIN cerró en 79,99%, por debajo del umbral de seguridad de XM (80%) y de la referencia del Ministerio de Minas y Energía (82,5%). La asimetría regional es aguda: Porce III cayó a 36,27% y Porce II a 37,19%, impulsando picos de bolsa hasta $1.065,8/kWh ante la perspectiva de un fenómeno de El Niño de gran intensidad a finales de 2026. La tendencia del periodo es de Alta Presión Operativa con Riesgo de Precios.</p>
       </div>
-      <div class="pull">"El riesgo sistémico se ha desplazado de la variabilidad climática hacia restricciones físicas de red y debilidades financieras del mercado mayorista."<span class="src">Mesa de Inteligencia · Geam Energy</span></div>
+      <div class="pull">"El sistema atraviesa un estrechamiento simultáneo de sus márgenes de cobertura hídrica y de gas, exigiendo respaldo térmico intensivo."<span class="src">Mesa de Inteligencia · Geam Energy</span></div>
       <div class="eyebrow" style="margin-top:14px;">Tendencia del periodo</div>
-      <div class="meta">Embalses SIN 78,23% &nbsp; Bolsa 516,36 COP/kWh &nbsp; Brent <span style="color:var(--accent)">▲</span> 93,71 USD/b &nbsp; Deuda ASIC $2,9 billones</div>
+      <div class="meta">Embalses SIN 79,99% &nbsp; Bolsa máx. 1.065,8 COP/kWh &nbsp; Brent <span style="color:var(--accent)">▲</span> 91,30 USD/b &nbsp; Henry Hub 2,87 USD/MMBtu</div>
     </div>
 
     <div class="col">
-      <div class="eyebrow">Portada · Saturación de Red y Mantenimiento de SPEC</div>
-      <h2 class="head">Gobierno declara emergencia técnica en 51 subestaciones y ordena plan de choque a seis meses</h2>
-      <div class="deck">La Resolución 40333 de 2026 confirma que 31 subestaciones operan con su capacidad de cortocircuito totalmente agotada y 20 más al límite, justo cuando la desconexión de SPEC del 30 de julio al 3 de agosto dejará sin el 76,6% de su capacidad térmica a la Costa Caribe.</div>
-      <div class="byline">Fuente: Ministerio de Minas y Energía · 27 Jul 2026</div>
+      <div class="eyebrow">Portada · Estrés hídrico regional y respuesta regulatoria</div>
+      <h2 class="head">Embalses cierran en 79,99% y el precio de bolsa toca $1.065,8/kWh, su nivel más alto en veinte meses</h2>
+      <div class="deck">La concentración del agua en la región Oriente contrasta con el agotamiento de Antioquia (Porce III 36,27%, Porce II 37,19%) y del Caribe (52,84%). El Gobierno responde con la Resolución 40333 de resiliencia del SIN, la Circular 40008 sobre ofertas de precios bajos y dos resoluciones CREG de flexibilidad y última instancia.</div>
+      <div class="byline">Fuente: XM · El Colombiano / Diario del Huila · 24 Ago 2026</div>
       <figure class="res-fig">
-        <h6>Figura 1 · Saturación de subestaciones y mantenimiento de SPEC · Jul 2026</h6>
-        <div class="num" style="font-size:40px;letter-spacing:-.02em;">51 <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--muted);">subestaciones en emergencia técnica (31 agotadas, 20 al límite)</span></div>
-        <div class="sub">Indisponibilidad térmica Costa Caribe por SPEC: 76,6% · Resolución 40333 de 2026</div>
+        <h6>Figura 1 · Reservas hídricas del SIN y precio spot · Ago 2026</h6>
+        <div class="num" style="font-size:40px;letter-spacing:-.02em;">79,99% <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--muted);">volumen útil agregado de embalses</span></div>
+        <div class="sub">Umbral XM 80% · referencia MinMinas 82,5% · incumplimiento leve del umbral estival</div>
         <hr>
         <div class="row">
-          <div><strong>Déficit de Energía Firme</strong>3.107 GWh/año en OEF para el ciclo 2025–2026.</div>
-          <div><strong>Avance renovable 2026</strong>Solo 331 MW (7,4%) de 4.475 MW proyectados.</div>
-          <div><strong>Cartera morosa ASIC</strong>$2,9 billones, con Air-e concentrando $1,9 billones.</div>
-          <div><strong>Riesgo regional</strong>Racionamiento probable hacia inicios de 2027 si se prolonga el periodo seco.</div>
+          <div><strong>Pico de bolsa</strong>$1.065,8/kWh, máximo de los últimos 20 meses.</div>
+          <div><strong>Promedio PTB</strong>$579,79/kWh en el periodo monitoreado.</div>
+          <div><strong>Antioquia crítica</strong>Porce III 36,27% y Porce II 37,19% de capacidad útil.</div>
+          <div><strong>Balance de generación</strong>243,12 GWh-día · 79,74% renovable / 20,26% no renovable.</div>
         </div>
       </figure>
       <div class="body columns-2" style="margin-top:18px;">
-        <p>El Ministerio de Minas y Energía declaró en emergencia técnica a 51 subestaciones del SIN y ordenó, vía Resolución 40333 de 2026, un plan de choque a seis meses que habilita la ejecución de obras por terceros si los operadores incumplen cronogramas.</p>
-        <p>La saturación coincide con la salida de operación de SPEC entre el 30 de julio y el 3 de agosto, que recorta el 76,6% de la capacidad térmica de Tebsa, Termocandelaria, Termoflores y Termobarranquilla, forzando al Gobierno a ordenar ahorro energético preventivo.</p>
-        <p>El retraso en nueva oferta limpia agrava el cuadro: solo el 7,4% (331 MW) de los 4.475 MW renovables proyectados para 2026 está en operación comercial.</p>
-        <p>En el frente financiero, la cartera vencida del mercado mayorista supera $2,9 billones —$1,9 billones concentrados en Air-e—, comprometiendo la liquidez de los generadores para adquirir combustibles de coyuntura.</p>
+        <p>El volumen útil agregado de los embalses del Sistema Interconectado Nacional se situó en 79,99% al cierre de agosto, insuficiente frente al indicador objetivo del 80% trazado por XM y al 82,5% recomendado por las autoridades para afrontar la temporada seca.</p>
+        <p>El desglose regional revela un deterioro pronunciado en Antioquia y el Caribe: Porce III y Porce II descendieron a 36,27% y 37,19%, mientras el Caribe totalizó 52,84% y Caldas 68,9%.</p>
+        <p>La menor disponibilidad hídrica forzó mayor despacho térmico y tensionó el mercado spot, donde el Precio de Transacciones en Bolsa promedió $579,79/kWh con picos extraordinarios de $1.065,8/kWh.</p>
+        <p>En paralelo, la declinación continua de la producción onshore de gas obligó a flexibilizar Obligaciones de Energía Firme y a instruir esquemas de racionamiento térmico para proteger la demanda esencial.</p>
       </div>
     </div>
 
     <div class="col">
       <div class="alert">
         <span class="badge">Alerta · Nivel Alto</span>
-        <h5>Mantenimiento de SPEC e indisponibilidad térmica en la Costa Caribe</h5>
-        <div class="body" style="font-size:13px;"><p style="margin:4px 0 0;">La salida de operación de SPEC entre el 30 de julio y el 3 de agosto reduce el insumo de gas importado para Tebsa, Termocandelaria, Termoflores y Termobarranquilla, recortando el 76,6% de la capacidad térmica de la región y forzando ahorro energético preventivo.</p></div>
-        <div style="margin-top:8px;"><span class="tag">#Gas</span><span class="tag">#SPEC</span><span class="tag">#CostaCaribe</span></div>
+        <h5>Estrés hídrico regional y disparada de precios spot</h5>
+        <div class="body" style="font-size:13px;"><p style="margin:4px 0 0;">Con el agregado del SIN en 79,99%, la concentración del agua en Oriente contrasta con el agotamiento en Antioquia (Porce III 36,27%, Porce II 37,19%) y el Caribe (52,84%). Los picos de bolsa de hasta $1.065,8/kWh incrementan el riesgo de liquidez de comercializadores con alta exposición al mercado de oportunidad.</p></div>
+        <div style="margin-top:8px;"><span class="tag">#Embalses</span><span class="tag">#PrecioDeBolsa</span><span class="tag">#XM</span></div>
       </div>
       <div class="alert" style="border-color:var(--accent-2);background:rgba(138,106,26,.06);">
         <span class="badge" style="background:var(--accent-2);">Alerta · Nivel Media</span>
-        <h5 style="color:var(--accent-2);">Déficit de Energía Firme e iliquidez por cartera morosa</h5>
-        <div class="body" style="font-size:13px;"><p style="margin:4px 0 0;">XM identificó un faltante de 3.107 GWh/año en OEF para 2025–2026, agravado por $2,9 billones en cartera morosa que restringe la compra spot de combustibles térmicos, elevando el riesgo de racionamiento hacia inicios de 2027.</p></div>
-        <div style="margin-top:8px;"><span class="tag">#OEF</span><span class="tag">#CarteraMorosa</span><span class="tag">#XM</span></div>
+        <h5 style="color:var(--accent-2);">Reconfiguración de la comercialización en la Costa Caribe</h5>
+        <div class="body" style="font-size:13px;"><p style="margin:4px 0 0;">La cesación de operaciones de Afinia en municipios de Cesar, Bolívar y Magdalena desde el 1 de septiembre de 2026, cediendo el mercado a Energía Atenea, abre un periodo de transición que exige seguimiento a las garantías financieras ante XM.</p></div>
+        <div style="margin-top:8px;"><span class="tag">#Afinia</span><span class="tag">#EnergíaAtenea</span><span class="tag">#Caribe</span></div>
       </div>
       <hr class="divider">
       <div class="eyebrow">Señales clave del periodo</div>
       <div class="body" style="font-size:13px;">
-        <p>— <strong>Regulación:</strong> Resolución 40333 declara emergencia técnica en 51 subestaciones del SIN.</p>
-        <p>— <strong>Gas:</strong> priorización de demanda esencial ante mantenimiento de SPEC; avances offshore en Sirius y Ballena.</p>
-        <p>— <strong>Eléctrico:</strong> precio de bolsa en 516,36 COP/kWh activa el 28,72% de las OEF comprometidas.</p>
-        <p>— <strong>Hídrico:</strong> embalses agregados en 78,23%; 15 de 24 embalses incumplen la meta del 80%.</p>
-        <p>— <strong>Financiero:</strong> cartera morosa del ASIC supera $2,9 billones, con Air-e concentrando $1,9 billones.</p>
+        <p>— <strong>Regulación:</strong> Resolución 40333 fija los primeros lineamientos obligatorios de resiliencia del SIN.</p>
+        <p>— <strong>Gas:</strong> Ecopetrol y Petrobras confirman el pozo offshore Sandía-1 en el Caribe colombiano.</p>
+        <p>— <strong>Abastecimiento:</strong> convocatoria internacional para importar GNL por Buenaventura desde finales de 2026.</p>
+        <p>— <strong>Eléctrico:</strong> PTB promedio de $579,79/kWh con pico de $1.065,8/kWh, máximo en 20 meses.</p>
+        <p>— <strong>Renovables:</strong> el mercado proyecta cerrar 2026 con más de 4.200 MW FNCER instalados.</p>
       </div>
     </div>
   </section>
@@ -272,163 +275,177 @@
   <!-- §I REGULACIÓN Y POLÍTICA -->
   <div class="section-head">
     <span class="no">§ I</span><span class="t">Regulación y Política</span><span class="line"></span>
-    <span class="meta">MinMinas · UPME · CREG</span>
+    <span class="meta">MinMinas · CREG</span>
   </div>
   <div class="stories" style="grid-template-columns:1.3fr 1fr;">
     <article class="story">
-      <div class="eyebrow">Ministerio de Minas y Energía · 27 Jul 2026 · Resolución 40333</div>
-      <h2 class="head" style="font-size:30px;">Gobierno ordena plan de choque de seis meses para 51 subestaciones saturadas del SIN</h2>
-      <div class="deck">La Resolución 40333 de 2026 impone a la UPME, el CND, el CNO y los operadores un plan de corto plazo para intervenir subestaciones con capacidad de cortocircuito agotada, habilitando obras prioritarias por terceros si los operadores no cumplen los cronogramas.</div>
-      <div class="byline">Ministerio de Minas y Energía · 27 Jul 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
-      <div class="body"><p>La medida exige corregir configuraciones vulnerables, repotenciar nodos y reforzar sistemas de protección en 51 subestaciones críticas, elevando los estándares de resiliencia del SIN ante eventos climáticos extremos y ciberataques.</p><p>Reorienta las inversiones en los planes de expansión de transmisión, con impacto directo en los presupuestos corporativos de los operadores de red obligados a cumplir el cronograma de seis meses.</p></div>
-      <div class="pull" style="font-size:16px;">"Una falla en los nodos saturados puede desencadenar suspensiones masivas e interrupciones en cadena del servicio en varias regiones del país."<span class="src">Mesa de Inteligencia · Geam Energy</span></div>
-      <div><span class="tag">#Regulación</span><span class="tag">#MinMinas</span><span class="tag">#UPME</span><span class="tag">#Transmisión</span></div>
+      <div class="eyebrow">Ministerio de Minas y Energía · 16 Ago 2026 · Resolución 40333</div>
+      <h2 class="head" style="font-size:30px;">MinMinas expide los primeros lineamientos obligatorios de resiliencia operativa del SIN</h2>
+      <div class="deck">La Resolución 40333 de 2026 establece por primera vez reglas vinculantes de resiliencia para el Sistema Interconectado Nacional, con el fin de mitigar impactos por eventos climáticos extremos y fallas de infraestructura y evitar apagones en cadena.</div>
+      <div class="byline">Ministerio de Minas y Energía · 16 Ago 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>La norma obliga a los agentes a modificar sus manuales de operación y a someter a auditoría la resistencia de sus activos, mejorando la capacidad de respuesta de la red ante fallas encadenadas o eventos climáticos severos.</p><p>El cumplimiento implica costos de adecuación y mantenimiento preventivo para las empresas de transmisión y generación, elevando el estándar de confiabilidad del sistema eléctrico nacional.</p></div>
+      <div class="pull" style="font-size:16px;">"El marco normativo entró en una fase de intervención preventiva para contener traslados tarifarios desproporcionados y garantizar la resiliencia física de la red."<span class="src">Mesa de Inteligencia · Geam Energy</span></div>
+      <div><span class="tag">#Regulación</span><span class="tag">#MinMinas</span><span class="tag">#XM</span><span class="tag">#Confiabilidad</span></div>
     </article>
 
     <article class="story">
-      <div class="eyebrow">UPME · Resoluciones 400 y 443 de 2026 · Ley 1715</div>
-      <h3 class="head">UPME abre ventanilla continua para incentivos tributarios y agiliza conexiones al SIN</h3>
-      <div class="byline">UPME &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
-      <div class="body"><p>Las resoluciones 400 y 443 eliminan el esquema por ciclos para certificar incentivos de la Ley 1715, y modifican las reglas para resolver solicitudes de conexión definitiva y temporal, agilizando los conceptos técnicos de capacidad de transporte.</p><p>Acelera el flujo de caja de las inversiones en FNCER al acortar los plazos de acceso a exenciones de IVA y deducciones de renta, dinamizando la integración de autogeneradores al SIN.</p></div>
-      <div><span class="tag">#Regulación</span><span class="tag">#UPME</span><span class="tag">#Ley1715</span></div>
+      <div class="eyebrow">MinMinas · Circular 40008 de 2026 · Ofertas hídricas</div>
+      <h3 class="head">Circular 40008 insta a los generadores hídricos a ofertar al valor real del agua</h3>
+      <div class="byline">Ministerio de Minas y Energía &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio-Alto</span></div>
+      <div class="body"><p>El ministro Edwin Palma Egea instó a los generadores hídricos a acogerse a los esquemas de oferta de precios bajos por tecnología (Resoluciones CREG 101 066 de 2024 y 101 097 de 2026), demandando ofertas consecuentes con el valor real del agua.</p><p>La medida busca proteger a las distribuidoras expuestas en bolsa y presiona a las hidráulicas a ofertar a costos marginales reales para mitigar los precios spot.</p></div>
+      <div><span class="tag">#Regulación</span><span class="tag">#CREG</span><span class="tag">#PrecioDeBolsa</span></div>
     </article>
   </div>
 
   <div class="stories" style="grid-template-columns:1fr;margin-top:6px;">
     <article class="story">
-      <div class="eyebrow">CREG · Julio 2026 · Proyectos de Resolución 701 126 y 701 127</div>
-      <h3 class="head" style="font-size:22px;">CREG propone flexibilizar el Cargo por Confiabilidad y la entrega de excedentes durante el mantenimiento de SPEC</h3>
+      <div class="eyebrow">CREG · Agosto 2026 · Resoluciones 101 111 y 101 121</div>
+      <h3 class="head" style="font-size:22px;">La CREG institucionaliza la Participación Activa de la Demanda y define el Prestador de Última Instancia</h3>
       <div class="byline">CREG &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
-      <div class="body columns-2"><p>Los borradores normativos facilitan la entrega transitoria de excedentes al SIN y flexibilizan el cumplimiento de Obligaciones de Energía Firme durante la indisponibilidad de gas importado por el mantenimiento de SPEC.</p><p>Permiten incorporar generación distribuida e industrial para compensar la caída temporal de capacidad térmica y disminuyen el riesgo de penalizaciones monetarias por indisponibilidad de gas, dando herramientas adaptativas al mercado mayorista.</p></div>
-      <div><span class="tag">#CREG</span><span class="tag">#CargoPorConfiabilidad</span><span class="tag">#SPEC</span></div>
+      <div class="body columns-2"><p>La Resolución CREG 101 121 de 2026 fijó los criterios de selección, remuneración y operación del Prestador de Última Instancia (PUI), asegurando la continuidad del suministro a usuarios finales en caso de retiro o quiebra de su comercializador titular.</p><p>Complementariamente, la Resolución CREG 101 111 de 2026 institucionalizó la Participación Activa de la Demanda en la bolsa de energía: los consumidores industriales podrán vender sus reducciones de consumo, reduciendo la necesidad de despachar plantas térmicas de alto costo en horas pico y creando un mecanismo donde la demanda compite directamente con la generación.</p></div>
+      <div><span class="tag">#CREG</span><span class="tag">#PUI</span><span class="tag">#ParticipaciónDeLaDemanda</span></div>
     </article>
   </div>
 
-  <!-- §II MERCADO DE GAS -->
+  <!-- §II GAS E HIDROCARBUROS -->
   <div class="section-head">
-    <span class="no">§ II</span><span class="t">Mercado de Gas · SPEC y Offshore</span><span class="line"></span>
-    <span class="meta">MinMinas · CREG · Naturgas</span>
+    <span class="no">§ II</span><span class="t">Mercado de Gas Natural e Hidrocarburos</span><span class="line"></span>
+    <span class="meta">Ecopetrol · Petrobras · MinMinas</span>
   </div>
   <div class="stories" style="grid-template-columns:1.3fr 1fr;">
     <article class="story">
-      <div class="eyebrow">Ministerio de Minas y Energía · Resoluciones 40267 y 40289 · 2026</div>
-      <h2 class="head" style="font-size:30px;">MinMinas prioriza el suministro de gas a la demanda esencial durante el mantenimiento de SPEC</h2>
-      <div class="deck">Las resoluciones 40267 y 40289 reglamentan la priorización de gas natural para la demanda esencial ante la indisponibilidad temporal de la regasificadora del Caribe, redireccionando moléculas del interior hacia centros poblados y restringiendo el suministro industrial no esencial.</div>
-      <div class="byline">Ministerio de Minas y Energía · 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
-      <div class="body"><p>La medida activa el orden legal de atención de demanda en condiciones de insalvables restricciones, redireccionando moléculas desde los campos de Llanos y La Guajira hacia centros poblados y compresión del SNT.</p><p>Incrementa los costos marginales de transporte y fletes de gas para la industria, restringiendo el suministro a la demanda no esencial durante el periodo de mantenimiento del 30 de julio al 3 de agosto.</p></div>
-      <div><span class="tag">#Gas</span><span class="tag">#SPEC</span><span class="tag">#MinMinas</span><span class="tag">#DemandaEsencial</span></div>
+      <div class="eyebrow">Valora Analitik · 25 Ago 2026 · Offshore</div>
+      <h2 class="head" style="font-size:30px;">Ecopetrol y Petrobras confirman el descubrimiento del pozo offshore Sandía-1 en el Caribe</h2>
+      <div class="deck">Ecopetrol (55,56%) y Petrobras (44,4%) ratificaron el hallazgo del pozo Sandía-1 en aguas profundas del Caribe colombiano, cuya perforación concluyó con éxito a finales de julio de 2026, confirmando la extensión de la provincia gasífera marina.</div>
+      <div class="byline">Valora Analitik · 25 Ago 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>El hallazgo acelera la necesidad de expedir el marco normativo para la asignación de licencias de transporte e infraestructura submarina, y exige el diseño de gasoductos mar adentro para conectar el activo con la red nacional de transporte.</p><p>La entrada en producción comercial requerirá asignaciones masivas de CAPEX en los planes de inversión de Ecopetrol para la próxima década, pero constituye el principal activo para frenar el déficit de gas natural a largo plazo.</p></div>
+      <div><span class="tag">#Gas</span><span class="tag">#Ecopetrol</span><span class="tag">#Offshore</span><span class="tag">#ANH</span></div>
     </article>
 
     <article class="story">
-      <div class="eyebrow">Naturgas / Valora Analitik · 24 Jul 2026 · Offshore</div>
-      <h3 class="head">Avanza proyecto Sirius y se explora regasificadora en Ballena, La Guajira</h3>
-      <div class="byline">Naturgas / Valora Analitik · 24 Jul 2026 &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio-Alto</span></div>
-      <div class="body"><p>Ecopetrol y Petrobras confirmaron avances en el proyecto Sirius, mientras TGI busca un acuerdo de conexión con Ecopetrol para una regasificadora en Ballena, ampliando la capacidad de importación por el norte del país.</p><p>Asegura alternativas de abastecimiento a largo plazo frente a la caída de producción en Llanos, aunque demanda altas inversiones para conectar yacimientos mar adentro con el SNT.</p></div>
-      <div><span class="tag">#Gas</span><span class="tag">#Sirius</span><span class="tag">#TGI</span><span class="tag">#Ballena</span></div>
+      <div class="eyebrow">Infobae · 30 Jul 2026 · GNL</div>
+      <h3 class="head">Ecopetrol abre convocatoria internacional para importar GNL por Buenaventura</h3>
+      <div class="byline">Infobae &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>La estatal inició la contratación internacional para importar gas natural licuado por el Pacífico mediante una unidad flotante de regasificación en Buenaventura, con entregas desde finales de 2026 y hasta 2030.</p><p>El esquema requiere aprobación de tarifas de regasificación y reglas de acceso abierto por parte de la CREG, mitiga riesgos de racionamiento en el suroccidente y diversifica la infraestructura de importación más allá del nodo Caribe de SPEC.</p></div>
+      <div><span class="tag">#Gas</span><span class="tag">#GNL</span><span class="tag">#Buenaventura</span><span class="tag">#Precios</span></div>
     </article>
   </div>
 
   <div class="stories" style="grid-template-columns:1fr;margin-top:6px;">
     <article class="story">
-      <div class="eyebrow">CREG / ABC Economía · Contexto relevante 2026</div>
-      <h3 class="head" style="font-size:22px;">CREG ordena devolver $150.000 millones a usuarios por recalculo del WACC de transporte de gas</h3>
-      <div class="byline">CREG / ABC Economía &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
-      <div class="body columns-2"><p>La CREG modificó la tasa de descuento (WACC) de la actividad de transporte del 11,88% al 10,94%, tras recursos interpuestos por distribuidores, y ordenó a TGI y Promigas reintegrar cobros en exceso.</p><p>La reliquidación reduce los ingresos regulados de las transportadoras y mitiga parcialmente los sobrecostos en la tarifa final generados por el transporte del norte al centro del país.</p></div>
+      <div class="eyebrow">Valora Analitik · 5 Ago 2026 · Estrategia corporativa</div>
+      <h3 class="head" style="font-size:22px;">Ecopetrol reactiva la OPA por el 51% de Brava Energía y convoca asamblea extraordinaria</h3>
+      <div class="byline">Valora Analitik &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body columns-2"><p>Ecopetrol reactivó la Oferta Pública de Adquisición para tomar el control del 51% de la brasileña Brava Energía, apalancándose en un crédito puente bancario que posteriormente será reestructurado en el mercado de capitales. La operación añade activos de producción de petróleo y gas en cuencas brasileñas al portafolio consolidado.</p><p>En el frente de gobierno corporativo, el Gobierno citó a Asamblea Extraordinaria de Accionistas para el 15 de septiembre de 2026, con el fin de ratificar una nueva Junta Directiva y encarar investigaciones administrativas por supuestas irregularidades en la contratación de gas desde Houston.</p></div>
       <div style="margin:12px 0 0;border:1px solid var(--ink);background:var(--paper-2);overflow:hidden;">
-        <div style="padding:10px 14px;border-bottom:1px solid var(--ink);font-family:'Source Serif 4',serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;">Tabla 1 · Recalculo del WACC de transporte de gas · 2026</div>
+        <div style="padding:10px 14px;border-bottom:1px solid var(--ink);font-family:'Source Serif 4',serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;">Tabla 1 · Procesos y proyectos de hidrocarburos · Ago 2026</div>
         <table style="width:100%;border-collapse:collapse;font-family:'Source Serif 4',serif;font-size:12.5px;">
           <thead><tr style="background:var(--paper);">
-            <th style="text-align:left;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Variable</th>
-            <th style="text-align:right;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Valor</th>
+            <th style="text-align:left;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Proceso / proyecto</th>
+            <th style="text-align:left;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Agentes</th>
+            <th style="text-align:left;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Estado y perspectiva</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:7px 12px;border-bottom:1px solid rgba(0,0,0,.12);"><strong>WACC anterior</strong></td><td style="text-align:right;padding:7px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">11,88%</td></tr>
-            <tr><td style="padding:7px 12px;border-bottom:1px solid rgba(0,0,0,.12);"><strong>WACC recalculado</strong></td><td style="text-align:right;padding:7px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">10,94%</td></tr>
-            <tr><td style="padding:7px 12px;"><strong>Devolución ordenada (TGI/Promigas)</strong></td><td style="text-align:right;padding:7px 12px;font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">$150.000 M</td></tr>
+            <tr><td style="padding:7px 12px;border-bottom:1px solid rgba(0,0,0,.12);"><strong>Pozo offshore Sandía-1</strong></td><td style="padding:7px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Ecopetrol 55,56% / Petrobras 44,4%</td><td style="padding:7px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Confirmado en agosto de 2026; clave para el autoabastecimiento de largo plazo.</td></tr>
+            <tr><td style="padding:7px 12px;border-bottom:1px solid rgba(0,0,0,.12);"><strong>Importación de GNL por Buenaventura</strong></td><td style="padding:7px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Ecopetrol</td><td style="padding:7px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Convocatoria abierta; entradas operativas proyectadas hacia finales de 2026.</td></tr>
+            <tr><td style="padding:7px 12px;border-bottom:1px solid rgba(0,0,0,.12);"><strong>Adquisición de Brava Energía</strong></td><td style="padding:7px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Ecopetrol</td><td style="padding:7px 12px;border-bottom:1px solid rgba(0,0,0,.12);">OPA reactivada por el 51%; consolidación financiera prevista para el T3-2026.</td></tr>
+            <tr><td style="padding:7px 12px;"><strong>Reestructuración de Junta Directiva</strong></td><td style="padding:7px 12px;">Ecopetrol</td><td style="padding:7px 12px;font-weight:600;color:var(--accent);">Asamblea extraordinaria convocada para el 15 de septiembre de 2026.</td></tr>
           </tbody>
         </table>
       </div>
-      <div style="margin-top:10px;"><span class="tag">#Gas</span><span class="tag">#CREG</span><span class="tag">#TGI</span><span class="tag">#Promigas</span><span class="tag">#WACC</span></div>
+      <div style="margin-top:10px;"><span class="tag">#Hidrocarburos</span><span class="tag">#Ecopetrol</span><span class="tag">#Inversión</span><span class="tag">#Governance</span></div>
     </article>
   </div>
 
   <!-- §III MERCADO ELÉCTRICO -->
   <div class="section-head">
-    <span class="no">§ III</span><span class="t">Mercado Eléctrico · Embalses y Cartera Morosa</span><span class="line"></span>
-    <span class="meta">XM · El Heraldo</span>
+    <span class="no">§ III</span><span class="t">Mercado Eléctrico y Confiabilidad</span><span class="line"></span>
+    <span class="meta">XM · El Colombiano · Valora Analitik</span>
   </div>
   <div class="stories">
     <article class="story">
-      <div class="eyebrow">XM / ABC Economía · 7 Jul 2026 · Hidrología</div>
-      <h3 class="head">15 de 24 embalses incumplen la meta hídrica del 80%; Porce III y Muña en niveles críticos</h3>
-      <div class="byline">XM / ABC Economía &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
-      <div class="body"><p>XM alertó que 15 de los 24 embalses están por debajo de la meta hídrica del 80%, con Porce III en 25,84% y Muña en 39,34%, forzando la reorganización del despacho hidráulico en las cadenas del Centro y Antioquia.</p><p>XM proyecta que Guavio y El Peñol podrían operar por debajo de mínimos históricos a inicios de 2027, presionando al alza el precio de oferta de los generadores hidráulicos.</p></div>
+      <div class="eyebrow">El Colombiano / Diario del Huila · 24 Ago 2026 · Hidrología</div>
+      <h3 class="head">Embalses en 79,99% y precio de bolsa en máximos de veinte meses por sequía en Antioquia</h3>
+      <div class="byline">El Colombiano / Diario del Huila &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>Las reservas hídricas agregadas cerraron en 79,99%, impulsando el precio spot a su máximo en 20 meses ($1.065,8/kWh) por el agotamiento de los embalses de regulación de Antioquia.</p><p>El cuadro activa las llamadas de atención del MinMinas (Circular 40008) sobre las ofertas de los generadores hídricos, incrementa el despacho de plantas a gas y carbón y presiona la liquidez de comercializadores sin cobertura de contratos.</p></div>
       <div class="compare">
-        <h6>Embalses críticos vs. meta XM · Corte 7 Jul 2026</h6>
-        <div class="row"><span class="lbl">Agregado SIN</span><div class="track"><div class="fill" style="width:78.23%;"></div></div><span class="val">78,23%</span></div>
-        <div class="row"><span class="lbl">Porce III</span><div class="track"><div class="fill alt" style="width:25.84%;"></div></div><span class="val">25,84%</span></div>
-        <div class="row"><span class="lbl">Muña</span><div class="track"><div class="fill alt" style="width:39.34%;"></div></div><span class="val">39,34%</span></div>
-        <div class="cap">Niveles en % de capacidad útil. Meta XM: 80%. Fuente: XM.</div>
+        <h6>Embalses críticos vs. umbral XM · Corte 24 Ago 2026</h6>
+        <div class="row"><span class="lbl">Agregado SIN</span><div class="track"><div class="fill" style="width:79.99%;"></div></div><span class="val">79,99%</span></div>
+        <div class="row"><span class="lbl">Porce III</span><div class="track"><div class="fill alt" style="width:36.27%;"></div></div><span class="val">36,27%</span></div>
+        <div class="row"><span class="lbl">Porce II</span><div class="track"><div class="fill alt" style="width:37.19%;"></div></div><span class="val">37,19%</span></div>
+        <div class="row"><span class="lbl">Región Caribe</span><div class="track"><div class="fill alt" style="width:52.84%;"></div></div><span class="val">52,84%</span></div>
+        <div class="row"><span class="lbl">Caldas</span><div class="track"><div class="fill" style="width:68.9%;"></div></div><span class="val">68,9%</span></div>
+        <div class="cap">Niveles en % de capacidad útil. Umbral XM: 80%; referencia MinMinas: 82,5%. Fuente: XM.</div>
       </div>
-      <div><span class="tag">#Embalses</span><span class="tag">#XM</span><span class="tag">#ElNiño</span></div>
+      <div><span class="tag">#Embalses</span><span class="tag">#XM</span><span class="tag">#ElNiño</span><span class="tag">#CREG</span></div>
     </article>
 
     <article class="story">
-      <div class="eyebrow">XM · Informes Operativos de Mercado · 2026</div>
-      <h3 class="head">Precio de bolsa en 516,36 COP/kWh activa el 28,72% de las Obligaciones de Energía Firme</h3>
-      <div class="byline">XM &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
-      <div class="body"><p>El precio ponderado de bolsa se elevó a 516,36 COP/kWh en mayo, activando el 28,72% de las OEF comprometidas y forzando el despacho de plantas térmicas bajo el esquema de remanente al Precio de Escasez.</p><p>Las compras netas en bolsa de agentes descalzados crecieron 372% frente al año anterior, trasladando gradualmente sobrecostos de generación al componente G de la tarifa final.</p></div>
-      <div><span class="tag">#PrecioDeBolsa</span><span class="tag">#XM</span><span class="tag">#OEF</span></div>
+      <div class="eyebrow">XM / EPM · Agosto 2026 · Operación</div>
+      <h3 class="head">La generación promedia 243,12 GWh-día con 79,74% renovable y EPM refuerza la red en Soacha</h3>
+      <div class="byline">XM · EPM &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+      <div class="body"><p>La generación acumulada del periodo promedió 243,12 GWh-día, de los cuales 79,74% provino de recursos renovables (hidráulica y solar) y 20,26% de fuentes no renovables, con el PTB promediando $579,79/kWh.</p><p>Para aliviar las congestiones de red en el centro del país, EPM puso en marcha un proyecto de transmisión en Soacha que mejora la capacidad de importación de energía hacia Cundinamarca, Meta y Guaviare.</p></div>
+      <div><span class="tag">#XM</span><span class="tag">#EPM</span><span class="tag">#Transmisión</span></div>
     </article>
 
     <article class="story">
-      <div class="eyebrow">El Heraldo · 26 Jul 2026 · Financiero</div>
-      <h3 class="head">Cartera morosa del sector supera $2,9 billones; Air-e concentra $1,9 billones</h3>
-      <div class="byline">El Heraldo &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
-      <div class="body"><p>La deuda acumulada en comercialización de energía alcanza $2,9 billones, con Air-e representando $1,9 billones de saldos pendientes con generadores, amenazando la compra regular de combustibles térmicos.</p><p>Eleva el riesgo de liquidez y contagio en la cadena de pagos del mercado mayorista, frenando la inversión privada en expansión y mantenimiento preventivo de infraestructura.</p></div>
-      <div><span class="tag">#AirE</span><span class="tag">#DeudaFinanciera</span><span class="tag">#ASIC</span></div>
+      <div class="eyebrow">Valora Analitik · 28 Ago 2026 · Comercialización</div>
+      <h3 class="head">Afinia cesa la comercialización en Cesar, Bolívar y Magdalena desde el 1 de septiembre</h3>
+      <div class="byline">Valora Analitik &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>Afinia dejará de prestar los servicios de distribución y comercialización de energía en municipios del Caribe el 1 de septiembre de 2026, siendo asumidos por Energía Atenea bajo supervisión de la CREG y la Superintendencia de Servicios Públicos.</p><p>La transición reasigna el recaudo y la cartera en una de las zonas con mayores pérdidas no técnicas del país y exige articulación rápida para mantener la operación comercial sin interrupciones.</p></div>
+      <div><span class="tag">#Afinia</span><span class="tag">#Comercialización</span><span class="tag">#Caribe</span></div>
     </article>
   </div>
 
   <!-- §IV TRANSICIÓN -->
   <div class="section-head">
     <span class="no">§ IV</span><span class="t">Transición Energética y Renovables</span><span class="line"></span>
-    <span class="meta">ABC Economía · Oil Channel</span>
+    <span class="meta">SER Colombia · Valora Analitik</span>
   </div>
   <div class="stories" style="grid-template-columns:1.4fr 1fr;">
     <article class="story">
-      <div class="eyebrow">ABC Economía / XM · 7 Jul 2026 · Renovables</div>
-      <h3 class="head">Solo ingresa el 7,4% de la meta renovable de 2026: 331 de 4.475 MW proyectados</h3>
-      <div class="byline">ABC Economía / XM · 7 Jul 2026 &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
-      <div class="body"><p>De los 4.475 MW renovables programados para 2026, solo han ingresado 331 MW por demoras en trámites ambientales e infraestructura de interconexión, privando al SIN de energía solar diurna para ahorrar agua en los embalses.</p><p>La UPME y la CREG podrían ejecutar garantías por retrasos en las fechas de puesta en operación comercial, mientras los generadores renovables quedan expuestos a compras spot a precios altos para cumplir contratos suscritos.</p></div>
-      <div class="pull" style="font-size:15px;">"El atraso del 92,6% en la meta renovable de 2026 aumenta la dependencia del parque térmico e hidroeléctrico tradicional durante la sequía."<span class="src">Mesa de Inteligencia</span></div>
-      <div><span class="tag">#Renovables</span><span class="tag">#UPME</span><span class="tag">#Transición</span></div>
+      <div class="eyebrow">SER Colombia · Agosto 2026 · FNCER</div>
+      <h3 class="head">Colombia cerraría 2026 con más de 4.200 MW renovables, pero SER advierte déficit estructural desde 2027</h3>
+      <div class="byline">SER Colombia &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>De los más de 4.200 MW proyectados, 2.870 MW corresponden a proyectos de mediana y gran escala en pruebas o entrada comercial, y 1.300 MW a autogeneración y minigranjas solares.</p><p>SER Colombia advirtió que el ritmo actual es insuficiente para evitar un déficit estructural en el mercado mayorista a partir de 2027: el país requerirá 6.000 MW nuevos en cinco años, con inversiones cercanas a US$5.000 millones. De concretarse entre 6.500 MW y 9.500 MW en el lustro, se prevén ahorros tarifarios de hasta $7 billones para los consumidores finales.</p></div>
+      <div class="pull" style="font-size:15px;">"La capacidad renovable proyectada para 2026 equivale al consumo eléctrico de Bogotá, pero no basta para cubrir la brecha del mercado mayorista desde 2027."<span class="src">Mesa de Inteligencia</span></div>
+      <div><span class="tag">#Renovables</span><span class="tag">#FNCER</span><span class="tag">#SERColombia</span></div>
     </article>
     <article class="story">
       <div style="margin:0;border:1px solid var(--ink);background:var(--paper-2);overflow:hidden;">
-        <div style="padding:10px 14px;border-bottom:1px solid var(--ink);font-family:'Source Serif 4',serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;">Tabla 2 · Avance de la meta renovable 2026</div>
+        <div style="padding:10px 14px;border-bottom:1px solid var(--ink);font-family:'Source Serif 4',serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;">Tabla 2 · Capacidad y requerimientos FNCER</div>
         <table style="width:100%;border-collapse:collapse;font-family:'Source Serif 4',serif;font-size:12px;">
           <thead><tr style="background:var(--paper);">
             <th style="text-align:left;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Indicador</th>
             <th style="text-align:right;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Valor</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Meta programada 2026</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">4.475 MW</td></tr>
-            <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">En operación comercial</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">331 MW</td></tr>
-            <tr><td style="padding:6px 12px;">Avance porcentual</td><td style="text-align:right;padding:6px 12px;font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">7,4%</td></tr>
+            <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Proyección FNCER cierre 2026</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">&gt; 4.200 MW</td></tr>
+            <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Mediana y gran escala</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">2.870 MW</td></tr>
+            <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Autogeneración y minigranjas</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">1.300 MW</td></tr>
+            <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Requerimiento 2027-2031</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">6.000 MW</td></tr>
+            <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Inversión estimada</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">US$ 5.000 M</td></tr>
+            <tr><td style="padding:6px 12px;">Ahorro tarifario potencial</td><td style="text-align:right;padding:6px 12px;font-family:'JetBrains Mono',monospace;font-weight:600;">$7 billones</td></tr>
           </tbody>
         </table>
       </div>
     </article>
   </div>
 
-  <div class="stories" style="grid-template-columns:1fr;margin-top:6px;">
+  <div class="stories" style="grid-template-columns:1fr 1fr;margin-top:6px;">
     <article class="story">
-      <div class="eyebrow">Oil Channel · 9 Jul 2026 · Hidrógeno</div>
-      <h3 class="head" style="font-size:22px;">Promigas, Ecopetrol y TGI ponen en marcha cuatro pilotos industriales de hidrógeno</h3>
-      <div class="byline">Oil Channel &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
-      <div class="body columns-2"><p>Los cuatro pilotos, orientados al blending en redes de gas y producción descentralizada, aportan insumos técnicos para la futura regulación de mezcla de hidrógeno en la red nacional, con pruebas de compatibilidad en materiales de tuberías e inyección de gas sintético.</p><p>Atraen capitales de innovación y fondos multilaterales para la transición energética, posicionando a las transportadoras de gas en la sustitución paulatina del combustible fósil a largo plazo.</p></div>
-      <div><span class="tag">#Hidrógeno</span><span class="tag">#Promigas</span><span class="tag">#Ecopetrol</span><span class="tag">#TGI</span></div>
+      <div class="eyebrow">Valora Analitik · 13 Ago 2026 · Financiamiento</div>
+      <h3 class="head" style="font-size:21px;">Erco Energía asegura US$129 millones en equity para infraestructura solar</h3>
+      <div class="byline">Valora Analitik &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+      <div class="body"><p>Erco Energía cerró una ronda Serie C por US$129 millones en equity para expandir la construcción de parques solares en Colombia, una de las mayores inyecciones de capital privado del sector energético nacional en 2026.</p><p>La operación aumenta la inyección fotovoltaica en redes de distribución regional en horas de radiación pico y consolida el modelo de generación distribuida y granjas solares de mediana escala.</p></div>
+      <div><span class="tag">#Solar</span><span class="tag">#Inversión</span><span class="tag">#UPME</span></div>
+    </article>
+    <article class="story">
+      <div class="eyebrow">Valora Analitik · 29 May 2026 · M&amp;A</div>
+      <h3 class="head" style="font-size:21px;">Promigas multiplica por 20 su portafolio renovable tras adquirir los activos de Zelestra</h3>
+      <div class="byline">Valora Analitik &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
+      <div class="body"><p>Promigas culminó la compra de los activos renovables de Zelestra, sumando en Colombia 252 MW fotovoltaicos operativos —los parques La Unión (144 MW) y La Mata (108 MW)— y 101 MW adicionales en fase de desarrollo.</p><p>La transacción exige ajustar los registros de generación ante XM, reconfigura el balance de activos de la compañía y la posiciona como actor integrado de infraestructura de gas y energía limpia en el Caribe.</p></div>
+      <div><span class="tag">#Promigas</span><span class="tag">#Solar</span><span class="tag">#M&amp;A</span></div>
     </article>
   </div>
 
@@ -437,29 +454,29 @@
     <div>
       <div class="section-head">
         <span class="no">§ V</span><span class="t">Contexto Internacional</span><span class="line"></span>
-        <span class="meta">Barchart · Oil & Gas Journal</span>
+        <span class="meta">Cotizaciones · 31 Ago 2026</span>
       </div>
       <article>
-        <div class="eyebrow">Barchart / Oil & Gas Journal · Cotizaciones de Julio de 2026 · Crudo</div>
-        <h3 class="head">Estabilidad en los marcadores internacionales de crudo y gas natural</h3>
-        <div class="byline">Referencias internacionales &nbsp;|&nbsp; <span class="impact med"><span class="dot"></span>Medio</span></div>
+        <div class="eyebrow">Mercados internacionales · Última semana de agosto de 2026 · Crudo</div>
+        <h3 class="head">Las tensiones en el Estrecho de Ormuz llevan el Brent por encima de US$90,50 por barril</h3>
+        <div class="byline">Referencias internacionales &nbsp;|&nbsp; <span class="impact high"><span class="dot"></span>Alto</span></div>
         <div class="body columns-2">
-          <p>El crudo Brent cerró en USD 93,71 por barril y el WTI osciló entre USD 83,20 y USD 95,50, manteniendo marcadores estables en gas global sin alteraciones inmediatas en las fórmulas de liquidación de regalías hidrocarburíferas.</p>
-          <p>Para Colombia, la estabilidad da predictibilidad a las compras de cargamentos de GNL importado para SPEC y sostiene los ingresos operacionales y transferencias de Ecopetrol a la Nación, equilibrando los costos de insumos térmicos importados frente a los precios de la bolsa local.</p>
+          <p>El crudo Brent, marcador de referencia para las finanzas públicas de Colombia, escaló hasta negociarse entre US$90,50 y US$91,30 por barril, con un alza de 2,72% en las sesiones de cierre de mes por las acciones militares de Estados Unidos en el Estrecho de Ormuz y un paquete de sanciones dirigido a bloquear las rutas del petróleo iraní.</p>
+          <p>El WTI cerró entre US$83,40 y US$85,54 por barril, acumulando una pérdida semanal superior al 4% por el incremento de 0,1 millones de barriles en los inventarios comerciales de Estados Unidos y el aumento paulatino de oferta de la OPEP+ de 188.000 barriles diarios. El Henry Hub cotizó en US$2,87 por MMBtu, sosteniendo condiciones favorables para los proyectos de importación de GNL, y el oro spot se ubicó en US$4.597,39 por onza.</p>
         </div>
         <figure class="res-fig">
-          <h6>Figura 2 · Marcadores internacionales de energía · 27 Jul 2026</h6>
-          <div class="num" style="font-size:36px;">$93,71 <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--muted);">Brent USD/bbl</span></div>
-          <div class="sub">Estabilidad semanal en marcadores de crudo</div>
+          <h6>Figura 2 · Marcadores internacionales de energía · 31 Ago 2026</h6>
+          <div class="num" style="font-size:36px;">$90,50 – 91,30 <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--muted);">Brent USD/bbl</span></div>
+          <div class="sub">Alcista (+2,72% intradía) por escalada geopolítica en Ormuz</div>
           <hr>
           <div class="row">
-            <div><strong>WTI</strong>83,20–95,50 USD/bbl · rango con volatilidad acotada.</div>
-            <div><strong>Tendencia</strong>Sin alteraciones inmediatas en regalías hidrocarburíferas.</div>
-            <div><strong>Impacto GNL</strong>Predictibilidad en compras de cargamentos para SPEC.</div>
-            <div><strong>Impacto fiscal</strong>Sostén en ingresos y transferencias de Ecopetrol.</div>
+            <div><strong>WTI</strong>83,40–85,54 USD/bbl · retroceso semanal superior al 4%.</div>
+            <div><strong>Henry Hub</strong>2,87 USD/MMBtu · estable en nivel bajo; favorece el GNL.</div>
+            <div><strong>Oro spot</strong>4.597,39 USD/oz · refugio ante volatilidad global.</div>
+            <div><strong>Oferta OPEP+</strong>Aumento de 188.000 barriles diarios anunciado.</div>
           </div>
         </figure>
-        <div><span class="tag">#Brent</span><span class="tag">#WTI</span><span class="tag">#Internacional</span></div>
+        <div><span class="tag">#Brent</span><span class="tag">#WTI</span><span class="tag">#HenryHub</span><span class="tag">#Ormuz</span></div>
       </article>
     </div>
     <div>
@@ -469,18 +486,18 @@
       <article>
         <div class="alert" style="margin-top:0;">
           <span class="badge">Alerta 1 · Alta</span>
-          <h5>Mantenimiento de SPEC e indisponibilidad térmica en la Costa Caribe</h5>
-          <div class="body" style="font-size:12.5px;"><p style="margin:4px 0 0;">La salida de operación de SPEC entre el 30 de julio y el 3 de agosto recorta el 76,6% de la capacidad térmica de la región, forzando al Gobierno a ordenar medidas preventivas de ahorro energético y virtualidad.</p></div>
+          <h5>Estrés hídrico regional y disparada de precios spot</h5>
+          <div class="body" style="font-size:12.5px;"><p style="margin:4px 0 0;">El agregado del SIN en 79,99% oculta el agotamiento de Antioquia (Porce III 36,27%, Porce II 37,19%) y del Caribe (52,84%). Los picos de bolsa de hasta $1.065,8/kWh elevan el riesgo de liquidez de los comercializadores expuestos al mercado de oportunidad.</p></div>
         </div>
         <div class="alert">
           <span class="badge">Alerta 2 · Alta</span>
-          <h5>Saturación técnica en 31 subestaciones eléctricas del SIN</h5>
-          <div class="body" style="font-size:12.5px;"><p style="margin:4px 0 0;">El Ministerio declaró en emergencia técnica a 51 subestaciones (31 agotadas y 20 al límite) y ordenó un plan de choque a seis meses; una falla puede desencadenar suspensiones masivas en varias regiones.</p></div>
+          <h5>Vulnerabilidad estructural en el abastecimiento de gas natural</h5>
+          <div class="body" style="font-size:12.5px;"><p style="margin:4px 0 0;">La producción nacional de gas registra caídas consecutivas en lo corrido de 2026. Coincidiendo con el mantenimiento de la regasificadora de SPEC en Cartagena, las autoridades flexibilizaron las Obligaciones de Energía Firme e instruyeron esquemas de racionamiento térmico para proteger la demanda esencial.</p></div>
         </div>
         <div class="alert" style="border-color:var(--accent-2);background:rgba(138,106,26,.06);">
           <span class="badge" style="background:var(--accent-2);">Alerta 3 · Media</span>
-          <h5 style="color:var(--accent-2);">Déficit de Energía Firme e iliquidez por cartera morosa</h5>
-          <div class="body" style="font-size:12.5px;"><p style="margin:4px 0 0;">XM identificó un faltante de 3.107 GWh/año en OEF, agravado por una cartera morosa de $2,9 billones que restringe la compra spot de combustibles, elevando el riesgo de racionamiento hacia inicios de 2027.</p></div>
+          <h5 style="color:var(--accent-2);">Reconfiguración de la comercialización en la Costa Caribe</h5>
+          <div class="body" style="font-size:12.5px;"><p style="margin:4px 0 0;">La cesación de operaciones de Afinia en Cesar, Bolívar y Magdalena desde el 1 de septiembre de 2026, con traspaso del mercado a Energía Atenea, abre una transición operativa que exige seguimiento a las garantías financieras ante XM.</p></div>
         </div>
       </article>
     </div>
@@ -489,39 +506,47 @@
   <!-- KPIs -->
   <div class="section-head" style="margin-top:30px;">
     <span class="no">§ KPI</span><span class="t">Indicadores del Periodo</span><span class="line"></span>
-    <span class="meta">21–27 Jul 2026 · Edición Núm. 28</span>
+    <span class="meta">24–31 Ago 2026 · Edición Núm. 29</span>
   </div>
   <div class="kpis">
-    <div class="kpi"><div class="l">Embalses SIN</div><div class="v">78,23%</div><div class="d down">15 de 24 incumplen meta 80%</div></div>
-    <div class="kpi"><div class="l">Precio bolsa</div><div class="v">516,36</div><div class="d down">COP/kWh · activa 28,72% OEF</div></div>
-    <div class="kpi"><div class="l">Déficit Energía Firme</div><div class="v">3.107</div><div class="d down">GWh/año · ciclo 2025-2026</div></div>
-    <div class="kpi"><div class="l">Avance renovable 2026</div><div class="v">7,4%</div><div class="d down">331 de 4.475 MW</div></div>
-    <div class="kpi"><div class="l">Deuda ASIC</div><div class="v">$2,9B</div><div class="d down">Air-e concentra $1,9B</div></div>
-    <div class="kpi"><div class="l">Brent</div><div class="v">$93,71</div><div class="d down">USD/bbl · estable</div></div>
+    <div class="kpi"><div class="l">Embalses SIN</div><div class="v">79,99%</div><div class="d down">Bajo meta XM 80% y MinMinas 82,5%</div></div>
+    <div class="kpi"><div class="l">Bolsa · pico</div><div class="v">1.065,8</div><div class="d down">COP/kWh · máximo en 20 meses</div></div>
+    <div class="kpi"><div class="l">Bolsa · promedio</div><div class="v">579,79</div><div class="d down">COP/kWh · tendencia alcista</div></div>
+    <div class="kpi"><div class="l">Porce III</div><div class="v">36,27%</div><div class="d down">Nivel crítico · meta &gt;60%</div></div>
+    <div class="kpi"><div class="l">Porce II</div><div class="v">37,19%</div><div class="d down">Restricción severa de despacho</div></div>
+    <div class="kpi"><div class="l">Región Caribe</div><div class="v">52,84%</div><div class="d down">Alta dependencia térmica local</div></div>
+    <div class="kpi"><div class="l">Renovable / térmica</div><div class="v">79,7%</div><div class="d up">vs 20,26% no renovable</div></div>
+    <div class="kpi"><div class="l">Generación media</div><div class="v">243,1</div><div class="d">GWh-día en el periodo</div></div>
+    <div class="kpi"><div class="l">FNCER 2026</div><div class="v">4.200</div><div class="d up">MW proyectados al cierre</div></div>
+    <div class="kpi"><div class="l">Brent</div><div class="v">$91,30</div><div class="d up">USD/bbl · +2,72% intradía</div></div>
+    <div class="kpi"><div class="l">WTI</div><div class="v">$85,54</div><div class="d down">USD/bbl · −4% semanal</div></div>
+    <div class="kpi"><div class="l">Henry Hub</div><div class="v">$2,87</div><div class="d">USD/MMBtu · estable</div></div>
   </div>
 
   <!-- TABLA DE VARIABLES -->
   <div style="margin:14px 0 6px;border:1px solid var(--ink);background:var(--paper-2);overflow:hidden;">
-    <div style="padding:10px 14px;border-bottom:1px solid var(--ink);font-family:'Source Serif 4',serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;">Tabla 3 · KPIs y marcadores internacionales · Periodo 21–27 Jul 2026</div>
+    <div style="padding:10px 14px;border-bottom:1px solid var(--ink);font-family:'Source Serif 4',serif;font-variant:small-caps;letter-spacing:.22em;font-size:10.5px;color:var(--accent);font-weight:600;">Tabla 3 · KPIs y señales clave del mercado · Periodo 24–31 Ago 2026</div>
     <table style="width:100%;border-collapse:collapse;font-family:'Source Serif 4',serif;font-size:12.5px;">
       <thead><tr style="background:var(--paper);">
         <th style="text-align:left;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Variable de monitoreo</th>
         <th style="text-align:right;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Valor</th>
-        <th style="text-align:left;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Variación / estado</th>
+        <th style="text-align:left;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Condición / tendencia</th>
         <th style="text-align:left;padding:7px 12px;border-bottom:1px solid var(--ink);font-variant:small-caps;letter-spacing:.12em;font-size:10px;color:var(--muted);">Fuente</th>
       </tr></thead>
       <tbody>
-        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Nivel agregado de embalses (SIN)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">78,23%</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Meta XM 80% · 15 de 24 embalses incumplen</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM</td></tr>
-        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Embalse Porce III (Antioquia)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">25,84%</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Condición crítica, meta &gt;60%</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM</td></tr>
-        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Embalse Muña (Centro)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">39,34%</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Condición crítica, meta &gt;60%</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM</td></tr>
-        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Precio ponderado bolsa de energía</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">516,36</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">COP/kWh · activa 28,72% de OEF comprometidas</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM</td></tr>
-        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Precio promedio contratos SICEP</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">305,41</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">COP/kWh · cobertura estable en contratos</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM</td></tr>
-        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Déficit de Energía Firme (2025-2026)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">3.107</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">GWh/año · brecha entre oferta y demanda</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM</td></tr>
-        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Avance capacidad renovable 2026</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">331 MW (7,4%)</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Meta 4.475 MW · retraso severo en ejecución</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">ABC Economía / XM</td></tr>
-        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Subestaciones saturadas en cortocircuito</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">31 agotadas / 20 al límite</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Riesgo de fallas · Res. 40333 de 2026</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">MinMinas</td></tr>
-        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Deuda comercializadoras (Air-e)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">$2,9 billones</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">$1,9 billones concentrados en Air-e · estrés de liquidez</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">El Heraldo</td></tr>
-        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Crudo Brent (futuros)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">93,71</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">USD/bbl · estabilidad en ingresos fiscales</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">Barchart</td></tr>
-        <tr><td style="padding:6px 12px;">Crudo WTI (rango)</td><td style="text-align:right;padding:6px 12px;font-family:'JetBrains Mono',monospace;">83,20 - 95,50</td><td style="padding:6px 12px;">USD/bbl · volatilidad acotada</td><td style="padding:6px 12px;color:var(--muted);">Oil & Gas Journal</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Nivel agregado de embalses (SIN)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">79,99%</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Por debajo de la meta de XM (80%) y MinMinas (82,5%).</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Precio máximo de bolsa de energía</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">$1.065,8 / kWh</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Alta volatilidad; pico máximo en los últimos 20 meses.</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Precio promedio en bolsa (PTB)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">$579,79 / kWh</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Tendencia alcista por baja hidrología regional.</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Producción de gas onshore</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">Declinación 2026</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Riesgo de abastecimiento; impulsa la importación de GNL.</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">MinMinas / Naturgas</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Producción nacional de petróleo</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">Caída en julio</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Tercer mes consecutivo; menor volumen de exportación.</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">Ecopetrol / ANH</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Reservas hídricas Porce III (Antioquia)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">36,27%</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Nivel crítico; riesgo de agotamiento local.</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Reservas hídricas Porce II (Antioquia)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">37,19%</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Restricción severa para despacho hídrico continuo.</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Reservas hídricas región Caribe</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">52,84%</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Nivel bajo; alta dependencia de térmicas regionales.</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Generación renovable vs. no renovable</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">79,74% / 20,26%</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Balance hidro-térmico en proceso de reajuste.</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">XM</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Capacidad renovable instalada 2026</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">&gt; 4.200 MW</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Crecimiento sostenido de FNCER en el SIN.</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">SER Colombia</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Crudo Brent (referencia)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);">US$ 90,50 – 91,30 / bbl</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Tendencia alcista por riesgo en el Estrecho de Ormuz.</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">Mercados internacionales</td></tr>
+        <tr><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Crudo WTI (referencia)</td><td style="text-align:right;padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-family:'JetBrains Mono',monospace;">US$ 83,40 – 85,54 / bbl</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);">Moderado; retroceso semanal superior al 4%.</td><td style="padding:6px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:var(--muted);">Mercados internacionales</td></tr>
+        <tr><td style="padding:6px 12px;">Gas natural Henry Hub (referencia)</td><td style="text-align:right;padding:6px 12px;font-family:'JetBrains Mono',monospace;">US$ 2,87 / MMBtu</td><td style="padding:6px 12px;">Estable en nivel bajo; favorece importaciones de GNL.</td><td style="padding:6px 12px;color:var(--muted);">Mercados internacionales</td></tr>
       </tbody>
     </table>
   </div>
@@ -531,22 +556,22 @@
     <div class="sources">
       <h6>Síntesis Ejecutiva Final</h6>
       <ul>
-        <li><strong>Presión operativa combinada:</strong> El Niño intenso (81% de probabilidad), el mantenimiento de SPEC y la congestión en 31 subestaciones representan el mayor riesgo sistémico desde 2024.</li>
-        <li><strong>Atraso en la matriz limpia:</strong> apenas 7,4% (331 de 4.475 MW) de los proyectos renovables previstos para 2026 están en operación, sin respaldo solar diurno para conservar los embalses.</li>
-        <li><strong>Estrés financiero en comercialización:</strong> la cartera en el ASIC ($2,9 billones, liderada por Air-e con $1,9 billones) restringe la liquidez de los generadores para comprar combustibles críticos.</li>
-        <li><strong>Flexibilización regulatoria:</strong> la UPME y la CREG avanzan en esquemas para autorizar excedentes al SIN y agilizar trámites de incentivos (Ley 1715).</li>
-        <li><strong>Tendencia general:</strong> Riesgo Significativo y Volatilidad Alta, con presión sobre precios de bolsa y dependencia del ahorro preventivo durante el mantenimiento de infraestructura de gas.</li>
+        <li><strong>Tensión en el mercado spot eléctrico:</strong> embalses agregados en 79,99% y agotamiento hídrico en Antioquia (Porce III 36,27%) dispararon la bolsa a picos de $1.065,8/kWh, aumentando la dependencia térmica.</li>
+        <li><strong>Medidas regulatorias de contingencia:</strong> el Gobierno y la CREG activaron normas para blindar la red (Res. 40333), incentivar la respuesta de la demanda (Res. CREG 101 111) y estructurar el Prestador de Última Instancia (Res. CREG 101 121).</li>
+        <li><strong>Respuesta a la declinación de gas:</strong> ante la caída continuada de la producción continental, Ecopetrol licita la importación de GNL por Buenaventura mientras madura el hallazgo offshore Sandía-1.</li>
+        <li><strong>Expansión y financiamiento renovable:</strong> el mercado se encamina a cerrar 2026 con más de 4.200 MW limpios, impulsado por los US$129 M de equity de Erco Energía y la compra de activos de Zelestra por Promigas.</li>
+        <li><strong>Tendencia general:</strong> Alta Presión Operativa con Riesgo de Precios, con estrechamiento de los márgenes de cobertura hídrica y de gas y estricta gestión de garantías en el mercado mayorista.</li>
       </ul>
     </div>
     <div class="sources">
       <h6>Agenda Regulatoria y Operativa Próxima</h6>
       <ul>
-        <li><strong>30 Jul – 3 Ago 2026.</strong> Mantenimiento de la regasificadora SPEC en Cartagena, con 76,6% de indisponibilidad térmica en la Costa Caribe.</li>
-        <li><strong>6 meses desde jul 2026.</strong> Plan de choque de la Resolución 40333 para intervenir 51 subestaciones saturadas.</li>
-        <li><strong>Inmediato.</strong> Aplicación de las Resoluciones 40267 y 40289 de priorización de gas a la demanda esencial.</li>
-        <li><strong>En curso.</strong> Devolución de $150.000 millones por parte de TGI y Promigas tras el recalculo del WACC.</li>
-        <li><strong>2026-2027.</strong> Avances en Sirius y la propuesta de regasificadora en Ballena, La Guajira.</li>
-        <li><strong>Inicios de 2027.</strong> Riesgo de racionamiento si se prolonga el periodo seco y persiste la iliquidez del ASIC.</li>
+        <li><strong>1 Sep 2026.</strong> Afinia cesa la comercialización en Cesar, Bolívar y Magdalena; Energía Atenea asume el mercado.</li>
+        <li><strong>15 Sep 2026.</strong> Asamblea Extraordinaria de Accionistas de Ecopetrol para ratificar nueva Junta Directiva.</li>
+        <li><strong>Inmediato.</strong> Aplicación de la Resolución MinMinas 40267 sobre suministro de gas por el mantenimiento de SPEC.</li>
+        <li><strong>Finales de 2026.</strong> Entradas operativas previstas del esquema flotante de regasificación de GNL en Buenaventura.</li>
+        <li><strong>Cierre de 2026.</strong> Consolidación de más de 4.200 MW FNCER y llegada del fenómeno de El Niño de alta intensidad.</li>
+        <li><strong>2027-2031.</strong> Requerimiento de 6.000 MW nuevos (US$5.000 M) para evitar el déficit estructural advertido por SER Colombia.</li>
       </ul>
     </div>
   </div>
@@ -554,16 +579,16 @@
   <!-- EDITORIAL -->
   <div class="section-head" style="margin-top:30px;">
     <span class="no">§ ED</span><span class="t">Editorial · Tendencia del Mercado</span><span class="line"></span>
-    <span class="meta">Mesa de Inteligencia · Geam Energy · 27 Jul 2026</span>
+    <span class="meta">Mesa de Inteligencia · Geam Energy · 31 Ago 2026</span>
   </div>
   <div style="border:2px solid var(--ink);padding:20px 22px;background:var(--paper-2);margin-bottom:22px;">
     <div class="body columns-2">
-      <p>El periodo del 21 al 27 de julio confirma que el riesgo sistémico del SIN se ha desplazado de la variabilidad climática hacia restricciones físicas de red y debilidades financieras. La Resolución 40333 de 2026 confirmó que 31 subestaciones operan con capacidad de cortocircuito agotada y 20 más al límite, restringiendo la transmisión hacia los grandes nodos de consumo.</p>
-      <p>En gas, el mantenimiento de la regasificadora SPEC entre el 30 de julio y el 3 de agosto dejará indisponible el 76,6% de la capacidad térmica de la Costa Caribe, forzando priorización de la demanda esencial vía las Resoluciones 40267 y 40289, mientras avanzan alternativas offshore como Sirius y la propuesta de regasificadora en Ballena.</p>
-      <p>En electricidad, 15 de los 24 embalses incumplen la meta de seguridad del 80% fijada por XM, con Porce III y Muña en niveles críticos. El precio de bolsa en 516,36 COP/kWh ya activó el 28,72% de las Obligaciones de Energía Firme, y el retraso del 92,6% en la meta renovable de 2026 (solo 331 de 4.475 MW en operación) deja al sistema sin respaldo solar diurno.</p>
-      <p>El frente financiero agrava el cuadro: la cartera vencida del mercado mayorista supera $2,9 billones, con Air-e concentrando $1,9 billones, restringiendo la liquidez de los generadores para comprar combustibles en momentos críticos. El contexto internacional se mantiene estable —Brent en USD 93,71/bbl y WTI entre USD 83,20 y 95,50/bbl—, sin presiones adicionales. La tendencia se consolida en <strong>Riesgo Significativo y Volatilidad Alta</strong>, con la UPME y la CREG avanzando en flexibilización regulatoria para amortiguar la indisponibilidad de insumos.</p>
+      <p>El periodo del 24 al 31 de agosto muestra un sector energético colombiano con presiones estructurales aceleradas en oferta hídrica y producción interna de hidrocarburos, amortiguadas por intervenciones regulatorias de emergencia y por anuncios de gran calado en infraestructura mar adentro y renovables.</p>
+      <p>El indicador agregado de embalses en 79,99% esconde una asimetría regional severa: mientras el Oriente concentra el agua, Porce III y Porce II operan en 36,27% y 37,19%, y el Caribe apenas alcanza 52,84%. El resultado fue un PTB promedio de $579,79/kWh con picos de $1.065,8/kWh, el registro más alto en veinte meses, ante la perspectiva de un El Niño de gran intensidad al cierre del año.</p>
+      <p>En gas, la declinación continua de la producción onshore forzó respuestas inmediatas: la convocatoria internacional de Ecopetrol para importar GNL por Buenaventura y la confirmación del pozo offshore Sandía-1 con Petrobras. Desde la regulación, la Resolución MinMinas 40333, la Circular 40008 y las resoluciones CREG 101 111 y 101 121 configuran un paquete de blindaje frente a apagones, iliquidez comercial y rigidez de la demanda.</p>
+      <p>El frente renovable ofrece el contrapeso: más de 4.200 MW proyectados al cierre de 2026, con los US$129 millones de equity de Erco Energía y los 252 MW operativos que Promigas incorporó al comprar los activos de Zelestra. Aun así, SER Colombia advierte que se requieren 6.000 MW y US$5.000 millones en cinco años para evitar un déficit estructural desde 2027. Con el Brent sobre US$90,50/bbl por la tensión en Ormuz, la tendencia se consolida en <strong>Alta Presión Operativa con Riesgo de Precios</strong>.</p>
     </div>
-    <div class="byline" style="margin-top:14px;">Mesa de Inteligencia GEAM · Vol. IV · Núm. 28 · 27 Jul 2026 · Circulación restringida B2B</div>
+    <div class="byline" style="margin-top:14px;">Mesa de Inteligencia GEAM · Vol. IV · Núm. 29 · 31 Ago 2026 · Circulación restringida B2B</div>
   </div>
 
   <!-- FUENTES -->
@@ -571,17 +596,17 @@
     <span class="no">§ FT</span><span class="t">Fuentes Consultadas</span><span class="line"></span>
   </div>
   <div style="columns:3;column-gap:22px;font-family:'Source Serif 4',serif;font-size:12px;line-height:1.5;">
-    <p><strong>Regulación y política —</strong> Ministerio de Minas y Energía (Resolución 40333 de 2026), UPME (Resoluciones 400 y 443 de 2026), CREG (proyectos de resolución 701 126 y 701 127).</p>
-    <p><strong>Mercado de gas —</strong> Ministerio de Minas y Energía (Resoluciones 40267 y 40289), CREG / ABC Economía (recalculo del WACC), Naturgas / Valora Analitik (Sirius y Ballena).</p>
-    <p><strong>Mercado eléctrico —</strong> XM / ABC Economía (embalses), XM (informes operativos de mercado), El Heraldo (cartera morosa y Air-e).</p>
-    <p><strong>Transición —</strong> ABC Economía / XM (avance renovable 2026), Oil Channel (pilotos de hidrógeno).</p>
-    <p><strong>Internacional —</strong> Barchart (Brent, WTI), Oil & Gas Journal (cotizaciones de julio de 2026).</p>
-    <p style="break-inside:avoid;"><em>Nota metodológica:</em> el análisis cubre publicaciones entre el 21 y el 27 de julio de 2026. Los precios internacionales y marcadores de mercado corresponden a cierres recientes de la semana de referencia.</p>
+    <p><strong>Regulación y política —</strong> Ministerio de Minas y Energía (Resolución 40333 de 2026, Circular 40008 de 2026, Resolución 40267 de 2026), CREG (Resoluciones 101 111 y 101 121 de 2026; 101 066 de 2024 y 101 097 de 2026).</p>
+    <p><strong>Gas e hidrocarburos —</strong> Valora Analitik (Sandía-1, Brava Energía), Infobae (convocatoria de GNL en Buenaventura), Ecopetrol y Petrobras (comunicados corporativos).</p>
+    <p><strong>Mercado eléctrico —</strong> XM (informes operativos, embalses y generación), El Colombiano / Diario del Huila (precio de bolsa), Valora Analitik (Afinia y Energía Atenea), EPM (transmisión en Soacha).</p>
+    <p><strong>Transición —</strong> SER Colombia (requerimientos FNCER 2027-2031), Valora Analitik (Erco Energía, Promigas–Zelestra).</p>
+    <p><strong>Internacional —</strong> Cotizaciones de mercado del 31 de agosto de 2026 para Brent, WTI, Henry Hub y oro spot.</p>
+    <p style="break-inside:avoid;"><em>Nota metodológica:</em> el análisis cubre publicaciones entre el 24 y el 31 de agosto de 2026, con referencias de contexto de meses previos cuando el hecho sigue vigente. Los marcadores internacionales corresponden a cierres de la semana de referencia.</p>
   </div>
 
   <div class="footer">
-    <span>El Radar Energético · Vol. IV · Núm. 28</span>
-    <span>Próxima edición · Lunes 3 de Agosto de 2026</span>
+    <span>El Radar Energético · Vol. IV · Núm. 29</span>
+    <span>Próxima edición · Lunes 7 de Septiembre de 2026</span>
     <span>— fin de la edición —</span>
   </div>
 
